@@ -11,20 +11,20 @@ tags:
 branch: master   - 网站源码
 branch: gh-pages - html网页
 
-### 使用GitHub登录travis-ci.org
+使用GitHub登录travis-ci.org
 ![](https://tppr.me/NT5xK)
 
-### 登录后，点击红色区域选择想要自动部署的repo
+登录后，点击红色区域选择想要自动部署的repo
 ![](https://tppr.me/dKLvB)
 
-### 到GitHub-setting申请Personal access token
+到GitHub-setting申请Personal access token
 ![](https://tppr.me/NeETX)
 ![](https://tppr.me/jH0Hi)
 
-### 得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN
+得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN
 ![](https://tppr.me/oUUcQ)
 
-### 编写.travis.yml，并上传到master分支
+编写.travis.yml，并上传到master分支
 ```
 # file: .travis.yml
 
@@ -67,5 +67,5 @@ good luck ~:~
 ## 注意
 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用
 
-#### 参考
+## 参考
 http://www.jianshu.com/p/e22c13d85659
