@@ -19,14 +19,14 @@ after_script:
   - git config user.name "opsforce"  #修改name
   - git config user.email "minng.jao@gmail.com"  #修改email
   - git add .
-  - git commit -m "update myblog"
+  - git commit -m "update myblog" #此处看情况修改
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages #GH_TOKEN是在Travis中配置token的名称
 # E: Build LifeCycle
 
 branches:
   only:
-    - master  #只监测gh-pages分支，gh-pages是我的分支的名称，可根据自己情况设置
+    - master #只监测master分支，对应的源码分支
 
 env:
   global:
-    - GH_REF: github.com/opsforce/myblog.git  #设置GH_REF，注意更改yourname   
+    - GH_REF: github.com/opsforce/myblog.git #设置GH_REF，注意更改
