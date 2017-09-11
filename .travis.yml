@@ -1,27 +1,32 @@
-language: node_js
+language: node_js  #设置语言
 
-node_js: stable
+node_js: stable  #设置相应的版本
 
+# S: Build Lifecycle
 install:
-  - npm install
+  - npm install  #安装hexo及插件
+
+#before_script:
+ # - npm install -g gulp
 
 script:
-  - hexo clean
-  - hexo generate
+  - hexo clean  #清除
+  - hexo generate  #生成静态网页
 
 after_script:
   - cd ./public
   - git init
-  - git config user.name "opsforce"
-  - git config user.email "minng.jao@gmail.com"
+  - git config user.name "opsforce"  #修改name
+  - git config user.email "minng.jao@gmail.com"  #修改email
   - git add .
   - git commit -m "update myblog"
-  - git push --force --quiet "https://${github_token}@${GH_REF}" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages #GH_TOKEN是在Travis中配置token的名称
+# E: Build LifeCycle
 
 branches:
   only:
-    - gh-pages
+    - master  #只监测gh-pages分支，gh-pages是我的分支的名称，可根据自己情况设置
 
 env:
   global:
-    - GH_REF: github.com/opsforce/myblog.git  
+    - GH_REF: github.com/opsforce/myblog.git  #设置GH_REF，注意更改yourname   
