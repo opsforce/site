@@ -7,13 +7,13 @@ title: opsForce
 subtitle:
 description: Do not tell me, it can't be done.
 author: Jimmy Zhao
-#language: zh-cn
-language: en
+language: zh-cn
+#language: en
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://opsforce.org
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -31,6 +31,7 @@ skip_render: README.md
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
+auto_spacing: true
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
