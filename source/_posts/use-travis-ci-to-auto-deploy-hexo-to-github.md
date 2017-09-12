@@ -12,17 +12,22 @@ branch: master   - 网站源码
 branch: gh-pages - html网页
 
 使用GitHub登录travis-ci.org
-![](https://tppr.me/NT5xK)
+
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg)
 
 登录后，点击红色区域选择想要自动部署的repo
-![](https://tppr.me/dKLvB)
+
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg)
 
 到GitHub-setting申请Personal access token
-![](https://tppr.me/NeETX)
-![](https://tppr.me/jH0Hi)
+
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg)
 
 得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN
-![](https://tppr.me/oUUcQ)
+
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg)
 
 编写.travis.yml，并上传到master分支
 ```
@@ -61,7 +66,9 @@ env:
   global:
     - GH_REF: github.com/<github username>/<your repo>.git #设置GH_REF，注意更改
 ```
+
 不出意外的，现在现在新建一遍文章push到GitHub就会自动部署到gh-pages分支了
+
 good luck ~:~
 
 ## 注意

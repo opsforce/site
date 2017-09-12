@@ -6,6 +6,7 @@ categories:
 - Docker
 tags:
 - Docker
+- Swarm
 - Consul
 ---
 ##  Architecture && host lists
