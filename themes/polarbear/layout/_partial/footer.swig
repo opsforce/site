@@ -5,8 +5,14 @@
         {{ theme.since }} -
     {% endif %}
     {{ current }}
-    <span class="footer-author">{{ config.author }}.</span>
+    <span class="footer-author">{{ config.author }} |</span>
     <span class="power-by">
-        {{ __('footer.powered', '<a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">PolarBear</a>') }}
+        {{ __('footer.powered', '<a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">PolarBear</a>') }} |
     </span>
+
+    <!-- 2017-09-09 添加文章字数统计及阅读时间 start -->
+    <!-- https://github.com/willin/hexo-wordcount -->
+    <span class="post-count">{{ totalcount(site, '0,0.0a') }} words total</span>
+    <!-- 2017-09-10 添加文章字数统计及阅读时间 end -->
+    
 </span>
