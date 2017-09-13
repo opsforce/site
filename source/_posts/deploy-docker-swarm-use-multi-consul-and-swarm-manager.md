@@ -1,5 +1,5 @@
 ---
-title: Docker swarm with consul cluster
+title: Deploy docker swarm use multi consul and swarm-manager
 date: 2016/7/13 20:46:25
 updated: 2016/7/13 20:46:25
 categories:
@@ -9,18 +9,12 @@ tags:
 - Swarm
 - Consul
 ---
-##  Architecture && host lists
-```
-172.16.2.9   consul-01 swarm-manager-01
-172.16.2.10  consul-02 swarm-manager-02
-172.16.2.11  consul-03 swarm-manager-03
-172.16.2.12  lb for consul
-172.16.2.13  swarm-slave
-172.16.2.14  swarm-slave
-```
+## Architecture
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fji5f29q6xj30kr0bd0ty.jpg)
+
 
 ## Prepare
-```
+``` bash
 # useradd mfg
 # passwd mfg
 # echo '
@@ -33,7 +27,7 @@ $ sudo systemctl restart docker && sudo systemctl enable docker
 ```
 
 ## Consul
-```
+``` bash
 #####################################################################################################
 # consul  https://hub.docker.com/r/progrium/consul/  
 # https://github.com/gliderlabs/docker-consul 
@@ -91,7 +85,7 @@ $ docker run --restart=always --name consul-03 -d -h node3 -v /data/consul/data:
 ```
 
 ## Lb for consul using nginx [或者使用云服务商的lb]
-```
+``` bash
 $ docker run -d --name nginx -v ${HOME}/nginx/conf.d:/etc/nginx/conf.d -p 8000:80 nginx:1.13.3-alpine
 $ vi ${HOME}/nginx/conf.d/consul.conf
 upstream docker-consul {
@@ -120,7 +114,7 @@ $ docker exec -it nginx nginx -s reload
 ```
 
 ## Swarm manager nodes
-```
+``` bash
 #####################################################################################################
 # [Swarm: A Docker-native clustering system | Docker Documentation](https://docs.docker.com/swarm/reference/swarm/)
 # [High availability in Docker Swarm | Docker Documentation](https://docs.docker.com/swarm/multi-manager-setup/)
@@ -138,7 +132,7 @@ $ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-03 swarm mana
 ```
 
 ## Swarm slave nodes
-```
+``` bash
 $ sudo vi /usr/lib/systemd/system/docker.service
 
 ExecStart=/usr/bin/dockerd
@@ -155,13 +149,13 @@ $ sudo systemctl daemon-reload && sudo systemctl restart docker
 ```
 
 ## Test
-```
+``` bash
 $ docker -H :4000 run -d --name nginx-test -e constraint:node==iZuf654mu2j1ottom86sm9Z -p 80:80 nginx:1.13.3-alpine
 
 ```
 
 ## Maintain
-```
+``` bash
 ## common command
 $ docker -H :4000 info
 $ docker -H :4000 ps
@@ -172,7 +166,7 @@ $ docker-compose -H :4000 -f ~/do	cker-compose.yml ps
 ```
 
 ## Other [Danger!!!]
-```
+``` bash
 $ docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) && sudo rm -rf /data/consul && sudo rm -rf /etc/docker/key.json
 ```
 
