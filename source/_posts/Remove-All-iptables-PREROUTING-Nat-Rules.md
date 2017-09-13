@@ -1,12 +1,12 @@
 ---
 title: Remove All Iptables PREROUTING Nat Rules
-date: 2017/09/09 20:46:25
-updated: 2017/09/09 20:46:25
+date: 2016/06/09 20:46:25
+updated: 2016/06/09 20:46:25
 categories:
-- security
+- Security
 tags:
-- firewall
-- iptables
+- Firewall
+- Iptables
 ---
 To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:
 
