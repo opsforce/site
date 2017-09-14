@@ -9,7 +9,7 @@ tags:
 - Kubernetes
 ---
 ## Architecture
-![](https://ws3.sinaimg.cn/large/006tKfTcgy1fji5xqnhakj30tj0gpgn7.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg)
 
 ## Tutorial
 

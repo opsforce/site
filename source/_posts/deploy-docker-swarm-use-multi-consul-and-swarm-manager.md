@@ -10,8 +10,7 @@ tags:
 - Consul
 ---
 ## Architecture
-![](https://ws4.sinaimg.cn/large/006tKfTcgy1fji5f29q6xj30kr0bd0ty.jpg)
-
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg)
 
 ## Prepare
 ``` bash
