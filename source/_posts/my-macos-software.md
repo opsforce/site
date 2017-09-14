@@ -11,16 +11,16 @@ tags:
 * atom - 开发工具
 * bear - Markdown && GTD
 * boxy - 第三方Gmail for Mac
-* calibre - 
-* cleanmymac 3
+* calibre - 个人图书馆
+* cleanmymac 3 - 系统管理
 * docker
 * dropbox
 * dropdmg
-* foxit reader
+* foxit reader - PDF view
 * google chrome
-* iina
-* instant translate
-* istat menus
+* iina - 牛X的视频播放软件
+* instant translate - 牛X的翻译软件
+* istat menus - 状态栏显示系统状况
 ~~kindle~~
 ~~kypass~~
 * microsoft excel
@@ -44,11 +44,11 @@ tags:
 * vu - instagram 第三方app
 * webtorrent - Mac上最牛X的种子播放工具
 * wechat
-* xcode
+* xcode - Mac自家开发工具
 * 网易邮箱大师
 * 订票助手
 * The Unarchiver - RAR解压缩
 * Reeder - RSS阅读
 * snappy - 截图工具
 * iPic && iPic Mover - 上传图床工具并生成markdown格式
-* powershell - azure终端工具
+* powershell - Azure终端工具

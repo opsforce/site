@@ -158,7 +158,7 @@ $ docker -H :4000 run -d --name nginx-test -e constraint:node==iZuf654mu2j1ottom
 ## common command
 $ docker -H :4000 info
 $ docker -H :4000 ps
-$ docker-compose -H :4000 -f ~/do	cker-compose.yml ps
+$ docker-compose -H :4000 -f ~/docker-compose.yml ps
 
 ## common issue
 * 如果出现docker -H :4000 info 显示没有节点或者缺少某个节点，到缺少的节点上执行docker restart slave

@@ -19,8 +19,6 @@ $ sudo apt-get update
 $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 $ sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 $ sudo apt-get update
-```
-``` bash
 $ sudo apt-cache policy docker-engine # find docker-engine version you need to install
 docker-engine:
   Installed: (none)
@@ -141,14 +139,14 @@ If you don't see a command prompt, try pressing enter.
 
 ### Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]
 
-```
+``` bash
 ## master node
 $ sudo -i
 # kubeadm token list | grep authentication,signing | awk '{prin t $1}'
 4****f.****78b31****9**
 ```
 
-```
+``` bash
 ## minion node
 $ sudo -i
 # kubeadm join --token 4****f.****78b31****9** <master node ip>:6443
@@ -177,19 +175,16 @@ Run 'kubectl get nodes' on the master to see this machine join.
 
 ### Deploy applications
 
-#### [Specifying ImagePullSecrets on a Pod](https://kubernetes.io/docs/concepts/containers/images/)
+[Specifying ImagePullSecrets on a Pod](https://kubernetes.io/docs/concepts/containers/images/)
 Note: This approach is currently the recommended approach for GKE, GCE, and any cloud-providers where node creation is automated.
 Kubernetes supports specifying registry keys on a pod.
 
-#### Creating a Secret with a Docker Config
-Run the following command, substituting the appropriate uppercase values:
+Creating a Secret with a Docker Config,Run the following command, substituting the appropriate uppercase values:
 ``` bash
 $ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
 secret "myregistrykey" created.
-```
 
-```
-kubectl -n production create secret docker-registry m4g-harbor-registry --docker-server=harbor.madeforgoods.com --docker-username=docker --docker-password=M4g@docker! --docker-email=mfgops@madeforgoods.com.cn
+$ kubectl -n development create secret docker-registry m4g-harbor-registry --docker-server=harbor.madeforgoods.com --docker-username=docker --docker-password=M4g@docker! --docker-email=mfgops@madeforgoods.com.cn
 ```
 
 ### Storage use glusterfs
@@ -199,43 +194,43 @@ $ sudo yum update -y && sudo setenforce 0 && sudo sed -i 's|SELINUX=enforcing|SE
 
 
 # 先安装 gluster 源
-$ sudo yum install centos-release-gluster -y
-# 安装 glusterfs 组件
-$ sudo yum install -y glusterfs glusterfs-server glusterfs-fuse glusterfsrdma glusterfs-geo-replication glusterfs-devel
-## 创建 glusterfs 目录
+$ sudo yum install centos-release-gluster -y 
+# 安装 glusterfs 组件 
+$ sudo yum install -y glusterfs glusterfs-server glusterfs-fuse glusterfsrdma glusterfs-geo-replication glusterfs-devel 
+## 创建 glusterfs 目录 
 #$ mkdir /opt/glusterd
-## 修改 glusterd 目录
-#$ sed -i 's/var\/lib/opt/g' /etc/glusterfs/glusterd.vol
-# 启动 glusterfs
+## 修改 glusterd 目录 
+#$ sed -i 's/var\/lib/opt/g' /etc/glusterfs/glusterd.vol 
+# 启动 glusterfs 
 $ sudo systemctl start glusterd.service && sudo systemctl enable glusterd.service && sudo systemctl status glusterd.service
 
 
-# 配置 hosts
-$ sudo vi /etc/hosts
+# 配置 hosts 
+$ sudo vi /etc/hosts 
 172.31.2.93 gfs-01
 172.31.3.19 gfs-02
 172.31.6.141 gfs-03
 # 开放端口
-$ sudo iptables -I INPUT -p tcp --dport 24007 -j ACCEPT
-# 创建存储目录
+$ sudo iptables -I INPUT -p tcp --dport 24007 -j ACCEPT 
+# 创建存储目录 
 $ sudo mkdir /data/glusterfs/data -p
-# 添加节点到 集群
-# 执行操作的本机不需要probe 本机
+# 添加节点到 集群 
+# 执行操作的本机不需要probe 本机 
 [root@sz-pg-oam-docker-test-001 ~]#
-gluster peer probe gfs-02
-gluster peer probe gfs-03
-# 查看集群状态
-# gluster peer status
-Number of Peers: 2
-Hostname: sz-pg-oam-docker-test-002.tendcloud.com
-Uuid: f25546cc-2011-457d-ba24-342554b51317
-State: Peer in Cluster (Connected)
-Hostname: sz-pg-oam-docker-test-003.tendcloud.com
-Uuid: 42b6cad1-aa01-46d0-bbba-f7ec6821d66d
+gluster peer probe gfs-02 
+gluster peer probe gfs-03 
+# 查看集群状态 
+# gluster peer status 
+Number of Peers: 2 
+Hostname: sz-pg-oam-docker-test-002.tendcloud.com 
+Uuid: f25546cc-2011-457d-ba24-342554b51317 
+State: Peer in Cluster (Connected) 
+Hostname: sz-pg-oam-docker-test-003.tendcloud.com 
+Uuid: 42b6cad1-aa01-46d0-bbba-f7ec6821d66d 
 State: Peer in Cluster (Connected)
 
 
-# 创建分布卷
+# 创建分布卷 
 # sudo gluster volume create k8s-volume transport tcp gfs-01:/data/glusterfs/data gfs-02:/data/glusterfs/data gfs-03:/data/glusterfs/data force
 
 sudo fdisk /dev/xvdf
@@ -243,7 +238,7 @@ sudo mkfs.xfs /dev/xvdf1
 sudo umount /data/glusterfs/data
 sudo mount /dev/xvdf1 /data/glusterfs/data
 
-# 查看volume状态
+# 查看volume状态 
 # sudo gluster volume info
 Volume Name: k8s-volume
 Type: Distribute
@@ -261,21 +256,21 @@ transport.address-family: inet
 nfs.disable: on
 
 
-# 启动 分布卷
+# 启动 分布卷 
 # sudo gluster volume start k8s-volume
 
 
-# 开启 指定 volume 的配额
-$ sudo gluster volume quota k8s-volume enable
-# 限制 指定 volume 的配额
-$ sudo gluster volume quota k8s-volume limit-usage / 30GB
-# 设置 cache 大小, 默认32MB
+# 开启 指定 volume 的配额 
+$ sudo gluster volume quota k8s-volume enable 
+# 限制 指定 volume 的配额 
+$ sudo gluster volume quota k8s-volume limit-usage / 30GB 
+# 设置 cache 大小, 默认32MB 
 $ sudo gluster volume set k8s-volume performance.cache-size 500MB
-# 设置 io 线程, 太大会导致进程崩溃
-$ sudo gluster volume set k8s-volume performance.io-thread-count 16
-# 设置 网络检测时间, 默认42s
-$ sudo gluster volume set k8s-volume network.ping-timeout 10
-# 设置 写缓冲区的大小, 默认1M
+# 设置 io 线程, 太大会导致进程崩溃 
+$ sudo gluster volume set k8s-volume performance.io-thread-count 16 
+# 设置 网络检测时间, 默认42s 
+$ sudo gluster volume set k8s-volume network.ping-timeout 10 
+# 设置 写缓冲区的大小, 默认1M 
 $ sudo gluster volume set k8s-volume performance.write-behind-window-size 500MB
 
 
@@ -301,21 +296,32 @@ ip-***-***-***-***    Ready     17d       v1.6.7
 ip-***-***-***-***    Ready     7d        v1.6.7
 ip-***-***-***-***    Ready     17d       v1.6.7
 
-$ kubectl get pods
+$ kubectl get po --all-namespaces -o wide
 
 $ kubectl get nodes --show-labels
 
-$ kubectl get nodes
+$ kubectl delete node <minion-hostname>
 
-####################################
-$ kubectl label nodes 172.16.1.107 role=app
-$ kubectl label nodes 172.16.1.107 role-
-$ kubectl -n production delete deployment mysql
+$ kubectl label nodes <minion-hostname> ***=***
+
+$ kubectl label nodes <minion-hostname> role-
 
 $ kubectl get services
 
-```
+$ kubectl -n development delete service <service name>
 
+$ kubectl -n development delete StatefulSet <StatefulSet name>
+
+$ kubectl -n development delete deployment <deployment name>
+
+$ kubectl create namespace <namespace name>
+
+$ kubectl get Deployments --all-namespaces
+
+$ kubectl -n kube-system describe po <pod name>
+
+$ kubectl apply -f <yaml name>.yaml
+```
 
 # Issue && Todo
 * 使用dpkg -i *.deb 的时候出现依赖没有安装
@@ -382,15 +388,14 @@ as root:
 # kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
 升级Node
-1. 升级安装包
+1. 升级安装包 
 $ sudo apt-mark hold docker-engine
 $ sudo apt-get upgrade -y
 2. 重启kubelet
 $ sudo systemctl restart kubelet
-
-
 ```
 
-* https://kubernetes.io/docs/concepts/services-networking/ingress/
+* ingress
+https://kubernetes.io/docs/concepts/services-networking/ingress/
 
 # Reference && Document
