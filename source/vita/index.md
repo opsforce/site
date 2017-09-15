@@ -1,16 +1,19 @@
 ---
-title: vita
+title: 简历
 ---
-![](https://cdn.dribbble.com/users/1162077/screenshots/3749498/building.png)
-## *教育背景*
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fjkqqh28jwj30m80gojsi.jpg)
+赵加明
+现居住地: 上海市普陀区
+
+## 教育背景
 2009.09 ~ 2013.07 南京理工大学紫金学院/计算机学院/计算机科学与技术/本科
 主要课程: JAVA; C; C++; 计算机组成原理; 操作系统; 计算机网络原理; 数据库系统原理; 数据结构
 英语水平: 英语四级
 
-## *研究领域*
+## 研究领域
 Docker; Swarm+Compose; Kubernetes; Automation; DBA; Security; Virtualization
 
-## *工作经验*
+## 工作经验
 ### 2016.11 ~ 至今 madeforgoods/Devops
 * 应用程序基础设施重构(Docker)
 * 快速构建几大云平台的跨数据中心(Docker; Swarm+Compose; Kubernetes)
@@ -41,11 +44,10 @@ Docker; Swarm+Compose; Kubernetes; Automation; DBA; Security; Virtualization
 涉及语言: Shell; SQL
 
 ### 2013.08 ~ 2015.02 南京苏创科技有限公司/运维
-工作内容: 
 * 负责硬件(服务器; 存储; 交换路由; 小型机等)售后技术支持; 操作系统; 数据库(Mysql; Oracle); 双机热备等环境搭建与部署
 涉及语言: Shell; SQL
 
-## *学校 x 实习项目经验*
+## 学校 x 实习项目经验
 ### 2012.10 ~ 2012.12 基于百度地图 x 微信实现地点历史留言 APP 软件设计
 * 基于百度地图定位功能 API 实现个人位置定位
 * 个人语音实录数据发送同步保存到云端网络
@@ -60,7 +62,7 @@ Docker; Swarm+Compose; Kubernetes; Automation; DBA; Security; Virtualization
 * 文件管理器 APP 开发
 责任描述: 独立完成
 
-## *获奖 x 资格证书*
+## 获奖 x 资格证书
 * 2014.06 红帽认证工程师(RHCE)
 * 2012.12 东软睿道主办首届"东软睿道杯" APPS 创新大赛团队三等奖
 * 2012.09 南京理工大学紫金学院二等奖学金
