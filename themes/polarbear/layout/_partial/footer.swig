@@ -10,9 +10,9 @@
         {{ __('footer.powered', '<a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">PolarBear</a>') }} |
     </span>
 
-    <!-- 2017-09-09 添加文章字数统计及阅读时间 start -->
+    <!-- 2017-09-09 添加文章字数统计及阅读时间 START -->
     <!-- https://github.com/willin/hexo-wordcount -->
     <span class="post-count">{{ totalcount(site, '0,0.0a') }} words total</span>
-    <!-- 2017-09-10 添加文章字数统计及阅读时间 end -->
+    <!-- 2017-09-10 添加文章字数统计及阅读时间 END -->
     
 </span>

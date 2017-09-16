@@ -11,10 +11,10 @@
 
       <time class="post-time">
           
-          <!-- 2017-09-09 添加文章字数统计及阅读时间 start -->
+          <!-- 2017-09-09 添加文章字数统计及阅读时间 START -->
           <!-- https://github.com/willin/hexo-wordcount -->
           {{ full_date(post.date, 'MMM D YYYY') }} | <span class="post-count">{{ wordcount(post.content) }} words</span> | <span class="post-count">{{ min2read(post.content) }} min read</span>
-          <!-- 2017-09-10 添加文章字数统计及阅读时间 end -->
+          <!-- 2017-09-10 添加文章字数统计及阅读时间 END -->
 
       </time>
     </header>
@@ -42,7 +42,11 @@
 
     {% if not is_home() %}
       
-      <!-- 2017-09-10 添加版权信息 start -->
+      <!-- 2017-09-10 添加捐款 START -->
+      <iframe src="/donate/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
+      <!-- 2017-09-10 添加捐款 END -->
+
+      <!-- 2017-09-10 添加版权信息 START -->
       <!-- https://arcecho.github.io/2017/04/08/Hexo-Next下添加版权声明模块/ -->
       <div>    
         {# 表示如果不在索引列表中加入后续的HTML代码 #}
@@ -60,7 +64,7 @@
           </li>
         </ul>
       </div>
-      <!-- 2017-09-10 添加版权信息 end -->
+      <!-- 2017-09-10 添加版权信息 END -->
 
       <footer class="post-footer">
 		{% if post.tags and post.tags.length %}
