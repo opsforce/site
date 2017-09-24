@@ -17,8 +17,8 @@
     
     <!-- 2017-09-09 How to Add Visitors Count to Your Website START -->
     <!-- http://bryanyzhu.github.io/2015/12/17/all_about_hexo_III/ http://busuanzi.ibruce.info -->
-    <span id="busuanzi_container_site_uv">
-    You got <span id="busuanzi_value_site_uv"></span> visitors
+    <span id="busuanzi_container_site_pv">
+    Total <span id="busuanzi_value_site_pv"></span> views
     </span>
     <!-- 2017-09-09 How to Add Visitors Count to Your Website END -->
 
