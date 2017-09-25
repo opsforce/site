@@ -9,10 +9,12 @@ tags:
 - Kubernetes
 ---
 ``` bash
+
 ### minikube v0.22.0 kubectl v1.7.5
+$ minikube ssh
 
-minikube ssh
 
+# file name: pullk8simages.sh
 #!/bin/bash
 gcr="harbor.madeforgoods.com/google_containers/kubernetes-dashboard-amd64:v1.6.3 harbor.madeforgoods.com/google_containers/k8s-dns-kube-dns-amd64:1.14.4 harbor.madeforgoods.com/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.4 harbor.madeforgoods.com/google_containers/k8s-dns-sidecar-amd64:1.14.4  harbor.madeforgoods.com/google_containers/pause-amd64:3.0"
 for i in $gcr; do docker pull $i; done
