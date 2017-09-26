@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: README.md
+skip_render: README.md, douban.html
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -44,7 +44,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -53,7 +53,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -91,7 +91,7 @@ deploy:
   type: git
   repo: git@github.com:opsforce/myblog.git
   branch: gh-pages
-#  message: test it  
+#  message: test it
 
 # Include/Exclude Files/Folders
 #include:
@@ -102,17 +102,17 @@ exclude:
 # hexo-all-minifier
 #html_minifier:
 #  enable: true
-#  exclude: 
+#  exclude:
 #css_minifier:
 #  enable: true
-#  exclude: 
+#  exclude:
 #    - '*.min.css'
 #js_minifier:
 #  enable: true
 #  mangle: true
 #  output:
 #  compress:
-#  exclude: 
+#  exclude:
 #    - '*.min.js'
 #image_minifier:
 #  enable: false
@@ -120,4 +120,4 @@ exclude:
 #  multipass: false
 #  optimizationLevel: 2
 #  pngquant: false
-#  progressive: false  
+#  progressive: false

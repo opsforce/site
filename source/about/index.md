@@ -1,14 +1,17 @@
 ---
-title: 关于
+title: About
 ---
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fjkqnxchvkj30m80godgb.jpg)
 > Do not tell me, it can't be done! --- [珍珠港 Pearl Harbor](https://movie.douban.com/subject/1302987/)
 
-### 联系方式
+### Me
+Hi, I'm Jimmy Zhao, I write this blog and work as a DevOps Engineer. Focused on building and automating infrastructure. My toolbox: Docker, Kubernetes, Rancher, Terraform, Ansible, GlusterFS, Ceph, OpenStack, Linux, Alicloud, AWS, GCE and many others.
+
+### Contact
 Github: [opsforce](https://github.com/opsforce)
 E-mail: [minng.jao@gmail.com](minng.jao@gmail.com)
 
-### 感谢:
+### Thanks
 1. Hexo theme
 * [polarbear](https://github.com/frostfan/hexo-theme-polarbear)
 2. Hexo plugins

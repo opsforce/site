@@ -35,7 +35,7 @@ widget:
 
 widget_custom:
     title: It's me
-    content: <p>这家伙很懒，什么都没留下</p>
+    content: <p>Hi, I'm Jimmy Zhao, I write this blog and work as a DevOps Engineer.</p>
 
 # ===========================================
 # Theme Settings
