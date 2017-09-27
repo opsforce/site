@@ -9,10 +9,8 @@ tags:
 - Kubernetes
 ---
 ``` bash
-
 ### minikube v0.22.0 kubectl v1.7.5
 $ minikube ssh
-
 
 # file name: pullk8simages.sh
 #!/bin/bash

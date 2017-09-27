@@ -34,8 +34,8 @@ widget:
   Categories: true
 
 widget_custom:
-    title: It's me
-    content: <p>Hi, I'm Jimmy Zhao, I write this blog and work as a DevOps Engineer.</p>
+    title: Me
+    content: <p>Hi, I’m Jimmy Zhao, I write this blog and work as a DevOps Engineer in Shanghai.</p>
 
 # ===========================================
 # Theme Settings
