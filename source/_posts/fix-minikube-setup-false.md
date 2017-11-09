@@ -9,6 +9,8 @@ tags:
 - Kubernetes
 ---
 
+![]https://c1.staticflickr.com/3/2138/3527907120_b66f1f2beb.jpg
+
 ``` bash
 ### minikube v0.22.0 kubectl v1.7.5
 $ minikube ssh
