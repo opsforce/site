@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: opsForce
+title: OPSFORCE
 subtitle:
 description: Do not tell me, it can't be done.
-author: opsForce
+author: Jimmy Zhao
 #language: en
 #language: zh-cn
 timezone: Asia/Shanghai
@@ -83,7 +83,8 @@ archive_generator:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: polarbear
+#theme: polarbear
+theme: vexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
