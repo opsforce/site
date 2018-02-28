@@ -1,3 +1,6 @@
 [submodule "themes/vexo"]
 	path = themes/vexo
 	url = https://github.com/yanm1ng/hexo-theme-vexo.git
+[submodule "themes/kana"]
+	path = themes/kana
+	url = https://github.com/bigfa/kana.git
