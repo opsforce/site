@@ -1,0 +1,50 @@
+# site icon
+favicon: /favicon.png
+
+# author headimg
+headimg: http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg
+# author info
+name: opsforce
+description: Stay Hungry,Stay Foolish.
+
+# search
+search:
+    enable: true
+    placeholder: Enter Key...
+
+# sidebar
+sidebar:
+  enable: true
+  menus:
+    -
+      name: Weibo
+      link: http://weibo.com/izekrx/
+      target: _blank
+
+# count(统计)
+count:
+  enable: true
+
+# comments
+comments:
+  duoshuo_username: opsforce
+  #disqus_username: yumemor
+
+# accounts support weibo/github/zhihu/twitter/douban
+# display to former three
+social:
+  -
+    name: weibo
+    link: http://weibo.com/izekrx/
+  -
+    name: github
+    link: https://github.com/opsforce
+  -
+    name: zhihu
+    link: https://www.zhihu.com/people/opsforce
+#  -
+#    name: twitter
+#    link:
+#  -
+#    name: douban
+#    link:

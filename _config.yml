@@ -40,8 +40,8 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace:
 
@@ -85,8 +85,8 @@ archive_generator:
 #theme: landscape
 #theme: polarbear
 #theme: vexo
-theme: kana
-
+#theme: kana
+theme: varaint
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
