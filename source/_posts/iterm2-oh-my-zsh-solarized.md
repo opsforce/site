@@ -12,7 +12,7 @@ tags:
 ```
 brew cask install iterm2
 ```
-如果没安装homebrew，就直接(官方)[http://iterm2.com/downloads.html] 下载安装包
+如果没安装homebrew，就直接!(官方)[http://iterm2.com/downloads.html] 下载安装包
 
 ### zsh
 http://ohmyz.sh/
