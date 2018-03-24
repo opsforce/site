@@ -91,3 +91,9 @@ plugins=(zsh-syntax-highlighting)
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
 $ source ~/.zshrc # 立即生效
 ```
+
+#### 参考
+http://smk17.cn/posts/108/
+https://gist.github.com/kevin-smets/8568070
+https://www.jianshu.com/p/7de00c73a2bb
+https://zhuanlan.zhihu.com/p/26373052
