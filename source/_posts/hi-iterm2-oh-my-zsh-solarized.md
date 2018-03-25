@@ -9,6 +9,7 @@ tags:
 - solarized
 ---
 ![](https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg)
+
 ### iTerm2
 ```
 brew cask install iterm2
