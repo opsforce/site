@@ -1,5 +1,5 @@
 ---
-title: iterm2 oh-my-zsh solarized
+title: Hi, iterm2 oh-my-zsh solarized
 date: 2017/11/13 20:46:25
 updated: 2017/11/13 20:46:25
 categories:
@@ -8,6 +8,7 @@ tags:
 - iterm2
 - solarized
 ---
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg)
 ### iTerm2
 ```
 brew cask install iterm2
