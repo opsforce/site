@@ -2,7 +2,9 @@
 favicon: /favicon.png
 
 # author headimg
-headimg: http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg
+#headimg: http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg
+headimg: https://ws4.sinaimg.cn/large/006tNc79gy1fpuw5c57ybj303k03kweb.jpg
+
 # author info
 name: opsforce
 description: Stay Hungry,Stay Foolish.
