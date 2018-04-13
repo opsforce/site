@@ -86,7 +86,8 @@ archive_generator:
 #theme: polarbear
 #theme: vexo
 #theme: kana
-theme: varaint
+#theme: varaint
+theme: vno
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

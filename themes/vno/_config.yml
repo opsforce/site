@@ -1,0 +1,28 @@
+menu:
+  归档: /archives
+rss: /atom.xml
+description:
+social:
+#  weibo: http://weibo.com/izekrx
+  github: https://github.com/opsforce
+#  stack_overflow:
+#  facebook:
+#  twitter: https://twitter.com/opsforce
+#  google_plus: https://plus.google.com/118328736821069549236
+  instagram: https://www.instagram.com/opsforce
+
+page_comment: true
+logo: /images/logo.png
+background:
+  cover: /images/background-cover.jpg
+  color: cover-disabled
+
+fancybox: true
+
+cloudtie_productkey: 7e456de65fb945698c448c72191454ce
+
+google_analytics: UA-90629160-1
+
+favicon: /images/favicon.png
+
+apple_touch_icon: /images/apple-touch-icon.png
