@@ -153,6 +153,3 @@ encrypt:
 search:
   path: search.xml
   field: post
-
-# auto Minify html、js、css and make it neat (https://github.com/rozbo/hexo-neat)
-neat_enable: true
