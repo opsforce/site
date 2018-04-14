@@ -95,7 +95,7 @@ theme: vno
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:opsforce/myblog.git
+  repo: git@github.com:opsforce/site.git
   branch: gh-pages
 #  message: test it
 
