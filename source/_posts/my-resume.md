@@ -1,11 +1,10 @@
 ---
-title: 简历
+title: 个人简历
 date: 2016-12-30 21:18:02
 password: 123456
-abstract: Welcome to my vita, enter password to read.
-message: Welcome to my vita, enter password to read.
+abstract: 'If yu want to view my resume, please enter the password for permission.'
+message: 'If yu want to view my resume, please enter the password for permission.'
 ---
-![](https://ws3.sinaimg.cn/large/006tKfTcly1fjkqqh28jwj30m80gojsi.jpg)
 ## 教育背景
 2009.09 ~ 2013.07 南京理工大学紫金学院/计算机学院/计算机科学与技术/本科
 主要课程: JAVA; C; C++; 计算机组成原理; 操作系统; 计算机网络原理; 数据库系统原理; 数据结构
