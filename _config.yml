@@ -7,7 +7,7 @@ title: OPSFORCE
 subtitle:
 description: Do not tell me, it can't be done.
 author: Jimmy Zhao
-#language: en
+language: en
 #language: zh-cn
 timezone: Asia/Shanghai
 
@@ -17,7 +17,7 @@ url: http://opsforce.org
 root: /
 #permalink: :year/:month/:day/:title/
 # disable permalink date time format
-permalink: :title/
+permalink: :title.html
 permalink_defaults:
 
 # Directory
@@ -144,7 +144,6 @@ douban:
 #    title: 'This is my game title'
 #    quote: 'This is my game quote'
   timeout: 10000 #optional
-
 
 # hexo-blog-encrypt (https://github.com/MikeCoder/hexo-blog-encrypt)
 ##
