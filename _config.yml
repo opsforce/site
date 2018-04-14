@@ -134,10 +134,10 @@ douban:
   user: 151423796
   book:
     title: '阅读'
-    quote: 'This is my book quote'
+    quote: '读一本书'
   movie:
     title: '观影'
-    quote: 'This is my movie quote'
+    quote: '看一部电影'
 #  game:
 #    title: 'This is my game title'
 #    quote: 'This is my game quote'
