@@ -16,6 +16,7 @@ timezone: Asia/Shanghai
 url: http://opsforce.org
 root: /
 #permalink: :year/:month/:day/:title/
+# disable permalink date time format
 permalink: :title/
 permalink_defaults:
 
