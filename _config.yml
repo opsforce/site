@@ -128,3 +128,17 @@ exclude:
 
 # vno theme required
 disqus_shortname: opsforce
+
+# douban plugins for hexo (https://github.com/mythsman/hexo-douban)
+douban:
+  user: 151423796
+  book:
+    title: '阅读'
+    quote: 'This is my book quote'
+  movie:
+    title: '观影'
+    quote: 'This is my movie quote'
+#  game:
+#    title: 'This is my game title'
+#    quote: 'This is my game quote'
+  timeout: 10000 #optional
