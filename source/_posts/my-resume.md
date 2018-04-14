@@ -4,6 +4,7 @@ date: 2016-12-30 21:18:02
 password: 123456
 abstract: 'If yu want to view my resume, please enter the password for permission.'
 message: 'If yu want to view my resume, please enter the password for permission.'
+top: True
 ---
 ## 教育背景
 2009.09 ~ 2013.07 南京理工大学紫金学院/计算机学院/计算机科学与技术/本科
