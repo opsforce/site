@@ -1,5 +1,9 @@
 ---
 title: 简历
+date: 2016-12-30 21:18:02
+password: 123456
+abstract: Welcome to my vita, enter password to read.
+message: Welcome to my vita, enter password to read.
 ---
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1fjkqqh28jwj30m80gojsi.jpg)
 ## 教育背景
@@ -8,22 +12,25 @@ title: 简历
 英语水平: 英语四级
 
 ## 研究领域
-Docker; Swarm+Compose; Kubernetes; Automation; DBA; Security; Virtualization
+Kubernetes; Docker; Swarm+Compose; Automation; 分布式存储; DBA; Security
 
 ## 工作经验
 ### 2016.11 ~ 至今 madeforgoods/Devops
-* 应用程序基础设施重构(Docker)
+* 应用程序基础设施重构(Docker; Kubernetes)
 * 快速构建几大云平台的跨数据中心(Docker; Swarm+Compose; Kubernetes)
-* CI/CD框架搭建与调整(Github; Gitlab; Bitbucket; Jenkins; Docker)
-* 监控; 日志及展示数据环境的构建(ELK; Zabbix; Open-falcon)
+* CI/CD框架搭建与调整(Github; Gitlab; Bitbucket; Jenkins; Docker; Harbor)
+* 分布式存储(Ceph; Glusterfs)
+* 监控, 日志及展示数据环境的构建(ELK; Zabbix; Open-falcon; Prometheus)
 * 安全化生产应用程序基础设施
-* 自动化更多的工作(Jenkins; Ansible; Terraform; Packer)
+* 自动化更多的工作(Jenkins; Ansible; Python; Shell; Terraform; Packer)
 * 文档整理(Markdown)
+* 搭建公司内部私有云盘、项目管理、自动测试等环境
 涉及语言: Shell; Python; SQL; Mongodb
 
 ### 2016.05 ~ 2016.11 上海易码信息科技有限公司/Devops
 * 生产测试环境搭建：负载均衡高可用WEB(Appache; Nginx; Tomcat; Jetty; Keepalived); 高可用数据库(Mongodb; Mysql+MHA; Redis; Memcached)
-* 基础运维架构搭建：监控(Zabbix); 日志系统(ELK Stack); CI/CD(Gitlab; Jenkins; Ansible); Ldap
+* 基础运维架构搭建：监控(Zabbix); 日志系统(ELK); CI/CD(Gitlab; Jenkins; Ansible); Ldap
+* 分布式存储(Ceph; Glusterfs)
 * 安全化生产应用程序基础设施
 * 容灾备份恢复; 规划及成本预算统计; 平台环境性能调优及安全架构; 维护 x 技术方案讨论设计及编写
 * 项目管理ITSM全称参与设计讨论开发; 及项目管理文档整理

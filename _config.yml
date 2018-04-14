@@ -15,7 +15,8 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://opsforce.org
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 
 # Directory
@@ -142,3 +143,9 @@ douban:
 #    title: 'This is my game title'
 #    quote: 'This is my game quote'
   timeout: 10000 #optional
+
+
+# hexo-blog-encrypt (https://github.com/MikeCoder/hexo-blog-encrypt)
+##
+encrypt:
+  enable: true
