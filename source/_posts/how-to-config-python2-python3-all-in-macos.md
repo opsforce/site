@@ -19,8 +19,9 @@ $ brew install pyenv-virtualenv # 安装virtualenv
 或者
 $ sudo easy_install virtualenv # 安装virtualenv
 
-$ mkdir myenv &&　cd myenv # 创建本地工作目录
+$ mkdir myenv && cd myenv # 创建本地工作目录
 $ which python3 # 找出Python3路径
+/usr/local/bin/python3
 
 # python2
 $ virtualenv --no-site-packages pyenv # 配置Python2虚拟路径
