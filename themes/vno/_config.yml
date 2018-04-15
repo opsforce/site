@@ -15,7 +15,8 @@ social:
   instagram: https://www.instagram.com/opsforce
 
 page_comment: true
-logo: /images/logo.png
+#logo: /images/logo.png
+logo: https://ws4.sinaimg.cn/large/006tNc79ly1fqd5hpo5g0j3064064mx3.jpg
 background:
 #  cover: /images/background-cover.jpg
 #  cover: https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f388c03c3f15daa78a7afd93b2ff3e3&auto=format&fit=crop&w=1400&q=80
@@ -28,6 +29,7 @@ cloudtie_productkey: 7e456de65fb945698c448c72191454ce
 
 google_analytics: UA-90629160-1
 
-favicon: /images/favicon.png
+#favicon: /images/favicon.png
+favicon: https://ws4.sinaimg.cn/large/006tNc79ly1fqd5hpo5g0j3064064mx3.jpg
 
 apple_touch_icon: /images/apple-touch-icon.png
