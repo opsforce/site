@@ -38,7 +38,7 @@ $(document).ready(function() {
     } else {
       $('.navigation-wrapper').toggleClass('visible animated bounceInDown');
     }
-    $('.btn-mobile-menu__icon').toggleClass('fa fa-list fa fa-angle-up animated fadeIn');
+    $('.btn-mobile-menu__icon').toggleClass('fa fa-bars fa fa-angle-up animated fadeIn');
   });
 
   $('.navigation-wrapper .blog-button').click(function() {
@@ -51,6 +51,6 @@ $(document).ready(function() {
       $('.navigation-wrapper').toggleClass('animated bounceInDown animated bounceOutUp');
     }
 
-    $('.btn-mobile-menu__icon').toggleClass('fa fa-list fa fa-angle-up animated fadeIn');
+    $('.btn-mobile-menu__icon').toggleClass('fa fa-bars fa fa-angle-up animated fadeIn');
   });
 });
