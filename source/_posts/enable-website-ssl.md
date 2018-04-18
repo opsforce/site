@@ -4,4 +4,4 @@ date: 2018/3/25 20:46:25
 updated: 2018/3/25 20:46:25
 ---
 ![](https://ws2.sinaimg.cn/large/006tKfTcgy1fqh244g88lj30gb0agzlh.jpg)
-网站已开启ssl访问，使用的是cloudflare.com没费ssl服务。
+网站已开启ssl访问，使用的是cloudflare.com免费ssl服务。
