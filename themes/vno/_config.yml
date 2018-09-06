@@ -20,7 +20,8 @@ logo: https://ws4.sinaimg.cn/large/006tNc79ly1fqd5hpo5g0j3064064mx3.jpg
 background:
 #  cover: /images/background-cover.jpg
 #  cover: https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f388c03c3f15daa78a7afd93b2ff3e3&auto=format&fit=crop&w=1400&q=80
-  cover: https://images.unsplash.com/photo-1516865674991-9bb4878e3476?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e0a23e155e64f69636fd59f66317f5bc&auto=format&fit=crop&w=1500&q=80
+#  cover: https://images.unsplash.com/photo-1516865674991-9bb4878e3476?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e0a23e155e64f69636fd59f66317f5bc&auto=format&fit=crop&w=1500&q=80
+  cover: https://images.unsplash.com/photo-1536065998491-91b0ffda8909?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=def50499ac5020f7bb4df6991004c286&auto=format&fit=crop&w=1951&q=80
   color: cover-disabled
 
 fancybox: true
