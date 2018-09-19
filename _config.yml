@@ -139,7 +139,7 @@ douban:
     title: '阅读'
     quote: '读一本书'
   movie:
-    title: '观影'
+    title: '电影'
     quote: '看一部电影'
 #  game:
 #    title: 'This is my game title'

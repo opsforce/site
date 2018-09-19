@@ -1,7 +1,7 @@
 menu:
   归档: /archives
   阅读: /books
-  观影: /movies
+  电影: /movies
   关于: /about
 rss: /atom.xml
 description:
