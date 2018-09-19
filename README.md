@@ -1,1 +1,1 @@
-# myblog [![Build Status](https://travis-ci.org/opsforce/site.svg?branch=master)](https://travis-ci.org/opsforce/site)
+[![Build Status](https://travis-ci.org/opsforce/site/master.svg?style=flat-square)](https://travis-ci.org/opsforce/site)
