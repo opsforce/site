@@ -9,4 +9,4 @@ Hi, I'm Jimmy Zhao, I write this blog and work as a DevOps Engineer in Shanghai.
 
 ### Contact
 Github: [opsforce](https://github.com/opsforce)
-E-mail: [minng.jao@gmail.com](minng.jao@gmail.com)
+E-mail: [i@opsforce.org](i@opsforce.org)
