@@ -9,7 +9,7 @@ install:
 before_script:
   # - npm install -g gulp
   - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
-  - sed -i 's|theme: vno|theme: Nayo|g' ./_config.yml
+  - sed -i 's|theme:\ vno|theme:\ Nayo|g' ./_config.yml
   - cat ./_config.yml | grep theme
 
 script:
