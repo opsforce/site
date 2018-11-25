@@ -6,18 +6,19 @@ node_js: stable # 设置相应的版本
 install:
   - npm install # 安装hexo及插件
 
-before_script:
-  # - npm install -g gulp
-  - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
-  - sed -i 's|theme:\ vno|theme:\ Nayo|g' ./_config.yml
-  - cat ./_config.yml | grep theme
+# before_script:
+#   - npm install -g gulp
 
 script:
+  - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
+  - ls -l themes
+  - sed -i 's|theme:\ vno|theme:\ Nayo|g' _config.yml
+  - cat _config.yml | grep theme
   - hexo clean # 清除
   - hexo generate # 生成静态网页
 
 after_script:
-  - cd ./public
+  - cd public
   - git init
   - git config user.name "opsforce" # 修改name
   - git config user.email "i@opsforce.org" # 修改email
