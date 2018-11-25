@@ -12,7 +12,7 @@ install:
 script:
   - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
   - ls -l themes
-  - sed -i 's|theme:\ vno|theme:\ Nayo|g' _config.yml
+  - sed -i 's|theme:\ vno|theme:\ nayo|g' _config.yml
   - cat _config.yml | grep theme
   - hexo clean # 清除
   - hexo generate # 生成静态网页
