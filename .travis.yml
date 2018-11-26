@@ -10,10 +10,9 @@ install:
 #   - npm install -g gulp
 
 script:
-  - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
-  - ls -l themes
-  - sed -i 's|theme:\ vno|theme:\ nayo|g' _config.yml
-  - cat _config.yml | grep theme
+  # - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
+  - git clone https://github.com/theme-next/hexo-theme-next themes/next
+  - sed -i 's|theme:\ vno|theme:\ next|g' _config.yml
   - hexo clean # 清除
   - hexo generate # 生成静态网页
 
