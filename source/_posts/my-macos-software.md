@@ -3,9 +3,9 @@ title: My macOS Software list [Continually updating]
 date: 2017/9/9 19:46:25
 updated: 2017/9/9 19:46:25
 categories:
-- Mac
+- macOS
 tags:
-- Mac
+- macOS
 ---
 * 1password 6 - 密码管理
 * atom - 开发工具

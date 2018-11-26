@@ -3,11 +3,11 @@ title: Mac下配置Python2和Python3共存
 date: 2016/7/10 20:46:25
 updated: 2016/7/13 20:46:25
 categories:
-- develop
+- Develop
 tags:
-- mac
-- python
-- virtualenv
+- macOS
+- Python
+- Virtualenv
 ---
 Mac默认是安装了Python2的，所以只需要安装Python3
 ```

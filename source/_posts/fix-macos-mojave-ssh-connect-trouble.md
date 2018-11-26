@@ -3,9 +3,9 @@ title: fix-macos-mojave-ssh-connect-trouble
 date: 2018/11/1 19:46:25
 updated: 2017/11/2 19:46:25
 categories:
-- Mac
+- macOS
 tags:
-- Mac
+- macOS
 ---
 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：
 ```

@@ -5,7 +5,7 @@ updated: 2015/10/19 20:46:25
 categories:
 - iCloud
 tags:
-- Mac
+- macOS
 - Windows
 - Safari
 - iCloud

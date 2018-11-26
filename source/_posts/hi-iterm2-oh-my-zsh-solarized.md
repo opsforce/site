@@ -3,9 +3,11 @@ title: Hi, iterm2 oh-my-zsh solarized
 date: 2017/11/13 20:46:25
 updated: 2017/11/13 20:46:25
 categories:
-- Linux
+- macOS
+- Unix/Linux
 tags:
-- iterm2
+- iTerm2
+- zsh
 - solarized
 ---
 ![](https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg)
