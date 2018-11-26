@@ -1,7 +1,7 @@
 ---
 title: fix-macos-mojave-ssh-connect-trouble
-date: 2018/11/1 19:46:25
-updated: 2017/11/2 19:46:25
+date: 2018/11/1
+updated: 2017/11/2
 categories:
 - macOS
 tags:

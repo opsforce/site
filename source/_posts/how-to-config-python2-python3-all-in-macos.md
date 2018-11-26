@@ -1,7 +1,7 @@
 ---
 title: Mac下配置Python2和Python3共存
-date: 2016/7/10 20:46:25
-updated: 2016/7/13 20:46:25
+date: 2016/7/10
+updated: 2016/7/13
 categories:
 - Develop
 tags:

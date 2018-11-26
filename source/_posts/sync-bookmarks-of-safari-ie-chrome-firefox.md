@@ -1,7 +1,7 @@
 ---
 title: 跨平台同步Safari、IE、Chrome、Firefox的书签
-date: 2015/10/19 20:46:25
-updated: 2015/10/19 20:46:25
+date: 2015/10/19
+updated: 2015/10/19
 categories:
 - iCloud
 tags:

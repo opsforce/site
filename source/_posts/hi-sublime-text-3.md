@@ -1,7 +1,7 @@
 ---
 title: Hi, sublime text 3
-date: 2017/12/09 20:46:25
-updated: 2017/12/13 20:46:25
+date: 2017/12/09
+updated: 2017/12/13
 categories:
 - Develop
 ---

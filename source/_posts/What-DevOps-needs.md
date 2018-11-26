@@ -1,7 +1,7 @@
 ---
 title: What DevOps needs?
-date: 2016/5/20 20:46:25
-updated: 2016/5/20 20:46:25
+date: 2016/5/20
+updated: 2016/5/20
 categories:
 - Develop
 ---

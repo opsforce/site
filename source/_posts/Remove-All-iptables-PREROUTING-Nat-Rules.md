@@ -1,7 +1,7 @@
 ---
 title: Remove All Iptables PREROUTING Nat Rules
-date: 2016/06/09 20:46:25
-updated: 2016/06/09 20:46:25
+date: 2016/06/09
+updated: 2016/06/09
 categories:
 - Security
 tags:

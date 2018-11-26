@@ -1,7 +1,7 @@
 ---
 title: Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)
-date: 2015/10/18 20:46:25
-updated: 2015/10/18 20:46:25
+date: 2015/10/18
+updated: 2015/10/18
 categories:
 - Git
 tags:

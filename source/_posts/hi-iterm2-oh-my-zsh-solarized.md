@@ -1,7 +1,7 @@
 ---
 title: Hi, iterm2 oh-my-zsh solarized
-date: 2017/11/13 20:46:25
-updated: 2017/11/13 20:46:25
+date: 2017/11/13
+updated: 2017/11/13
 categories:
 - macOS
 - Unix/Linux

@@ -1,7 +1,7 @@
 ---
 title: My macOS Software list [Continually updating]
-date: 2017/9/9 19:46:25
-updated: 2017/9/9 19:46:25
+date: 2017/9/9
+updated: 2017/9/9
 categories:
 - macOS
 tags:

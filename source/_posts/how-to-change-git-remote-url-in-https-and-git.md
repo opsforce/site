@@ -1,7 +1,7 @@
 ---
 title: 修改git的远程url地址git或者https
-date: 2015/10/19 20:46:25
-updated: 2015/10/19 20:46:25
+date: 2015/10/19
+updated: 2015/10/19
 categories:
 - Git
 tags:

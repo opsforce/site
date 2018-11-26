@@ -1,6 +1,7 @@
 ---
 title: 个人简历
-date: 2016-12-30 21:18:02
+date: 2016/11/30
+updated: 2016/11/31
 password: 123456
 abstract: 'If yu want to view my resume, please enter the password for permission.'
 message: 'If yu want to view my resume, please enter the password for permission.'

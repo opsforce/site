@@ -1,7 +1,7 @@
 ---
 title: Deploy kubernetes [Continually updating]
-date: 2017/9/8 19:46:25
-updated: 2017/9/8 19:46:25
+date: 2017/9/8
+updated: 2017/9/8
 categories:
 - Kubernetes
 tags:
