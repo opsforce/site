@@ -24,7 +24,7 @@ $ curl -fsSL https://get.docker.com/ | sh
 $ sudo usermod -aG docker $(whoami)
 $ sudo systemctl restart docker && sudo systemctl enable docker
 ```
-
+<!-- more -->
 ## Consul
 ``` bash
 #####################################################################################################
