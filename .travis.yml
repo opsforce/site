@@ -12,8 +12,12 @@ install:
 script:
   # - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
   - git clone https://github.com/theme-next/hexo-theme-next themes/next
+  - ls -al themes/next
+  - git clone https://github.com/theme-next/theme-next-reading-progress themes/next/source/lib/reading_progress
+  - ls -al themes/next/source/lib
   - sed -i 's|theme:\ vno|theme:\ next|g' _config.yml
   - sed -i 's|badges:\ false|badges:\ true|g' themes/next/_config.yml
+  - sed -i 's|reading_progress:\n\  enable:\ false|reading_progress:\n\  enable:\ true|g' themes/next/_config.yml
   - hexo clean # 清除
   - hexo generate # 生成静态网页
 
