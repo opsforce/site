@@ -15,6 +15,8 @@ Tools -> Install Package Control
 ### 安装主题
 到package control里面搜索相应主题安装即可，推荐一款主题Ayu
 
+<!-- more -->
+
 ### Preferences.sublime-settings-User
 ```
 {

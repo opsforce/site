@@ -21,6 +21,9 @@ brew cask install iterm2
 ### zsh
 http://ohmyz.sh/
 https://github.com/robbyrussell/oh-my-zsh
+
+<!-- more -->
+
 ```
 $ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current

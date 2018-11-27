@@ -25,6 +25,8 @@ categories:
 
 服务注册与发现：Zookeeper、etcd、Consul
 
+<!-- more -->
+
 脚本语言：python、ruby、shell
 
 日志管理：ELK、Logentries、Logrotate

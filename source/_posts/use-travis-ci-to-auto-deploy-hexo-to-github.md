@@ -29,6 +29,8 @@ branch: gh-pages - html网页
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg)
 
+<!-- more -->
+
 编写.travis.yml，并上传到master分支
 ```
 # file: .travis.yml

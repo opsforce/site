@@ -14,6 +14,8 @@ To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To
 iptables -t nat --line-numbers -L
 ```
 
+<!-- more -->
+
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg)
 
 As you can see the above command will display all PREROUTING chains with relevant line numbers. Next, we can use these line numbers to remove all PREROUTING chains one by one. For example to remove PREROUTING chain with line number 1 we can do:

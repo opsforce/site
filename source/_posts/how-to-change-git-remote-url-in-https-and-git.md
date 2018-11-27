@@ -30,6 +30,7 @@ tags:
 	# origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
 	# origin  git@github.com:USERNAME/REPOSITORY.git (push)
 
+<!-- more -->
 
 4.使用 `remote set-url` 修改从 SSH 切换 远程 URL 到 HTTPS
 

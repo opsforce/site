@@ -20,6 +20,9 @@ tags:
 * google chrome
 * iina - 牛X的视频播放软件
 * instant translate - 牛X的翻译软件
+
+<!-- more -->
+
 * istat menus - 状态栏显示系统状况
 ~~kindle~~
 ~~kypass~~

@@ -65,7 +65,9 @@ $ sudo apt-get -y install docker-engine=1.12.6-0~ubuntu-xenial
 $ sudo systemctl restart docker && sudo systemctl enable docker && sudo systemctl status docker
 $ sudo usermod -aG docker $(whoami) # 退出当前终端，docker相关命令才能生效
 ```
+
 <!-- more -->
+
 ### Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [all node]
 
 #### prepare

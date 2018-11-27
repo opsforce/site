@@ -20,6 +20,7 @@ _You will need your Bitbucket repository’s git URL as available on the **Overv
 
 ![Retrieve git URL from Bitbucket.org](https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png)
 
+<!-- more -->
 
 ## 1. Clone Bitbucket Repository Locally via Command Line
 
