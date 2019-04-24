@@ -186,7 +186,7 @@ Creating a Secret with a Docker Config,Run the following command, substituting t
 $ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
 secret "myregistrykey" created.
 
-$ kubectl -n development create secret docker-registry m4g-harbor-registry --docker-server=harbor.madeforgoods.com --docker-username=docker --docker-password=M4g@docker! --docker-email=mfgops@madeforgoods.com.cn
+$ kubectl -n development create secret docker-registry m4g-harbor-registry --docker-server=harbor.madeforgoods.com --docker-username=docker --docker-password=****** --docker-email=**********
 ```
 
 ### Storage use glusterfs
