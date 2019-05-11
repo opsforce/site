@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>OPSFORCE</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://opsforce.org/"/>
+  <updated>2018-11-01T16:00:00.000Z</updated>
+  <id>https://opsforce.org/</id>
+  
+  <author>
+    <name>Jimmy Zhao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fix-macos-mojave-ssh-connect-trouble</title>
+    <link href="https://opsforce.org/fix-macos-mojave-ssh-connect-trouble.html"/>
+    <id>https://opsforce.org/fix-macos-mojave-ssh-connect-trouble.html</id>
+    <published>2018-10-31T16:00:00.000Z</published>
+    <updated>2018-11-01T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p> 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：</p><pre><code>packet_write_wait: Connection to *.*.*.* port 22: Broken pipe</code></pre><p> 其实是 ssh 客户端比较新导致的 </p><pre><code>$ ssh -VOpenSSH_7.8p1, LibreSSL 2.7.3</code></pre><p> 只需添加 ssh 相关配置，可解决问题 </p><pre><code>$ cat .ssh/configHost *    IPQoS lowdelay throughput</code></pre><p> 这个问题困惑了我近半个月 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;packet_write_wait: Connection to *.*.*.* port 22: Broken pipe
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+      <category term="macOS" scheme="https://opsforce.org/categories/macOS/"/>
+    
+    
+      <category term="macOS" scheme="https://opsforce.org/tags/macOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站已开启 ssl 访问</title>
+    <link href="https://opsforce.org/enable-website-ssl.html"/>
+    <id>https://opsforce.org/enable-website-ssl.html</id>
+    <published>2018-03-24T16:00:00.000Z</published>
+    <updated>2018-03-24T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fqh244g88lj30gb0agzlh.jpg" alt><br> 网站已开启 ssl 访问，使用的是 cloudflare.com 免费 ssl 服务。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fqh244g88lj30gb0agzlh.jpg&quot; alt&gt;&lt;br&gt; 网站已开启 ssl 访问，使用的是 cloudflare.com 免费 ssl 服务。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://opsforce.org/categories/Security/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hi, sublime text 3</title>
+    <link href="https://opsforce.org/hi-sublime-text-3.html"/>
+    <id>https://opsforce.org/hi-sublime-text-3.html</id>
+    <published>2017-12-08T16:00:00.000Z</published>
+    <updated>2017-12-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="80" src="http://music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fpp6pb8snvj311y0jnwfs.jpg" alt></p><h3 id="安装 Package-Control"><a href="# 安装 Package-Control" class="headerlink" title="安装 Package Control"></a>安装 Package Control</h3><p>Tools -&gt; Install Package Control</p><h3 id="安装主题"><a href="# 安装主题" class="headerlink" title="安装主题"></a>安装主题 </h3><p> 到 package control 里面搜索相应主题安装即可，推荐一款主题 Ayu</p><a id="more"></a><h3 id="Preferences-sublime-settings-User"><a href="#Preferences-sublime-settings-User" class="headerlink" title="Preferences.sublime-settings-User"></a>Preferences.sublime-settings-User</h3><pre><code>{    &quot;font_size&quot;: 13,    &quot;ignored_packages&quot;:    [&quot;Vintage&quot;],    &quot;theme&quot;: &quot;ayu-light.sublime-theme&quot;,    &quot;color_scheme&quot;: &quot;Packages/ayu/ayu-light.tmTheme&quot;,    &quot;update_check&quot;: false // 禁止软件自动更新}</code></pre><h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>Package Control - 包控制管理工具<br>Alignment - 行对齐工具<br>SideBarEnhancements - 侧边栏右键加强<br>A File Icon - 主题 ayu 依赖的图标插件<br>Git</p><h3 id="设置 -package- 代理 -shadowsocks"><a href="# 设置 -package- 代理 -shadowsocks" class="headerlink" title="设置 package 代理 (shadowsocks)"></a> 设置 package 代理(shadowsocks)</h3><p>Preferences -&gt; Package Settings -&gt; Package Control -&gt; Settings - User</p><pre><code>    &quot;http_proxy&quot;: &quot;http://127.0.0.1:1087&quot;,    &quot;https_proxy&quot;: &quot;http://127.0.0.1:1087&quot;</code></pre><h3 id="快捷键"><a href="# 快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>Command+Shift+P - Package Control<br>Command+, - Settings</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;300&quot; height=&quot;80&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=28285910&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tNc79gy1fpp6pb8snvj311y0jnwfs.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h3 id=&quot;安装Package-Control&quot;&gt;&lt;a href=&quot;#安装Package-Control&quot; class=&quot;headerlink&quot; title=&quot;安装Package Control&quot;&gt;&lt;/a&gt;安装Package Control&lt;/h3&gt;&lt;p&gt;Tools -&amp;gt; Install Package Control&lt;/p&gt;
+&lt;h3 id=&quot;安装主题&quot;&gt;&lt;a href=&quot;#安装主题&quot; class=&quot;headerlink&quot; title=&quot;安装主题&quot;&gt;&lt;/a&gt;安装主题&lt;/h3&gt;&lt;p&gt;到package control里面搜索相应主题安装即可，推荐一款主题Ayu&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Develop" scheme="https://opsforce.org/categories/Develop/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hi, iterm2 oh-my-zsh solarized</title>
+    <link href="https://opsforce.org/hi-iterm2-oh-my-zsh-solarized.html"/>
+    <id>https://opsforce.org/hi-iterm2-oh-my-zsh-solarized.html</id>
+    <published>2017-11-12T16:00:00.000Z</published>
+    <updated>2017-11-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg" alt></p><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><pre><code>brew cask install iterm2</code></pre><p>如果没安装 homebrew，就直接 <a href="http://iterm2.com/downloads.html" target="_blank" rel="noopener"> 官方网站 </a> 下载安装包</p><h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p><a href="http://ohmyz.sh/" target="_blank" rel="noopener">http://ohmyz.sh/</a><br><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">https://github.com/robbyrussell/oh-my-zsh</a></p><a id="more"></a><pre><code>$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current                                 Dload  Upload   Total   Spent    Left  Speed  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  4019  100  4019    0     0   3668      0  0:00:01  0:00:01 --:--:-- 2052kCloning Oh My Zsh...Cloning into &#39;/Users/opsforce/.oh-my-zsh&#39;...remote: Counting objects: 852, done.remote: Compressing objects: 100% (716/716), done.remote: Total 852 (delta 16), reused 787 (delta 10), pack-reused 0Receiving objects: 100% (852/852), 581.15 KiB | 17.00 KiB/s, done.Resolving deltas: 100% (16/16), done.Looking for an existing zsh config...Using the Oh My Zsh template file and adding it to ~/.zshrcTime to change your default shell to zsh!Changing shell for opsforce.Password for opsforce:         __                                     __  ____  / /_     ____ ___  __  __   ____  _____/ /_ / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \/ /_/ / / / /  / / / / / / /_/ /    / /_(__) / / /\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/                        /____/                       ....is now installed!Please look over the ~/.zshrc file to select plugins, themes, and options.p.s. Follow us at https://twitter.com/ohmyzsh.p.p.s. Get stickers and t-shirts at https://shop.planetargon.com.</code></pre><h3 id="使用 pip 安装 Powerline"><a href="# 使用 pip 安装 Powerline" class="headerlink" title="使用 pip 安装 Powerline"></a>使用 pip 安装 Powerline</h3><pre><code>$ sudo pip install powerline-status</code></pre><h3 id="Powerline 字体下载安装"><a href="#Powerline 字体下载安装" class="headerlink" title="Powerline 字体下载安装"></a>Powerline 字体下载安装</h3><pre><code>$ git clone https://github.com/powerline/fonts.git$ ./fonts/install.sh</code></pre><p>设置 iTerm 2 的 Regular Font 和 Non-ASCII Font<br>安装完字体库之后，把 iTerm 2 的设置里的 Profile 中的 Text 选项卡中里的 Font 的字体设置成 Powerline 的字体，我这里设置的字体是 12pt Meslo LG L DZ Regular for Powerline</p><h3 id="修改主题"><a href="# 修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><pre><code>$ vi .zshrc#ZSH_THEME=&quot;robbyrussell&quot;ZSH_THEME=&quot;agnoster&quot;</code></pre><h3 id="安装配色方案"><a href="# 安装配色方案" class="headerlink" title="安装配色方案"></a>安装配色方案 </h3><p> 在 iTerm 2 输入以下命令：</p><pre><code>$ git clone https://github.com/altercation/solarized.git$ open solarized/iterm2-colors-solarized # 打开配色所在目录</code></pre><p>打开配色所在目录，双击 Solarized Dark.itermcolors 和 Solarized Light.itermcolors 两个文件就可以把配置文件导入到 iTerm2 里，然后选择 Solarized 配色：Preferences -&gt; Profiles -&gt; Default -&gt; Colors -&gt; Color Presets…</p><h3 id="增加指令高亮效果 -zsh-syntax-highlighting"><a href="# 增加指令高亮效果 -zsh-syntax-highlighting" class="headerlink" title="增加指令高亮效果 zsh-syntax-highlighting"></a>增加指令高亮效果 zsh-syntax-highlighting</h3><pre><code>$ brew install zsh-syntax-highlighting如果没安装 homebrew，就下载源码安装$ cd ~/.oh-my-zsh/custom/plugins$ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git$ echo &#39;# syntax-highlightingplugins=(zsh-syntax-highlighting)source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#39; &gt;&gt; ~/.zshrc$ source ~/.zshrc # 立即生效</code></pre><h4 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://smk17.cn/posts/108/" target="_blank" rel="noopener">http://smk17.cn/posts/108/</a><br><a href="https://gist.github.com/kevin-smets/8568070" target="_blank" rel="noopener">https://gist.github.com/kevin-smets/8568070</a><br><a href="https://www.jianshu.com/p/7de00c73a2bb" target="_blank" rel="noopener">https://www.jianshu.com/p/7de00c73a2bb</a><br><a href="https://zhuanlan.zhihu.com/p/26373052" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26373052</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h3 id=&quot;iTerm2&quot;&gt;&lt;a href=&quot;#iTerm2&quot; class=&quot;headerlink&quot; title=&quot;iTerm2&quot;&gt;&lt;/a&gt;iTerm2&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;brew cask install iterm2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果没安装homebrew，就直接&lt;a href=&quot;http://iterm2.com/downloads.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方网站&lt;/a&gt;下载安装包&lt;/p&gt;
+&lt;h3 id=&quot;zsh&quot;&gt;&lt;a href=&quot;#zsh&quot; class=&quot;headerlink&quot; title=&quot;zsh&quot;&gt;&lt;/a&gt;zsh&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://ohmyz.sh/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/robbyrussell/oh-my-zsh&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="macOS" scheme="https://opsforce.org/categories/macOS/"/>
+    
+      <category term="Unix/Linux" scheme="https://opsforce.org/categories/macOS/Unix-Linux/"/>
+    
+    
+      <category term="iTerm2" scheme="https://opsforce.org/tags/iTerm2/"/>
+    
+      <category term="zsh" scheme="https://opsforce.org/tags/zsh/"/>
+    
+      <category term="solarized" scheme="https://opsforce.org/tags/solarized/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My macOS Software list [Continually updating]</title>
+    <link href="https://opsforce.org/my-macos-software.html"/>
+    <id>https://opsforce.org/my-macos-software.html</id>
+    <published>2017-09-08T16:00:00.000Z</published>
+    <updated>2017-09-08T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>1password 6 - 密码管理 </li><li>atom - 开发工具 </li><li>bear - Markdown &amp;&amp; GTD</li><li>boxy - 第三方 Gmail for Mac</li><li>calibre - 个人图书馆 </li><li>cleanmymac 3 - 系统管理 </li><li>docker</li><li>dropbox</li><li>dropdmg</li><li>foxit reader - PDF view</li><li>google chrome</li><li>iina - 牛 X 的视频播放软件 </li><li>instant translate - 牛 X 的翻译软件 </li></ul><a id="more"></a><ul><li>istat menus - 状态栏显示系统状况 <br><del>kindle</del><br><del>kypass</del></li><li>microsoft excel</li><li>microsoft word</li><li>microsoft powerpoint</li><li>navicat premium - 关系型数据库图形化工具 </li><li>neteasemusic - 网易云音乐 <br><del>nextcloud</del></li><li>parallels desktop - Mac 上最牛 X 的虚拟化软件 </li><li>robo 3t - MongoDB 图形化工具 </li><li>seafile client - 企业存储 </li><li>shadowsocksx ng - 番·羽·土·啬 </li><li>sketch - 矢量图设计工具 </li><li>slack - 团队交流协作工具 </li><li>sublime text - 开发工具 <br><del>surge</del><br><del>teampaper snap</del></li><li>things - GTD 工具 </li><li>tower - GIT 图形化工具 </li><li>visual studio code - 开发工具 </li><li>vu - instagram 第三方 app</li><li>webtorrent - Mac 上最牛 X 的种子播放工具 </li><li>wechat</li><li>xcode - Mac 自家开发工具 </li><li> 网易邮箱大师 </li><li> 订票助手 </li><li>The Unarchiver - RAR 解压缩 </li><li>Reeder - RSS 阅读 </li><li>snappy - 截图工具 </li><li>iPic &amp;&amp; iPic Mover - 上传图床工具并生成 markdown 格式 </li><li>powershell - Azure 终端工具 </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;1password 6 - 密码管理&lt;/li&gt;
+&lt;li&gt;atom - 开发工具&lt;/li&gt;
+&lt;li&gt;bear - Markdown &amp;amp;&amp;amp; GTD&lt;/li&gt;
+&lt;li&gt;boxy - 第三方Gmail for Mac&lt;/li&gt;
+&lt;li&gt;calibre - 个人图书馆&lt;/li&gt;
+&lt;li&gt;cleanmymac 3 - 系统管理&lt;/li&gt;
+&lt;li&gt;docker&lt;/li&gt;
+&lt;li&gt;dropbox&lt;/li&gt;
+&lt;li&gt;dropdmg&lt;/li&gt;
+&lt;li&gt;foxit reader - PDF view&lt;/li&gt;
+&lt;li&gt;google chrome&lt;/li&gt;
+&lt;li&gt;iina - 牛X的视频播放软件&lt;/li&gt;
+&lt;li&gt;instant translate - 牛X的翻译软件&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="macOS" scheme="https://opsforce.org/categories/macOS/"/>
+    
+    
+      <category term="macOS" scheme="https://opsforce.org/tags/macOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Deploy kubernetes [Continually updating]</title>
+    <link href="https://opsforce.org/deploy-kubernetes.html"/>
+    <id>https://opsforce.org/deploy-kubernetes.html</id>
+    <published>2017-09-07T16:00:00.000Z</published>
+    <updated>2017-09-07T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg" alt></p><h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><h3 id="Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node"><a href="#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node" class="headerlink" title="Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]"></a>Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]</h3><pre><code class="bash">$ sudo apt-get update$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D$ sudo apt-add-repository &#39;deb https://apt.dockerproject.org/repo ubuntu-xenial main&#39;$ sudo apt-get update$ sudo apt-cache policy docker-engine # find docker-engine version you need to installdocker-engine:  Installed: (none)  Candidate: 17.05.0~ce-0~ubuntu-xenial  Version table:     17.05.0~ce-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     17.04.0~ce-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     17.03.1~ce-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     17.03.0~ce-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.13.1-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.13.0-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.6-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.5-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.4-0~ubuntu-xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.3-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.2-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.1-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.12.0-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.11.2-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.11.1-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages     1.11.0-0~xenial 500        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages## 如果 Ubuntu 为 14.04, 建议先装上以下两个软件包。$ apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual## 这里安装 docker-engine 1.12.6，官方兼容版本$ sudo apt-get -y install docker-engine=1.12.6-0~ubuntu-xenial$ sudo systemctl restart docker &amp;&amp; sudo systemctl enable docker &amp;&amp; sudo systemctl status docker$ sudo usermod -aG docker $(whoami) # 退出当前终端，docker 相关命令才能生效</code></pre><a id="more"></a><h3 id="Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-all-node"><a href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-all-node" class="headerlink" title="Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [all node]"></a>Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [all node]</h3><h4 id="prepare"><a href="#prepare" class="headerlink" title="prepare"></a>prepare</h4><pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get install -y apt-transport-https$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -$ sudo -i# cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.listdeb http://apt.kubernetes.io/ kubernetes-xenial mainEOF# apt-get update# exit</code></pre><h4 id="install-kubernetes"><a href="#install-kubernetes" class="headerlink" title="install kubernetes"></a>install kubernetes</h4><pre><code class="bash">$ sudo apt-get purge -y kubelet kubeadm kubectl kubernetes-cni # remove latest kubernetes$ sudo apt-get -y install kubelet=1.6.7-00 kubeadm=1.6.7-00 kubectl=1.6.7-00 kubernetes-cni=0.5.1-00 socat=1.7.3.1-1 # install specific version kubernetes$ sudo apt-get install -d --reinstall kubelet=1.6.7-00 kubeadm=1.6.7-00 kubectl=1.6.7-00 kubernetes-cni=0.5.1-00 socat=1.7.3.1-1 # download specific version kubernetes$ sudo ls -l /var/cache/apt/archives # checkout downloaded applications packages</code></pre><h3 id="Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-master-node"><a href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-master-node" class="headerlink" title="Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [master node]"></a>Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [master node]</h3><h4 id="init-kubernetes-cluster"><a href="#init-kubernetes-cluster" class="headerlink" title="init kubernetes cluster"></a>init kubernetes cluster</h4><pre><code class="bash">$ sudo -i# kubeadm init --apiserver-advertise-address &lt;master node ip&gt;[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/admin.conf&quot;[apiclient] Created API client, waiting for the control plane to become ready[apiclient] All control plane components are healthy after 19.392838 seconds[apiclient] Waiting for at least one node to register[apiclient] First node has registered after 2.006249 seconds[token] Using token: 4d044f.b88c78b31c9fd9e4[apiconfig] Created RBAC rules[addons] Created essential addon: kube-proxy[addons] Created essential addon: kube-dnsYour Kubernetes master has initialized successfully!To start using your cluster, you need to run (as a regular user):  cp /etc/kubernetes/admin.conf $HOME/  chown $(id -u):$(id -g) $HOME/admin.conf  export KUBECONFIG=$HOME/admin.confYou should now deploy a pod network to the cluster.Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:  http://kubernetes.io/docs/admin/addons/You can now join any number of machines by running the following on each nodeas root:  kubeadm join --token 4****f.****78b31****9** &lt;master node ip&gt;:6443</code></pre><h4 id="install-weave-network-for-kubernetes"><a href="#install-weave-network-for-kubernetes" class="headerlink" title="install weave network for kubernetes"></a>install weave network for kubernetes</h4><pre><code class="bash">$ kubectl apply -f https://git.io/weave-kube-1.6## 或者$ kubectl apply -f weave-daemonset-k8s-1.6.yaml## test DNS network$ kubectl run curl --image=radial/busyboxplus:curl -i --ttyIf you don&#39;t see a command prompt, try pressing enter.[root@curl-2716574283-xr8zd:/]$</code></pre><h3 id="Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-minion-node"><a href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-minion-node" class="headerlink" title="Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]"></a>Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]</h3><pre><code class="bash">## master node$ sudo -i# kubeadm token list | grep authentication,signing | awk &#39;{prin t $1}&#39;4****f.****78b31****9**</code></pre><pre><code class="bash">## minion node$ sudo -i# kubeadm join --token 4****f.****78b31****9** &lt;master node ip&gt;:6443[kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.[preflight] Running pre-flight checks[discovery] Trying to connect to API Server &quot;172.31.10.219:6443&quot;[discovery] Created cluster-info discovery client, requesting info from &quot;https://172.31.10.219:6443&quot;[discovery] Cluster info signature and contents are valid, will use API Server &quot;https://172.31.10.219:6443&quot;[discovery] Successfully established connection with API Server &quot;172.31.10.219:6443&quot;[bootstrap] Detected server version: v1.6.7[bootstrap] The server supports the Certificates API (certificates.k8s.io/v1beta1)[csr] Created API client to obtain unique certificate for this node, generating keys and certificate signing request[csr] Received signed certificate from the API server, generating KubeConfig...[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/kubelet.conf&quot;Node join complete:* Certificate signing request sent to master and response  received.* Kubelet informed of new secure connection details.Run &#39;kubectl get nodes&#39; on the master to see this machine join.</code></pre><h3 id="Kompose-Helps-Developers-Move-Docker-Compose-Files-to-Kubernetes"><a href="#Kompose-Helps-Developers-Move-Docker-Compose-Files-to-Kubernetes" class="headerlink" title="Kompose Helps Developers Move Docker Compose Files to Kubernetes"></a>Kompose Helps Developers Move Docker Compose Files to Kubernetes</h3><p><a href="http://blog.kubernetes.io/2017/08/kompose-helps-developers-move-docker.html" target="_blank" rel="noopener">http://blog.kubernetes.io/2017/08/kompose-helps-developers-move-docker.html</a></p><h3 id="Deploy-applications"><a href="#Deploy-applications" class="headerlink" title="Deploy applications"></a>Deploy applications</h3><p><a href="https://kubernetes.io/docs/concepts/containers/images/" target="_blank" rel="noopener">Specifying ImagePullSecrets on a Pod</a><br>Note: This approach is currently the recommended approach for GKE, GCE, and any cloud-providers where node creation is automated.<br>Kubernetes supports specifying registry keys on a pod.</p><p>Creating a Secret with a Docker Config,Run the following command, substituting the appropriate uppercase values:</p><pre><code class="bash">$ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAILsecret &quot;myregistrykey&quot; created.$ kubectl -n development create secret docker-registry m4g-harbor-registry --docker-server=harbor.madeforgoods.com --docker-username=docker --docker-password=****** --docker-email=**********</code></pre><h3 id="Storage-use-glusterfs"><a href="#Storage-use-glusterfs" class="headerlink" title="Storage use glusterfs"></a>Storage use glusterfs</h3><pre><code> 现在 ami 市场启动三台 centos 机器$ sudo yum update -y &amp;&amp; sudo setenforce 0 &amp;&amp; sudo sed -i &#39;s|SELINUX=enforcing|SELINUX=disabled|g&#39; /etc/selinux/config &amp;&amp; sudo systemctl disable firewalld &amp;&amp; sudo systemctl stop firewalld# 先安装 gluster 源$ sudo yum install centos-release-gluster -y # 安装 glusterfs 组件 $ sudo yum install -y glusterfs glusterfs-server glusterfs-fuse glusterfsrdma glusterfs-geo-replication glusterfs-devel ## 创建 glusterfs 目录 #$ mkdir /opt/glusterd## 修改 glusterd 目录 #$ sed -i &#39;s/var\/lib/opt/g&#39; /etc/glusterfs/glusterd.vol # 启动 glusterfs $ sudo systemctl start glusterd.service &amp;&amp; sudo systemctl enable glusterd.service &amp;&amp; sudo systemctl status glusterd.service# 配置 hosts $ sudo vi /etc/hosts 172.31.2.93 gfs-01172.31.3.19 gfs-02172.31.6.141 gfs-03# 开放端口$ sudo iptables -I INPUT -p tcp --dport 24007 -j ACCEPT # 创建存储目录 $ sudo mkdir /data/glusterfs/data -p# 添加节点到 集群 # 执行操作的本机不需要 probe 本机 [root@sz-pg-oam-docker-test-001 ~]#gluster peer probe gfs-02 gluster peer probe gfs-03 # 查看集群状态 # gluster peer status Number of Peers: 2 Hostname: sz-pg-oam-docker-test-002.tendcloud.com Uuid: f25546cc-2011-457d-ba24-342554b51317 State: Peer in Cluster (Connected) Hostname: sz-pg-oam-docker-test-003.tendcloud.com Uuid: 42b6cad1-aa01-46d0-bbba-f7ec6821d66d State: Peer in Cluster (Connected)# 创建分布卷 # sudo gluster volume create k8s-volume transport tcp gfs-01:/data/glusterfs/data gfs-02:/data/glusterfs/data gfs-03:/data/glusterfs/data forcesudo fdisk /dev/xvdfsudo mkfs.xfs /dev/xvdf1sudo umount /data/glusterfs/datasudo mount /dev/xvdf1 /data/glusterfs/data# 查看 volume 状态 # sudo gluster volume infoVolume Name: k8s-volumeType: DistributeVolume ID: 43358010-b01b-400a-93c9-945e3bb5dc1cStatus: CreatedSnapshot Count: 0Number of Bricks: 3Transport-type: tcpBricks:Brick1: gfs-01:/data/glusterfs/dataBrick2: gfs-02:/data/glusterfs/dataBrick3: gfs-03:/data/glusterfs/dataOptions Reconfigured:transport.address-family: inetnfs.disable: on# 启动 分布卷 # sudo gluster volume start k8s-volume# 开启 指定 volume 的配额 $ sudo gluster volume quota k8s-volume enable # 限制 指定 volume 的配额 $ sudo gluster volume quota k8s-volume limit-usage / 30GB # 设置 cache 大小, 默认 32MB $ sudo gluster volume set k8s-volume performance.cache-size 500MB# 设置 io 线程, 太大会导致进程崩溃 $ sudo gluster volume set k8s-volume performance.io-thread-count 16 # 设置 网络检测时间, 默认 42s $ sudo gluster volume set k8s-volume network.ping-timeout 10 # 设置 写缓冲区的大小, 默认 1M $ sudo gluster volume set k8s-volume performance.write-behind-window-size 500MB# k8s nodes[https://packages.ubuntu.com/xenial/glusterfs-client]sudo add-apt-repository ppa:gluster/glusterfs-3.11sudo apt-get update -ysudo apt-get install glusterfs-common fuse glusterfs-client -ysudo apt-get install glusterfs-client -y</code></pre><h1 id="Maintain-amp-amp-Common-Commands"><a href="#Maintain-amp-amp-Common-Commands" class="headerlink" title="Maintain &amp;&amp; Common Commands"></a>Maintain &amp;&amp; Common Commands</h1><pre><code class="bash">$ kubectl get nodesNAME                  STATUS    AGE       VERSIONip-***-***-***-***    Ready     17d       v1.6.7ip-***-***-***-***    Ready     32m       v1.6.7ip-***-***-***-***    Ready     27m       v1.6.7ip-***-***-***-***    Ready     17d       v1.6.7ip-***-***-***-***    Ready     7d        v1.6.7ip-***-***-***-***    Ready     17d       v1.6.7$ kubectl get po --all-namespaces -o wide$ kubectl get nodes --show-labels$ kubectl delete node &lt;minion-hostname&gt;$ kubectl label nodes &lt;minion-hostname&gt; ***=***$ kubectl label nodes &lt;minion-hostname&gt; role-$ kubectl get services$ kubectl -n development delete service &lt;service name&gt;$ kubectl -n development delete StatefulSet &lt;StatefulSet name&gt;$ kubectl -n development delete deployment &lt;deployment name&gt;$ kubectl create namespace &lt;namespace name&gt;$ kubectl get Deployments --all-namespaces$ kubectl -n kube-system describe po &lt;pod name&gt;$ kubectl apply -f &lt;yaml name&gt;.yaml</code></pre><h1 id="Issue-amp-amp-Todo"><a href="#Issue-amp-amp-Todo" class="headerlink" title="Issue &amp;&amp; Todo"></a>Issue &amp;&amp; Todo</h1><ul><li> 使用 dpkg -i *.deb 的时候出现依赖没有安装 </li></ul><p> 使用 apt-get -f -y install 解决依赖问题后再执行 dpkg 安装 deb 包 </p><ul><li><p>master node cluster</p></li><li><p>elasticsearch cluster</p></li><li><p>efk cluster</p></li><li><p>monitor</p></li><li><p><a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm-upgrade-1-7/" target="_blank" rel="noopener">Upgrading kubeadm clusters from 1.6 to 1.7</a><br><code>`</code><br> 升级 master</p><h2 id="ubuntu 中 apt-get-upgrade 如何忽略某项 -SegmentFault"><a href="#ubuntu 中 apt-get-upgrade 如何忽略某项 -SegmentFault" class="headerlink" title="ubuntu 中 apt-get upgrade 如何忽略某项 - SegmentFault"></a><a href="https://segmentfault.com/q/1010000000657514" target="_blank" rel="noopener">ubuntu 中 apt-get upgrade 如何忽略某项 - SegmentFault</a></h2><h1 id="apt-mark-hold-docker-engine"><a href="#apt-mark-hold-docker-engine" class="headerlink" title="apt-mark hold docker-engine"></a>apt-mark hold docker-engine</h1><h1 id="apt-get-upgrade-y"><a href="#apt-get-upgrade-y" class="headerlink" title="apt-get upgrade -y"></a>apt-get upgrade -y</h1><p>$ export KUBECONFIG=$HOME/admin.conf<br>$ kubectl delete daemonset kube-proxy -n kube-system<br>[kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.<br>[init] Using Kubernetes version: v1.7.5<br>[init] Using Authorization modes: [Node RBAC]<br>[preflight] Skipping pre-flight checks<br>[kubeadm] WARNING: starting in 1.8, tokens expire after 24 hours by default (if you require a non-expiring token use –token-ttl 0)<br>[certificates] Using the existing CA certificate and key.<br>[certificates] Using the existing API Server certificate and key.<br>[certificates] Using the existing API Server kubelet client certificate and key.<br>[certificates] Using the existing service account token signing key.<br>[certificates] Using the existing front-proxy CA certificate and key.<br>[certificates] Using the existing front-proxy client certificate and key.<br>[certificates] Valid certificates and keys now exist in “/etc/kubernetes/pki”<br>[kubeconfig] Using existing up-to-date KubeConfig file: “/etc/kubernetes/admin.conf”<br>[kubeconfig] Using existing up-to-date KubeConfig file: “/etc/kubernetes/kubelet.conf”<br>[kubeconfig] Using existing up-to-date KubeConfig file: “/etc/kubernetes/controller-manager.conf”<br>[kubeconfig] Using existing up-to-date KubeConfig file: “/etc/kubernetes/scheduler.conf”<br>[apiclient] Created API client, waiting for the control plane to become ready<br>[apiclient] All control plane components are healthy after 54.502116 seconds<br>[token] Using token: 6060e2.e9f36106911664fc<br>[apiconfig] Created RBAC rules<br>[addons] Applied essential addon: kube-proxy<br>[addons] Applied essential addon: kube-dns</p></li></ul><p>Your Kubernetes master has initialized successfully!</p><p>To start using your cluster, you need to run (as a regular user):</p><p>  mkdir -p $HOME/.kube<br>  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>  sudo chown $(id -u):$(id -g) $HOME/.kube/config</p><p>You should now deploy a pod network to the cluster.<br>Run “kubectl apply -f [podnetwork].yaml” with one of the options listed at:<br>  <a href="http://kubernetes.io/docs/admin/addons/" target="_blank" rel="noopener">http://kubernetes.io/docs/admin/addons/</a></p><p>You can now join any number of machines by running the following on each node<br>as root:</p><p>  kubeadm join –token 6060e2.e9f36106911664fc 172.31.10.219:6443</p><h2 id="Integrating-Kubernetes-via-the-Addon"><a href="#Integrating-Kubernetes-via-the-Addon" class="headerlink" title="Integrating Kubernetes via the Addon"></a><a href="https://www.weave.works/docs/net/latest/kubernetes/kube-addon/" target="_blank" rel="noopener">Integrating Kubernetes via the Addon</a></h2><h1 id="kubectl-apply-f-“https-cloud-weave-works-k8s-net-k8s-version-kubectl-version-base64-tr-d-‘-n’-”"><a href="#kubectl-apply-f-“https-cloud-weave-works-k8s-net-k8s-version-kubectl-version-base64-tr-d-‘-n’-”" class="headerlink" title="kubectl apply -f “https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d ‘\n’)”"></a>kubectl apply -f “<a href="https://cloud.weave.works/k8s/net?k8s-version=$" target="_blank" rel="noopener">https://cloud.weave.works/k8s/net?k8s-version=$</a>(kubectl version | base64 | tr -d ‘\n’)”</h1><p> 升级 Node</p><ol><li> 升级安装包 <br>$ sudo apt-mark hold docker-engine<br>$ sudo apt-get upgrade -y</li><li> 重启 kubelet<br>$ sudo systemctl restart kubelet<br><code>`</code></li></ol><ul><li>ingress<br><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></li></ul><h1 id="Reference-amp-amp-Document"><a href="#Reference-amp-amp-Document" class="headerlink" title="Reference &amp;&amp; Document"></a>Reference &amp;&amp; Document</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Architecture&quot;&gt;&lt;a href=&quot;#Architecture&quot; class=&quot;headerlink&quot; title=&quot;Architecture&quot;&gt;&lt;/a&gt;Architecture&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Tutorial&quot;&gt;&lt;a href=&quot;#Tutorial&quot; class=&quot;headerlink&quot; title=&quot;Tutorial&quot;&gt;&lt;/a&gt;Tutorial&lt;/h2&gt;&lt;h3 id=&quot;Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node&quot;&gt;&lt;a href=&quot;#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node&quot; class=&quot;headerlink&quot; title=&quot;Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]&quot;&gt;&lt;/a&gt;Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ sudo apt-get update
+$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+$ sudo apt-add-repository &amp;#39;deb https://apt.dockerproject.org/repo ubuntu-xenial main&amp;#39;
+$ sudo apt-get update
+$ sudo apt-cache policy docker-engine # find docker-engine version you need to install
+docker-engine:
+  Installed: (none)
+  Candidate: 17.05.0~ce-0~ubuntu-xenial
+  Version table:
+     17.05.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     17.04.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     17.03.1~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     17.03.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.13.1-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.13.0-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.6-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.5-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.4-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.3-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+
+## 如果Ubuntu为14.04,建议先装上以下两个软件包。
+$ apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+
+## 这里安装docker-engine 1.12.6，官方兼容版本
+$ sudo apt-get -y install docker-engine=1.12.6-0~ubuntu-xenial
+$ sudo systemctl restart docker &amp;amp;&amp;amp; sudo systemctl enable docker &amp;amp;&amp;amp; sudo systemctl status docker
+$ sudo usermod -aG docker $(whoami) # 退出当前终端，docker相关命令才能生效
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Kubernetes" scheme="https://opsforce.org/categories/Kubernetes/"/>
+    
+    
+      <category term="Docker" scheme="https://opsforce.org/tags/Docker/"/>
+    
+      <category term="Kubernetes" scheme="https://opsforce.org/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Deploy docker swarm use multi consul and swarm-manager</title>
+    <link href="https://opsforce.org/deploy-docker-swarm-use-multi-consul-and-swarm-manager.html"/>
+    <id>https://opsforce.org/deploy-docker-swarm-use-multi-consul-and-swarm-manager.html</id>
+    <published>2017-07-12T16:00:00.000Z</published>
+    <updated>2017-07-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg" alt></p><h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><pre><code class="bash"># useradd mfg# passwd mfg# echo &#39;mfg        ALL=(ALL)       NOPASSWD: ALL&#39; &gt;&gt; /etc/sudoers# exit$ ssh &lt;no_root&gt;@*.*.*.*$ curl -fsSL https://get.docker.com/ | sh$ sudo usermod -aG docker $(whoami)$ sudo systemctl restart docker &amp;&amp; sudo systemctl enable docker</code></pre><a id="more"></a><h2 id="Consul"><a href="#Consul" class="headerlink" title="Consul"></a>Consul</h2><pre><code class="bash">###################################################################################################### consul  https://hub.docker.com/r/progrium/consul/  # https://github.com/gliderlabs/docker-consul # https://docs.docker.com/swarm/reference/manage/ # https://docs.docker.com/swarm/reference/join/#####################################################################################################Running a real Consul cluster in a production environmentSetting up a real cluster on separate hosts is very similar to our single host cluster setup process, but with a few differences:We assume there is a private network between hosts. Each host should have an IP on this private networkWe&#39;re going to pass this private IP to Consul via the -advertise flagWe&#39;re going to publish all ports, including internal Consul ports (8300, 8301, 8302), on this IPWe set up a volume at /data for persistence. As an example, we&#39;ll bind mount /mnt from the hostAssuming we&#39;re on a host with a private IP of 172.16.2.9 and the IP of docker bridge docker0 is 172.17.0.1 we can start the first host agent:$ docker run --restart=always --name consul-01 -d -h node1 -v /data/consul/data:/data \    -p 172.16.2.9:8300:8300 \    -p 172.16.2.9:8301:8301 \    -p 172.16.2.9:8301:8301/udp \    -p 172.16.2.9:8302:8302 \    -p 172.16.2.9:8302:8302/udp \    -p 172.16.2.9:8400:8400 \    -p 172.16.2.9:8500:8500 \    -p 172.17.0.1:53:53/udp \    progrium/consul -server -advertise 172.16.2.9 -bootstrap-expect 3## On the second host, we&#39;d run the same thing, but passing a -join to the first node&#39;s IP. Let&#39;s say the private IP for this host is 172.16.2.10:$ docker run --restart=always --name consul-02 -d -h node2 -v /data/consul/data:/data  \    -p 172.16.2.10:8300:8300 \    -p 172.16.2.10:8301:8301 \    -p 172.16.2.10:8301:8301/udp \    -p 172.16.2.10:8302:8302 \    -p 172.16.2.10:8302:8302/udp \    -p 172.16.2.10:8400:8400 \    -p 172.16.2.10:8500:8500 \    -p 172.17.0.1:53:53/udp \    progrium/consul -server -advertise 172.16.2.10 -join 172.16.2.9## And the third host with an IP of 172.16.2.11:$ docker run --restart=always --name consul-03 -d -h node3 -v /data/consul/data:/data  \    -p 172.16.2.11:8300:8300 \    -p 172.16.2.11:8301:8301 \    -p 172.16.2.11:8301:8301/udp \    -p 172.16.2.11:8302:8302 \    -p 172.16.2.11:8302:8302/udp \    -p 172.16.2.11:8400:8400 \    -p 172.16.2.11:8500:8500 \    -p 172.17.0.1:53:53/udp \    progrium/consul -server -advertise 172.16.2.11 -join 172.16.2.9## That&#39;s it! Once this last node connects, it will bootstrap into a cluster. You now have a working cluster running in production on a private network.</code></pre><h2 id="Lb-for-consul-using-nginx- 或者使用云服务商的 lb"><a href="#Lb-for-consul-using-nginx- 或者使用云服务商的 lb" class="headerlink" title="Lb for consul using nginx [ 或者使用云服务商的 lb]"></a>Lb for consul using nginx [或者使用云服务商的 lb]</h2><pre><code class="bash">$ docker run -d --name nginx -v ${HOME}/nginx/conf.d:/etc/nginx/conf.d -p 8000:80 nginx:1.13.3-alpine$ vi ${HOME}/nginx/conf.d/consul.confupstream docker-consul {  server 172.16.2.9:8500;  server 172.16.2.10:8500;  server 172.16.2.11:8500;}server {  listen 80;  server_name nginx-consul;  location / {    proxy_pass                          http://docker-consul;    proxy_set_header  Host              $http_host;    proxy_set_header  X-Real-IP         $remote_addr; # pass on real client&#39;s IP    proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;    proxy_set_header  X-Forwarded-Proto $scheme;  }}$ docker cp consul.conf nginx:/etc/nginx/conf.d$ docker exec -it nginx nginx -s reload</code></pre><h2 id="Swarm-manager-nodes"><a href="#Swarm-manager-nodes" class="headerlink" title="Swarm manager nodes"></a>Swarm manager nodes</h2><pre><code class="bash">###################################################################################################### [Swarm: A Docker-native clustering system | Docker Documentation](https://docs.docker.com/swarm/reference/swarm/)# [High availability in Docker Swarm | Docker Documentation](https://docs.docker.com/swarm/multi-manager-setup/)# [Build a Swarm cluster for production | Docker Documentation](https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances)######################################################################################################### swarm manager$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-01 swarm manage -H :4000 --replication --advertise 172.16.2.9:4000 consul://172.16.2.12:8500$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-02 swarm manage -H :4000 --replication --advertise 172.16.2.10:4000 consul://172.16.2.12:8500$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-03 swarm manage -H :4000 --replication --advertise 172.16.2.11:4000 consul://172.16.2.12:8500</code></pre><h2 id="Swarm-slave-nodes"><a href="#Swarm-slave-nodes" class="headerlink" title="Swarm slave nodes"></a>Swarm slave nodes</h2><pre><code class="bash">$ sudo vi /usr/lib/systemd/system/docker.serviceExecStart=/usr/bin/dockerdchange to  ===&gt;&gt;&gt;ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=consul://172.16.2.12:8500 --cluster-advertise=172.16.2.9:2375#### swarm slave$ docker run -d --restart=always --name=swarm-slave swarm join --advertise=172.16.2.10:2375 consul://172.16.2.12:8500$ sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart docker</code></pre><h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><pre><code class="bash">$ docker -H :4000 run -d --name nginx-test -e constraint:node==iZuf654mu2j1ottom86sm9Z -p 80:80 nginx:1.13.3-alpine</code></pre><h2 id="Maintain"><a href="#Maintain" class="headerlink" title="Maintain"></a>Maintain</h2><pre><code class="bash">## common command$ docker -H :4000 info$ docker -H :4000 ps$ docker-compose -H :4000 -f ~/docker-compose.yml ps## common issue* 如果出现 docker -H :4000 info 显示没有节点或者缺少某个节点，到缺少的节点上执行 docker restart slave</code></pre><h2 id="Other-Danger"><a href="#Other-Danger" class="headerlink" title="Other [Danger!!!]"></a>Other [Danger!!!]</h2><pre><code class="bash">$ docker stop $(docker ps -a -q) &amp;&amp; docker rm $(docker ps -a -q) &amp;&amp; sudo rm -rf /data/consul &amp;&amp; sudo rm -rf /etc/docker/key.json</code></pre><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://hub.docker.com/r/progrium/consul/" target="_blank" rel="noopener">https://hub.docker.com/r/progrium/consul/</a><br><a href="https://github.com/gliderlabs/docker-consul" target="_blank" rel="noopener">GitHub - gliderlabs/docker-consul: Dockerized Consul</a><br><a href="https://docs.docker.com/swarm/reference/manage/" target="_blank" rel="noopener">manage — Create a Swarm manager | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/join/" target="_blank" rel="noopener">join — Create a Swarm node | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/swarm/" target="_blank" rel="noopener">Swarm: A Docker-native clustering system | Docker Documentation</a> <a href="https://docs.docker.com/swarm/multi-manager-setup/" target="_blank" rel="noopener">High availability in Docker Swarm | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances" target="_blank" rel="noopener">Build a Swarm cluster for production | Docker Documentation</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Architecture&quot;&gt;&lt;a href=&quot;#Architecture&quot; class=&quot;headerlink&quot; title=&quot;Architecture&quot;&gt;&lt;/a&gt;Architecture&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Prepare&quot;&gt;&lt;a href=&quot;#Prepare&quot; class=&quot;headerlink&quot; title=&quot;Prepare&quot;&gt;&lt;/a&gt;Prepare&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# useradd mfg
+# passwd mfg
+# echo &amp;#39;
+mfg        ALL=(ALL)       NOPASSWD: ALL&amp;#39; &amp;gt;&amp;gt; /etc/sudoers
+# exit
+$ ssh &amp;lt;no_root&amp;gt;@*.*.*.*
+$ curl -fsSL https://get.docker.com/ | sh
+$ sudo usermod -aG docker $(whoami)
+$ sudo systemctl restart docker &amp;amp;&amp;amp; sudo systemctl enable docker
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://opsforce.org/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://opsforce.org/tags/Docker/"/>
+    
+      <category term="Swarm" scheme="https://opsforce.org/tags/Swarm/"/>
+    
+      <category term="Consul" scheme="https://opsforce.org/tags/Consul/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Travis CI 自动部署 Hexo</title>
+    <link href="https://opsforce.org/use-travis-ci-to-auto-deploy-hexo-to-github.html"/>
+    <id>https://opsforce.org/use-travis-ci-to-auto-deploy-hexo-to-github.html</id>
+    <published>2017-07-12T16:00:00.000Z</published>
+    <updated>2017-07-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p><p>使用 GitHub 登录 travis-ci.org</p><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt></p><p>登录后，点击红色区域选择想要自动部署的 repo</p><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg" alt></p><p>到 GitHub-setting 申请 Personal access token</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg" alt></p><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg" alt></p><p>得到 Personal access token 后，添加到 travisci 对应 repo 的环境变量 GH_TOKEN</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg" alt></p><a id="more"></a><p>编写.travis.yml，并上传到 master 分支</p><pre><code># file: .travis.ymllanguage: node_js  #设置语言node_js: stable  #设置相应的版本# S: Build Lifecycleinstall:  - npm install  #安装 hexo 及插件#before_script: # - npm install -g gulpscript:  - hexo clean  #清除  - hexo generate  #生成静态网页after_script:  - cd ./public  - git init  - git config user.name &quot;your name&quot;  #修改 name  - git config user.email &quot;your email&quot;  #修改 email  - git add .  - git commit -m &quot;update myblog&quot; #此处看情况修改  - git push --force --quiet &quot;https://${GH_TOKEN}@${GH_REF}&quot; master:gh-pages #GH_TOKEN 是在 TravisCI 中配置 token 的名称# E: Build LifeCyclebranches:  only:    - master  #只监测 master 分支，对应的源码分支env:  global:    - GH_REF: github.com/&lt;github username&gt;/&lt;your repo&gt;.git #设置 GH_REF，注意更改</code></pre><p>不出意外的，现在现在新建一遍文章 push 到 GitHub 就会自动部署到 gh-pages 分支了</p><p>good luck ~:~</p><h2 id="注意"><a href="# 注意" class="headerlink" title="注意"></a>注意 </h2><p> 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用</p><h2 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/e22c13d85659" target="_blank" rel="noopener">http://www.jianshu.com/p/e22c13d85659</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;branch: master   - 网站源码&lt;br&gt;branch: gh-pages - html网页&lt;/p&gt;
+&lt;p&gt;使用GitHub登录travis-ci.org&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;登录后，点击红色区域选择想要自动部署的repo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;到GitHub-setting申请Personal access token&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CI/CD" scheme="https://opsforce.org/categories/CI-CD/"/>
+    
+    
+      <category term="Github" scheme="https://opsforce.org/tags/Github/"/>
+    
+      <category term="TravisCI" scheme="https://opsforce.org/tags/TravisCI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac 下配置 Python2 和 Python3 共存</title>
+    <link href="https://opsforce.org/how-to-config-python2-python3-all-in-macos.html"/>
+    <id>https://opsforce.org/how-to-config-python2-python3-all-in-macos.html</id>
+    <published>2016-07-09T16:00:00.000Z</published>
+    <updated>2016-07-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Mac 默认是安装了 Python2 的，所以只需要安装 Python3</p><pre><code>$ brew install python3 # 使用 homebrew 安装 python3$ python3 -VPython 3.6.5$ brew install pyenv-virtualenv # 安装 virtualenv或者$ sudo easy_install virtualenv # 安装 virtualenv$ mkdir myenv &amp;&amp; cd myenv # 创建本地工作目录$ which python3 # 找出 Python3 路径/usr/local/bin/python3# python2$ virtualenv --no-site-packages pyenv # 配置 Python2 虚拟路径$ source pyenv/bin/activate # 使 Python2 虚拟路径生效$ deactivate # 使 Python2 虚拟路径失效# python3$ virtualenv --no-site-packages --python=/usr/local/bin/python3 pyenv3 # 配置 Python3 虚拟路径$ source pyenv3/bin/activate # 使 Python3 虚拟路径生效$ deactivate # 使 Python3 虚拟路径失效</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Mac 默认是安装了 Python2 的，所以只需要安装 Python3&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew install python3 # 使用 homebrew 安装 python3
+$ python3 -V
+Python 3.6.5
+
+$ brew ins
+      
+    
+    </summary>
+    
+      <category term="Develop" scheme="https://opsforce.org/categories/Develop/"/>
+    
+    
+      <category term="macOS" scheme="https://opsforce.org/tags/macOS/"/>
+    
+      <category term="Python" scheme="https://opsforce.org/tags/Python/"/>
+    
+      <category term="Virtualenv" scheme="https://opsforce.org/tags/Virtualenv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Remove All Iptables PREROUTING Nat Rules</title>
+    <link href="https://opsforce.org/Remove-All-iptables-PREROUTING-Nat-Rules.html"/>
+    <id>https://opsforce.org/Remove-All-iptables-PREROUTING-Nat-Rules.html</id>
+    <published>2016-06-08T16:00:00.000Z</published>
+    <updated>2016-06-08T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:</p><pre><code>iptables -t nat --line-numbers -L</code></pre><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg" alt></p><p>As you can see the above command will display all PREROUTING chains with relevant line numbers. Next, we can use these line numbers to remove all PREROUTING chains one by one. For example to remove PREROUTING chain with line number 1 we can do:</p><pre><code>iptables -t nat -D PREROUTING 1</code></pre><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr43on6oj30vc0d944q.jpg" alt></p><p>In case that you wish to remove all PREROUTING chains with a single command you can try the following command chaining example:</p><pre><code>for i in $(iptables -t nat --line-numbers -L | grep ^[0-9] | awk &#39;{print $1}&#39; | tac ); do iptables -t nat -D PREROUTING $i; done</code></pre><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://lubos.rendek.org/remove-all-iptables-prerouting-nat-rules/" target="_blank" rel="noopener">Remove All Iptables PREROUTING Nat Rules</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;iptables -t nat --line-numbers -L
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Security" scheme="https://opsforce.org/categories/Security/"/>
+    
+    
+      <category term="Firewall" scheme="https://opsforce.org/tags/Firewall/"/>
+    
+      <category term="Iptables" scheme="https://opsforce.org/tags/Iptables/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>What DevOps needs?</title>
+    <link href="https://opsforce.org/What-DevOps-needs.html"/>
+    <id>https://opsforce.org/What-DevOps-needs.html</id>
+    <published>2016-05-19T16:00:00.000Z</published>
+    <updated>2016-05-19T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p> 硬性要求：工具上的准备 </p><p> 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：</p><p> 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion</p><p> 构建工具：Ant、Gradle、maven</p><p> 自动部署：Capistrano、CodeDeploy</p><p> 持续集成（CI）：Jenkins、Bamboo、Hudson、</p><p> 配置管理：Ansible、Chef、Puppet、SaltStack、ScriptRock GuardRail</p><p> 容器：Docker、LXC、第三方厂商如 AWS</p><p> 编排：Kubernetes、Core、Apache Mesos、DC/OS、Swarm</p><p> 服务注册与发现：Zookeeper、etcd、Consul</p><a id="more"></a><p> 脚本语言：python、ruby、shell</p><p> 日志管理：ELK、Logentries、Logrotate</p><p> 系统监控：Zabbix、Datadog、Graphite、Icinga、Nagios</p><p> 性能监控：AppDynamics、New Relic、Splunk</p><p> 压力测试：JMeter、Blaze Meter、loader.io</p><p> 预警：PagerDuty、pingdom、厂商自带如 AWS SNS</p><p>HTTP 加速器：Varnish</p><p> 消息总线：ActiveMQ、SQS</p><p> 应用服务器：Tomcat、JBoss</p><p>Web 服务器：Apache、Nginx、IIS</p><p> 数据库：MySQL、Oracle、PostgreSQL 等关系型数据库；cassandra、mongoDB、redis 等 NoSQL 数据库 </p><p> 项目管理（PM）：Jira、Asana、Taiga、Trello、Basecamp、Pivotal Tracker</p><p> 在工具的选择上，需要结合公司业务需求和技术团队情况而定。（注：更多关于工具的详细介绍可以参见此文：<a href="https://xebialabs.com/assets/files/infographics/periodic_table_11x17inc_v2_clean_outlines.pdf" target="_blank" rel="noopener">51 Best DevOps Tools for DevOps Engineers</a>）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;硬性要求：工具上的准备&lt;/p&gt;
+&lt;p&gt;上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：&lt;/p&gt;
+&lt;p&gt;代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion&lt;/p&gt;
+&lt;p&gt;构建工具：Ant、Gradle、maven&lt;/p&gt;
+&lt;p&gt;自动部署：Capistrano、CodeDeploy&lt;/p&gt;
+&lt;p&gt;持续集成（CI）：Jenkins、Bamboo、Hudson、&lt;/p&gt;
+&lt;p&gt;配置管理：Ansible、Chef、Puppet、SaltStack、ScriptRock GuardRail&lt;/p&gt;
+&lt;p&gt;容器：Docker、LXC、第三方厂商如AWS&lt;/p&gt;
+&lt;p&gt;编排：Kubernetes、Core、Apache Mesos、DC/OS、Swarm&lt;/p&gt;
+&lt;p&gt;服务注册与发现：Zookeeper、etcd、Consul&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Develop" scheme="https://opsforce.org/categories/Develop/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>修改 git 的远程 url 地址 git 或者 https</title>
+    <link href="https://opsforce.org/how-to-change-git-remote-url-in-https-and-git.html"/>
+    <id>https://opsforce.org/how-to-change-git-remote-url-in-https-and-git.html</id>
+    <published>2015-10-18T16:00:00.000Z</published>
+    <updated>2015-10-18T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>git remote set-url</code> 命令是修改存在的远程库的 URL</p><p><em>提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “<a href="https://github.com/waylau/github-help/blob/master/Which%20remote%20URL%20should%20I%20use%20%E6%88%91%E5%BA%94%E8%AF%A5%E7%94%A8%E5%93%AA%E7%A7%8D%E8%BF%9C%E7%A8%8B%20URL%20.md" target="_blank" rel="noopener">我应该用哪种远程 URL</a>”</em></p><p>这个命令带两个参数</p><ul><li>已经存在远程名字，如 <code>origin</code></li><li>新的远程的 URL ，如：<ul><li><code>https://github.com/USERNAME/REPOSITORY_2.git</code> 如果你用 https 更新代码</li><li><a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:USER/REPOSITORY_2.git` 如果你用 SSH 更新代码</li></ul></li></ul><p>##Switching remote URLs from SSH to HTTPS 从 SSH 切换 远程 URL 到 HTTPS</p><p>1. 打开终端 (Mac 和 Linux 用户) 或者 命令行 (Windows 用户).</p><p>2. 更改当前工作路径到你的本地项目</p><p>3. 列出你已经存在的远程库，为了获取到你想要修改的远程的名字</p><pre><code>$ git remote -v# origin  git@github.com:USERNAME/REPOSITORY.git (fetch)# origin  git@github.com:USERNAME/REPOSITORY.git (push)</code></pre><a id="more"></a><p>4. 使用 <code>remote set-url</code> 修改从 SSH 切换 远程 URL 到 HTTPS</p><pre><code>$ git remote set-url origin https://github.com/USERNAME/REPOSITORY_2.git</code></pre><p>5. 验证远程 URL 已改变</p><pre><code>$ git remote -v# Verify new remote URL# origin  https://github.com/USERNAME/REPOSITORY2.git (fetch)# origin  https://github.com/USERNAME/REPOSITORY2.git (push)</code></pre><p>下次，如果你使用 git fetch, git pull, 或 git push 操作库，则被要求提供账号密码</p><ul><li>如果你开启 <a href="https://help.github.com/articles/about-two-factor-authentication" target="_blank" rel="noopener"> 双因素认证 </a>，您必须<a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use" target="_blank" rel="noopener"> 创建一个个人访问 token</a> 来代替密码。</li><li>你可以使用一个 <a href="https://github.com/waylau/github-help/blob/master/Caching%20your%20GitHub%20password%20in%20Git%20%E4%BF%9D%E5%AD%98%E4%BD%A0%E7%9A%84%20Github%20%E5%AF%86%E7%A0%81.md" target="_blank" rel="noopener">credential helper</a> ，Git 会记住你的 GitHub 的用户名和密码，当每次与 GitHub 交互时。</li></ul><p>##Switching remote URLs from HTTPS to SSH 从 HTTPS 切换 远程 URL 到 SSH</p><p>1. 打开终端 (Mac 和 Linux 用户) 或者 命令行 (Windows 用户).</p><p>2. 更改当前工作路径到你的本地项目</p><p>3. 列出你已经存在的远程库，为了获取到你想要修改的远程的名字</p><pre><code>$ git remote -v# origin  https://github.com/USERNAME/REPOSITORY.git (fetch)# origin  https://github.com/USERNAME/REPOSITORY.git (push)</code></pre><p>4. 使用 <code>remote set-url</code> 修改从 SSH 切换 远程 URL 到 HTTPS</p><pre><code>$ git remote set-url origin git@github.com:USERNAME/REPOSITORY2.git</code></pre><p>5. 验证远程 URL 已改变</p><pre><code>$ git remote -v# Verify new remote URL# origin  git@github.com:USERNAME/REPOSITORY2.git (fetch)# origin  git@github.com:USERNAME/REPOSITORY2.git (push)</code></pre><p>##Troubleshooting 故障排除</p><p>你可能会遇到这些错误时，当试图改变一个远程。</p><p><strong>No such remote ‘[name]’</strong></p><p>这意思是说你要修改的远程不存在</p><pre><code>$ git remote set-url sofake https://github.com/octocat/Spoon-Knife# fatal: No such remote &#39;sofake&#39;</code></pre><p>检查你是否正确地输入远程名称。</p><p>##Further reading 扩展阅读</p><ul><li>《Pro Git》 书中的 “<a href="http://git-scm.com/book/en/Git-Basics-Working-with-Remotes" target="_blank" rel="noopener">Working with Remotes</a>“</li></ul><p><em>参考：</em><a href="https://help.github.com/articles/changing-a-remote-s-url/" target="_blank" rel="noopener">https://help.github.com/articles/changing-a-remote-s-url/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;git remote set-url&lt;/code&gt; 命令是修改存在的远程库的 URL&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “&lt;a href=&quot;https://github.com/waylau/github-help/blob/master/Which%20remote%20URL%20should%20I%20use%20%E6%88%91%E5%BA%94%E8%AF%A5%E7%94%A8%E5%93%AA%E7%A7%8D%E8%BF%9C%E7%A8%8B%20URL%20.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;我应该用哪种远程 URL&lt;/a&gt;”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这个命令带两个参数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已经存在远程名字，如 &lt;code&gt;origin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新的远程的 URL ，如：&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://github.com/USERNAME/REPOSITORY_2.git&lt;/code&gt; 如果你用https 更新代码&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;mailto:`git@github.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;`git@github.com&lt;/a&gt;:USER/REPOSITORY_2.git` 如果你用 SSH 更新代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##Switching remote URLs from SSH to HTTPS 从 SSH 切换 远程 URL 到 HTTPS&lt;/p&gt;
+&lt;p&gt;1.打开终端( Mac 和 Linux 用户)或者 命令行 (Windows 用户).&lt;/p&gt;
+&lt;p&gt;2.更改当前工作路径到你的本地项目&lt;/p&gt;
+&lt;p&gt;3.列出你已经存在的远程库，为了获取到你想要修改的远程的名字&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git remote -v
+# origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
+# origin  git@github.com:USERNAME/REPOSITORY.git (push)
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="https://opsforce.org/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://opsforce.org/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>跨平台同步 Safari、IE、Chrome、Firefox 的书签</title>
+    <link href="https://opsforce.org/sync-bookmarks-of-safari-ie-chrome-firefox.html"/>
+    <id>https://opsforce.org/sync-bookmarks-of-safari-ie-chrome-firefox.html</id>
+    <published>2015-10-18T16:00:00.000Z</published>
+    <updated>2015-10-18T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Windows 环境："><a href="#Windows 环境：" class="headerlink" title="Windows 环境："></a>Windows 环境：</h2><p> 首先下载 iCloud for Windows，<a href="https://support.apple.com/zh-cn/HT204283" target="_blank" rel="noopener"> 下载地址 </a></p><p>iCloud Bookmarks for chrome 的下载地址：<a href="https://chrome.google.com/webstore/detail/icloud-bookmarks/fkepacicchenbjecpbpbclokcabebhah" target="_blank" rel="noopener">iCloud Bookmarks</a>，官方出品，值得信赖。</p><p>iCloud Bookmarks for firefox 的下载地址：<a href="https://addons.mozilla.org/zh-CN/firefox/addon/icloud-bookmarks/" target="_blank" rel="noopener">iCloud 书签 </a>，官方出品，值得信赖。</p><h3 id="Mac 环境："><a href="#Mac 环境：" class="headerlink" title="Mac 环境："></a>Mac 环境：</h3><p> 啥都不用下载，只需要设置好 iCloud。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Windows 环境：&quot;&gt;&lt;a href=&quot;#Windows 环境：&quot; class=&quot;headerlink&quot; title=&quot;Windows 环境：&quot;&gt;&lt;/a&gt;Windows 环境：&lt;/h2&gt;&lt;p&gt; 首先下载 iCloud for Windows，&lt;a href=&quot;
+      
+    
+    </summary>
+    
+      <category term="iCloud" scheme="https://opsforce.org/categories/iCloud/"/>
+    
+    
+      <category term="macOS" scheme="https://opsforce.org/tags/macOS/"/>
+    
+      <category term="Windows" scheme="https://opsforce.org/tags/Windows/"/>
+    
+      <category term="Safari" scheme="https://opsforce.org/tags/Safari/"/>
+    
+      <category term="iCloud" scheme="https://opsforce.org/tags/iCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)</title>
+    <link href="https://opsforce.org/GitHub-Desktop-Bitbucket.html"/>
+    <id>https://opsforce.org/GitHub-Desktop-Bitbucket.html</id>
+    <published>2015-10-17T16:00:00.000Z</published>
+    <updated>2015-10-17T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>You <a href="http://stackoverflow.com/a/32213131/2613447" target="_blank" rel="noopener">can’t clone</a> a Bitbucket repo using <a href="https://desktop.github.com/" target="_blank" rel="noopener">GithHub Desktop</a> directly. Instead you would have to:</p><ol><li>Clone the Bitbucket repo locally via command line.</li><li>Add the cloned repository to your GitHub Desktop app.</li></ol><p>After completing these 2 steps, you’ll be able to execute sync, push, pull, commit, and other git commands available in GitHub Desktop for your Bitbucket repository just as you would for any GitHub repository.</p><p><em>You will need your Bitbucket repository’s git URL as available on the <strong>Overview</strong> page of your repository:</em></p><p><img src="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png" alt="Retrieve git URL from Bitbucket.org"></p><a id="more"></a><h2 id="1-Clone-Bitbucket-Repository-Locally-via-Command-Line"><a href="#1-Clone-Bitbucket-Repository-Locally-via-Command-Line" class="headerlink" title="1. Clone Bitbucket Repository Locally via Command Line"></a>1. Clone Bitbucket Repository Locally via Command Line</h2><ol><li>Open Terminal app.</li><li>Type <code>cd /Local/path/to/parent-folder/to/clone/into</code> (replacing that sample path with the local path to the parent folder you want to clone your Bitbucket repository into).</li><li>Hit enter. You’ve just opened that parent folder on the command line.</li><li>Type <code>git clone https://example@bitbucket.org/path/to/your-repo.git</code> (replacing that sample URL with the Bitbucket URL available on the <strong>Overview</strong> page of your repository).</li><li>Hit enter and watch the repository being cloned. (Once it’s done, it’ll say something like <strong>…done</strong> in one of the last lines.)</li></ol><h2 id="2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App"><a href="#2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App" class="headerlink" title="2. Add Cloned Repository to Your GitHub Desktop App"></a>2. Add Cloned Repository to Your GitHub Desktop App</h2><ol><li>Open GitHub Desktop.</li><li>In the upper right corner (if your sidbar is open) press the large <strong>+</strong> button.</li><li>Select <strong>Add</strong> to add an exisiting local repository.</li><li><p>On the <strong>Add</strong> tab click the <strong>Choose…</strong> button, navigate to the folder you have just cloned your Bitbucket repository into, and select it.</p><p><img src="https://cloud.githubusercontent.com/assets/308422/13249268/a342b1e2-da23-11e5-870f-f6ee0efd1b86.png" alt="“Add” tab in GitHub Desktop"></p></li><li><p>Your newly added repository will appear at the bottom of your sidebar in the <strong>Other</strong> section.</p></li></ol><p><strong>That’s it.</strong><br>You should now be able execute git operations on your Bitbucket repository via your GitHub Desktop app just as on any GitHub repository.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;You &lt;a href=&quot;http://stackoverflow.com/a/32213131/2613447&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;can’t clone&lt;/a&gt; a Bitbucket repo using &lt;a href=&quot;https://desktop.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GithHub Desktop&lt;/a&gt; directly. Instead you would have to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Clone the Bitbucket repo locally via command line.&lt;/li&gt;
+&lt;li&gt;Add the cloned repository to your GitHub Desktop app.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After completing these 2 steps, you’ll be able to execute sync, push, pull, commit, and other git commands available in GitHub Desktop for your Bitbucket repository just as you would for any GitHub repository.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;You will need your Bitbucket repository’s git URL as available on the &lt;strong&gt;Overview&lt;/strong&gt; page of your repository:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png&quot; alt=&quot;Retrieve git URL from Bitbucket.org&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="https://opsforce.org/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://opsforce.org/tags/Git/"/>
+    
+      <category term="GitHub" scheme="https://opsforce.org/tags/GitHub/"/>
+    
+      <category term="Bitbucket" scheme="https://opsforce.org/tags/Bitbucket/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://opsforce.org/hello-world.html"/>
+    <id>https://opsforce.org/hello-world.html</id>
+    <published>2015-06-12T16:00:00.000Z</published>
+    <updated>2015-06-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

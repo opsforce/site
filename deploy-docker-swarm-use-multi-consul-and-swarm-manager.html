@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Architecture Prepare# useradd mfg # passwd mfg # echo &amp;#39; mfg        ALL=(ALL)       NOPASSWD: ALL&amp;#39; &amp;gt;&amp;gt; /etc/sudoers # exit $ ssh &amp;lt;no_root&amp;gt;@*.*.*.* $ curl -fsSL https://get.docker.com">
+<meta name="keywords" content="Docker,Swarm,Consul">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy docker swarm use multi consul and swarm-manager">
+<meta property="og:url" content="https://opsforce.org/deploy-docker-swarm-use-multi-consul-and-swarm-manager.html">
+<meta property="og:site_name" content="OPSFORCE">
+<meta property="og:description" content="Architecture Prepare# useradd mfg # passwd mfg # echo &amp;#39; mfg        ALL=(ALL)       NOPASSWD: ALL&amp;#39; &amp;gt;&amp;gt; /etc/sudoers # exit $ ssh &amp;lt;no_root&amp;gt;@*.*.*.* $ curl -fsSL https://get.docker.com">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg">
+<meta property="og:updated_time" content="2017-07-12T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deploy docker swarm use multi consul and swarm-manager">
+<meta name="twitter:description" content="Architecture Prepare# useradd mfg # passwd mfg # echo &amp;#39; mfg        ALL=(ALL)       NOPASSWD: ALL&amp;#39; &amp;gt;&amp;gt; /etc/sudoers # exit $ ssh &amp;lt;no_root&amp;gt;@*.*.*.* $ curl -fsSL https://get.docker.com">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OPSFORCE" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://opsforce.org/deploy-docker-swarm-use-multi-consul-and-swarm-manager">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Deploy docker swarm use multi consul and swarm-manager | OPSFORCE</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OPSFORCE</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">15</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/deploy-docker-swarm-use-multi-consul-and-swarm-manager.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy Zhao">
+      <meta itemprop="description" content="Do not tell me, it can't be done.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OPSFORCE">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Deploy docker swarm use multi consul and swarm-manager
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-07-13 00:00:00" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">2017-07-13</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg" alt></p>
+<h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><pre><code class="bash"># useradd mfg
+# passwd mfg
+# echo &#39;
+mfg        ALL=(ALL)       NOPASSWD: ALL&#39; &gt;&gt; /etc/sudoers
+# exit
+$ ssh &lt;no_root&gt;@*.*.*.*
+$ curl -fsSL https://get.docker.com/ | sh
+$ sudo usermod -aG docker $(whoami)
+$ sudo systemctl restart docker &amp;&amp; sudo systemctl enable docker
+</code></pre>
+<a id="more"></a>
+<h2 id="Consul"><a href="#Consul" class="headerlink" title="Consul"></a>Consul</h2><pre><code class="bash">#####################################################################################################
+# consul  https://hub.docker.com/r/progrium/consul/  
+# https://github.com/gliderlabs/docker-consul 
+# https://docs.docker.com/swarm/reference/manage/ 
+# https://docs.docker.com/swarm/reference/join/
+#####################################################################################################
+
+Running a real Consul cluster in a production environment
+Setting up a real cluster on separate hosts is very similar to our single host cluster setup process, but with a few differences:
+
+We assume there is a private network between hosts. Each host should have an IP on this private network
+We&#39;re going to pass this private IP to Consul via the -advertise flag
+We&#39;re going to publish all ports, including internal Consul ports (8300, 8301, 8302), on this IP
+We set up a volume at /data for persistence. As an example, we&#39;ll bind mount /mnt from the host
+Assuming we&#39;re on a host with a private IP of 172.16.2.9 and the IP of docker bridge docker0 is 172.17.0.1 we can start the first host agent:
+
+$ docker run --restart=always --name consul-01 -d -h node1 -v /data/consul/data:/data \
+    -p 172.16.2.9:8300:8300 \
+    -p 172.16.2.9:8301:8301 \
+    -p 172.16.2.9:8301:8301/udp \
+    -p 172.16.2.9:8302:8302 \
+    -p 172.16.2.9:8302:8302/udp \
+    -p 172.16.2.9:8400:8400 \
+    -p 172.16.2.9:8500:8500 \
+    -p 172.17.0.1:53:53/udp \
+    progrium/consul -server -advertise 172.16.2.9 -bootstrap-expect 3
+
+## On the second host, we&#39;d run the same thing, but passing a -join to the first node&#39;s IP. Let&#39;s say the private IP for this host is 172.16.2.10:
+
+$ docker run --restart=always --name consul-02 -d -h node2 -v /data/consul/data:/data  \
+    -p 172.16.2.10:8300:8300 \
+    -p 172.16.2.10:8301:8301 \
+    -p 172.16.2.10:8301:8301/udp \
+    -p 172.16.2.10:8302:8302 \
+    -p 172.16.2.10:8302:8302/udp \
+    -p 172.16.2.10:8400:8400 \
+    -p 172.16.2.10:8500:8500 \
+    -p 172.17.0.1:53:53/udp \
+    progrium/consul -server -advertise 172.16.2.10 -join 172.16.2.9
+
+## And the third host with an IP of 172.16.2.11:
+
+$ docker run --restart=always --name consul-03 -d -h node3 -v /data/consul/data:/data  \
+    -p 172.16.2.11:8300:8300 \
+    -p 172.16.2.11:8301:8301 \
+    -p 172.16.2.11:8301:8301/udp \
+    -p 172.16.2.11:8302:8302 \
+    -p 172.16.2.11:8302:8302/udp \
+    -p 172.16.2.11:8400:8400 \
+    -p 172.16.2.11:8500:8500 \
+    -p 172.17.0.1:53:53/udp \
+    progrium/consul -server -advertise 172.16.2.11 -join 172.16.2.9
+
+## That&#39;s it! Once this last node connects, it will bootstrap into a cluster. You now have a working cluster running in production on a private network.
+</code></pre>
+<h2 id="Lb-for-consul-using-nginx- 或者使用云服务商的 lb"><a href="#Lb-for-consul-using-nginx- 或者使用云服务商的 lb" class="headerlink" title="Lb for consul using nginx [ 或者使用云服务商的 lb]"></a>Lb for consul using nginx [或者使用云服务商的 lb]</h2><pre><code class="bash">$ docker run -d --name nginx -v ${HOME}/nginx/conf.d:/etc/nginx/conf.d -p 8000:80 nginx:1.13.3-alpine
+$ vi ${HOME}/nginx/conf.d/consul.conf
+upstream docker-consul {
+  server 172.16.2.9:8500;
+  server 172.16.2.10:8500;
+  server 172.16.2.11:8500;
+}
+
+server {
+  listen 80;
+  server_name nginx-consul;
+
+  location / {
+    proxy_pass                          http://docker-consul;
+    proxy_set_header  Host              $http_host;
+    proxy_set_header  X-Real-IP         $remote_addr; # pass on real client&#39;s IP
+    proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header  X-Forwarded-Proto $scheme;
+  }
+
+}
+
+$ docker cp consul.conf nginx:/etc/nginx/conf.d
+$ docker exec -it nginx nginx -s reload
+
+</code></pre>
+<h2 id="Swarm-manager-nodes"><a href="#Swarm-manager-nodes" class="headerlink" title="Swarm manager nodes"></a>Swarm manager nodes</h2><pre><code class="bash">#####################################################################################################
+# [Swarm: A Docker-native clustering system | Docker Documentation](https://docs.docker.com/swarm/reference/swarm/)
+# [High availability in Docker Swarm | Docker Documentation](https://docs.docker.com/swarm/multi-manager-setup/)
+# [Build a Swarm cluster for production | Docker Documentation](https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances)
+#####################################################################################################
+
+#### swarm manager
+
+$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-01 swarm manage -H :4000 --replication --advertise 172.16.2.9:4000 consul://172.16.2.12:8500
+
+$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-02 swarm manage -H :4000 --replication --advertise 172.16.2.10:4000 consul://172.16.2.12:8500
+
+$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-03 swarm manage -H :4000 --replication --advertise 172.16.2.11:4000 consul://172.16.2.12:8500
+
+</code></pre>
+<h2 id="Swarm-slave-nodes"><a href="#Swarm-slave-nodes" class="headerlink" title="Swarm slave nodes"></a>Swarm slave nodes</h2><pre><code class="bash">$ sudo vi /usr/lib/systemd/system/docker.service
+
+ExecStart=/usr/bin/dockerd
+
+change to  ===&gt;&gt;&gt;
+
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=consul://172.16.2.12:8500 --cluster-advertise=172.16.2.9:2375
+
+
+#### swarm slave
+$ docker run -d --restart=always --name=swarm-slave swarm join --advertise=172.16.2.10:2375 consul://172.16.2.12:8500
+
+$ sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart docker
+</code></pre>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><pre><code class="bash">$ docker -H :4000 run -d --name nginx-test -e constraint:node==iZuf654mu2j1ottom86sm9Z -p 80:80 nginx:1.13.3-alpine
+
+</code></pre>
+<h2 id="Maintain"><a href="#Maintain" class="headerlink" title="Maintain"></a>Maintain</h2><pre><code class="bash">## common command
+$ docker -H :4000 info
+$ docker -H :4000 ps
+$ docker-compose -H :4000 -f ~/docker-compose.yml ps
+
+## common issue
+* 如果出现 docker -H :4000 info 显示没有节点或者缺少某个节点，到缺少的节点上执行 docker restart slave
+</code></pre>
+<h2 id="Other-Danger"><a href="#Other-Danger" class="headerlink" title="Other [Danger!!!]"></a>Other [Danger!!!]</h2><pre><code class="bash">$ docker stop $(docker ps -a -q) &amp;&amp; docker rm $(docker ps -a -q) &amp;&amp; sudo rm -rf /data/consul &amp;&amp; sudo rm -rf /etc/docker/key.json
+</code></pre>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://hub.docker.com/r/progrium/consul/" target="_blank" rel="noopener">https://hub.docker.com/r/progrium/consul/</a><br><a href="https://github.com/gliderlabs/docker-consul" target="_blank" rel="noopener">GitHub - gliderlabs/docker-consul: Dockerized Consul</a><br><a href="https://docs.docker.com/swarm/reference/manage/" target="_blank" rel="noopener">manage — Create a Swarm manager | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/join/" target="_blank" rel="noopener">join — Create a Swarm node | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/swarm/" target="_blank" rel="noopener">Swarm: A Docker-native clustering system | Docker Documentation</a> <a href="https://docs.docker.com/swarm/multi-manager-setup/" target="_blank" rel="noopener">High availability in Docker Swarm | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances" target="_blank" rel="noopener">Build a Swarm cluster for production | Docker Documentation</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+            <a href="/tags/Swarm/" rel="tag"># Swarm</a>
+          
+            <a href="/tags/Consul/" rel="tag"># Consul</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/use-travis-ci-to-auto-deploy-hexo-to-github.html" rel="next" title="使用 Travis CI 自动部署 Hexo">
+                <i class="fa fa-chevron-left"></i> 使用 Travis CI 自动部署 Hexo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/deploy-kubernetes.html" rel="prev" title="Deploy kubernetes [Continually updating]">
+                Deploy kubernetes [Continually updating] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jimmy Zhao</p>
+              <div class="site-description motion-element" itemprop="description">Do not tell me, it can't be done.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prepare"><span class="nav-number">2.</span> <span class="nav-text">Prepare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Consul"><span class="nav-number">3.</span> <span class="nav-text">Consul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lb-for-consul-using-nginx- 或者使用云服务商的 lb"><span class="nav-number">4.</span> <span class="nav-text">Lb for consul using nginx [或者使用云服务商的 lb]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swarm-manager-nodes"><span class="nav-number">5.</span> <span class="nav-text">Swarm manager nodes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swarm-slave-nodes"><span class="nav-number">6.</span> <span class="nav-text">Swarm slave nodes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">7.</span> <span class="nav-text">Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maintain"><span class="nav-number">8.</span> <span class="nav-text">Maintain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-Danger"><span class="nav-number">9.</span> <span class="nav-text">Other [Danger!!!]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">10.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmy Zhao</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
