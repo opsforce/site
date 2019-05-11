@@ -1,13 +1,20 @@
 language: node_js # 设置语言
-
 node_js: stable # 设置相应的版本
 
-# S: Build Lifecycle
+# Travis-CI Caching
+cache:
+  directories:
+    - node_modules
+
+# START: Build Lifecycle
 install:
   - npm install # 安装hexo及插件
 
 # before_script:
 #   - npm install -g gulp
+
+# script:
+#   - gulp dist
 
 script:
   # - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
@@ -30,7 +37,7 @@ after_script:
   - git add .
   - git commit -m "update site" # 此处看情况修改
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages # GH_TOKEN是在Travis中配置token的名称
-# E: Build LifeCycle
+# END: Build LifeCycle
 
 branches:
   only:
