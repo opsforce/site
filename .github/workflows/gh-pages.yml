@@ -29,7 +29,6 @@ jobs:
 
       - name: Handle somethings before building
         run: |
-          # - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
           - git clone https://github.com/theme-next/hexo-theme-next themes/next
           - ls -al themes/next
           - git clone https://github.com/theme-next/theme-next-reading-progress themes/next/source/lib/reading_progress
