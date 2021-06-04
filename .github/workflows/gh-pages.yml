@@ -36,6 +36,9 @@ jobs:
           ls -al themes/next/source/lib
 
           sed -i 's|theme:\ vno|theme:\ next|g' _config.yml
+
+          # theme_config=themes/next/_config.yml
+
           sed -i "s|reading_progress:\n\ \ enable:\ false|reading_progress:\n\ \ enable:\ true|" themes/next/_config.yml
 
           # 设置 theme next 的样式
@@ -52,7 +55,7 @@ jobs:
           sed -i 's|badges:\ false|badges:\ true|g' themes/next/_config.yml
 
           # 添加 豆瓣电影 菜单
-          sed -i '/fa-archive/a\\  movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
+          sed -i '/fa-archive/a\\  Movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
 
           # 打印 theme next 配置文件
           cat themes/next/_config.yml
