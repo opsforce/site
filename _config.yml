@@ -151,7 +151,9 @@ douban:
 encrypt:
   enable: true
 
-# (https://www.npmjs.com/package/hexo-generator-search)
+# (https://www.npmjs.com/package/hexo-generator-searchdb)
 search:
   path: search.xml
   field: post
+  content: true
+  format: html
