@@ -56,6 +56,7 @@ jobs:
 
           # 添加 豆瓣电影 菜单
           sed -i '/fa-archive/a\\  Movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
+          sed -i 's|  home: \/|  # home: \/|' themes/next/_config.yml
 
           # 打印 theme next 配置文件
           cat themes/next/_config.yml
