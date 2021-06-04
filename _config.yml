@@ -157,3 +157,10 @@ search:
   field: post
   content: true
   format: html
+
+# (https://www.npmjs.com/package/hexo-algolia)
+algolia:
+  applicationID: 'ALGOLIA_APPLICATION_ID'
+  apiKey: 'ALGOLIA_SEARCH_ONLY_API_KEY'
+  indexName: 'opsforce.org'
+  chunkSize: 5000
