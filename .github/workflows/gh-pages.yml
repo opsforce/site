@@ -52,7 +52,7 @@ jobs:
           sed -i 's|badges:\ false|badges:\ true|g' themes/next/_config.yml
 
           # 添加 豆瓣电影 菜单
-          sed -i '/fa-archive/a\\  movies: \/movies\/ \|\| fa fa-movies'
+          sed -i '/fa-archive/a\\  movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
 
           # 打印 theme next 配置文件
           cat themes/next/_config.yml
