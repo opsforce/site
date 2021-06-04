@@ -34,16 +34,23 @@ jobs:
           ls -al themes/next
           git clone https://github.com/theme-next/theme-next-reading-progress themes/next/source/lib/reading_progress
           ls -al themes/next/source/lib
+
           sed -i 's|theme:\ vno|theme:\ next|g' _config.yml
-          sed -i 's|badges:\ false|badges:\ true|g' themes/next/_config.yml
           sed -i "s|reading_progress:\n\ \ enable:\ false|reading_progress:\n\ \ enable:\ true|" themes/next/_config.yml
+
           # 设置 theme next 的样式
           sed -i 's|scheme: Muse|# scheme: Muse|' themes/next/_config.yml
           sed -i 's|#scheme: Mist|scheme: Mist|' themes/next/_config.yml
           sed -i -e 's|darkmode: .*|darkmode: true|' themes/next/_config.yml
+
           # 设置边栏
           sed -i 's|  position: left|  # position: left|' themes/next/_config.yml
           sed -i 's|  #position: right|  position: right|' themes/next/_config.yml
+
+          # 禁用 menu_settings icon
+          sed -i 's|  icons: true|  icons: false|' themes/next/_config.yml
+          sed -i 's|badges:\ false|badges:\ true|g' themes/next/_config.yml
+
           # 打印 theme next 配置文件
           cat themes/next/_config.yml
 
