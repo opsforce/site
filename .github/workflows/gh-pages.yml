@@ -63,7 +63,7 @@ jobs:
           sed -i ':a;N;$!ba;s#reading_progress:\n  enable: false#reading_progress:\n  enable: true#' themes/next/_config.yml
 
           # 开启本地搜索
-          sed -i ':a;N;$!ba;s#local_search:\n  enable: false#local_search:\n  enable: true#' themes/next/_config.yml
+          # sed -i ':a;N;$!ba;s#local_search:\n  enable: false#local_search:\n  enable: true#' themes/next/_config.yml
 
           # 打印 theme next 配置文件
           cat themes/next/_config.yml
