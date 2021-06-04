@@ -135,6 +135,7 @@ disqus_shortname: opsforce
 # douban plugins for hexo (https://github.com/mythsman/hexo-douban)
 douban:
   user: 151423796
+  builtin: true
   book:
     title: '阅读'
     quote: '读一本书'
