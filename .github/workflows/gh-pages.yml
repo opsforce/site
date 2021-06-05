@@ -52,12 +52,16 @@ jobs:
           sed -i 's|  icons: true|  icons: false|' themes/next/_config.yml
           sed -i 's|badges:\ false|badges:\ true|g' themes/next/_config.yml
 
-          # 添加 豆瓣电影 菜单
-          sed -i '/fa-archive/a\\  Movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
+          # 添加 豆瓣电影、项目 菜单，并排序
+          sed -i '/  #about/d' themes/next/_config.yml
+          sed -i '/  #categories/d' themes/next/_config.yml
+          sed -i '/  #tags/d' themes/next/_config.yml
           sed -i 's|  home: \/|  # home: \/|' themes/next/_config.yml
-          sed -i 's|  #about|  about|' themes/next/_config.yml
-          sed -i 's|  #categories|  categories|' themes/next/_config.yml
-          sed -i 's|  #tags|  tags|' themes/next/_config.yml
+          sed -i '/fa-archive/i\\  Movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
+          sed -i '/fa-movies/i\\  Project: \/project\/ \|\| fa fa-project' themes/next/_config.yml
+          sed -i '/fa-archive/a\\  categories: \/categories\/ \|\| fa fa-th' themes/next/_config.yml
+          sed -i '/fa-th/a\\  tags: \/tags\/ \|\| fa fa-tags' themes/next/_config.yml
+          sed -i '/fa-tags/a\\  about: \/about\/ \|\| fa fa-user' themes/next/_config.yml
 
           # 开启阅读进程
           sed -i ':a;N;$!ba;s#reading_progress:\n  enable: false#reading_progress:\n  enable: true#' themes/next/_config.yml
