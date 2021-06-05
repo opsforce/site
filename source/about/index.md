@@ -4,9 +4,7 @@ comments: false
 ---
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fjkqnxchvkj30m80godgb.jpg)
 
->Do not tell me, it can't be done!
-
-{% douban movie 1302987 %}
+> Do not tell me, it can't be done! --- [Pearl Harbor](https://movie.douban.com/subject/1302987/)
 
 ### Me
 Hi, I'm Jimmy Zhao, I write this blog and work as a DevOps Engineer in Shanghai. Focused on building and automating infrastructure. My toolbox: Docker, Kubernetes, Rancher, Terraform, Ansible, GlusterFS, Ceph, OpenStack, Linux, Alicloud, AWS, GCE etc.
