@@ -44,6 +44,11 @@ jobs:
           sed -i 's|#scheme: Mist|scheme: Mist|' themes/next/_config.yml
           sed -i -e 's|darkmode: .*|darkmode: true|' themes/next/_config.yml
 
+          # 添加自定义的图片，例如 favicon, logo, etc. 并配置
+          cp -r images/* themes/next/source/images/
+          sed -i -e 's|  small: /images.*|  small: /images/favicon-16x16.ico|' themes/next/_config.yml
+          sed -i -e 's|  medium: /images.*|  medium: /images/favicon-32x32.ico|' themes/next/_config.yml
+
           # 设置边栏
           sed -i 's|  position: left|  # position: left|' themes/next/_config.yml
           sed -i 's|  #position: right|  position: right|' themes/next/_config.yml
