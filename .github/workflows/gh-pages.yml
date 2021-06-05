@@ -70,6 +70,12 @@ jobs:
           sed -i "s|ALGOLIA_APPLICATION_ID|${{ secrets.ALGOLIA_APPLICATION_ID }}|" _config.yml
           sed -i "s|ALGOLIA_SEARCH_ONLY_API_KEY|${{ secrets.ALGOLIA_SEARCH_ONLY_API_KEY }}|" _config.yml
 
+          # 站点建立时间
+          sed -i 's|  #since: 2015|  since: 2013|' themes/next/_config.yml
+
+          # TODO
+
+
           # 打印站点配置文件
           echo '################################ 站点配置文件 START ################################'
           cat _config.yml
