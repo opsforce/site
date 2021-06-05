@@ -1,5 +1,6 @@
 ---
 title: 关于
+comments: false
 ---
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fjkqnxchvkj30m80godgb.jpg)
 > Do not tell me, it can't be done! --- [珍珠港 Pearl Harbor](https://movie.douban.com/subject/1302987/)
