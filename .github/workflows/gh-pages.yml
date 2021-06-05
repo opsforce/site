@@ -47,6 +47,8 @@ jobs:
           # 设置边栏
           sed -i 's|  position: left|  # position: left|' themes/next/_config.yml
           sed -i 's|  #position: right|  position: right|' themes/next/_config.yml
+          sed -i -e 's|  display: .*|  display: hide|' themes/next/_config.yml
+
 
           # 禁用 menu_settings icon
           sed -i 's|  icons: true|  icons: false|' themes/next/_config.yml
@@ -58,7 +60,7 @@ jobs:
           sed -i '/  #tags/d' themes/next/_config.yml
           sed -i 's|  home: \/|  # home: \/|' themes/next/_config.yml
           sed -i '/fa-archive/i\\  Movies: \/movies\/ \|\| fa fa-movies' themes/next/_config.yml
-          sed -i '/fa-movies/i\\  Project: \/project\/ \|\| fa fa-project' themes/next/_config.yml
+          sed -i '/fa-movies/i\\  Projects: \/projects\/ \|\| fa fa-project' themes/next/_config.yml
           sed -i '/fa-archive/a\\  categories: \/categories\/ \|\| fa fa-th' themes/next/_config.yml
           sed -i '/fa-th/a\\  tags: \/tags\/ \|\| fa fa-tags' themes/next/_config.yml
           sed -i '/fa-tags/a\\  about: \/about\/ \|\| fa fa-user' themes/next/_config.yml
