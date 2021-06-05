@@ -81,9 +81,9 @@ jobs:
           echo '################################ theme next 配置文件 END ################################'
 
       - name: Build
-        run: npm run build
-        with:
-          HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+        run: |
+          export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
