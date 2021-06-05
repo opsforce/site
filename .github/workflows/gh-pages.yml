@@ -67,7 +67,7 @@ jobs:
 
           # 集成 algolia 搜索
           sed -i ':a;N;$!ba;s#algolia_search:\n  enable: false#algolia_search:\n  enable: true#' themes/next/_config.yml
-          export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+          # export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
           sed -i "s|ALGOLIA_APPLICATION_ID|${{ secrets.ALGOLIA_APPLICATION_ID }}|" _config.yml
           sed -i "s|ALGOLIA_SEARCH_ONLY_API_KEY|${{ secrets.ALGOLIA_SEARCH_ONLY_API_KEY }}|" _config.yml
 
