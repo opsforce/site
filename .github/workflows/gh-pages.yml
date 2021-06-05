@@ -79,6 +79,9 @@ jobs:
           # 站点建立时间
           sed -i 's|  #since: 2015|  since: 2013|' themes/next/_config.yml
 
+          # 移除页面底部 Powered by Hexo & NexT...
+          sed -i -e 's|  powered: .*|  powered: false|g' themes/next/_config.yml
+
           # TODO
 
 
