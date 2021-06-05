@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>网站 CICD 迁移至 github action</title>
+    <url>/website-cicd-migrate-from-travis-ci-to-github-action.html</url>
+    <content><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>
+]]></content>
+      <categories>
+        <category>CI/CD</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>fix-macos-mojave-ssh-connect-trouble</title>
     <url>/fix-macos-mojave-ssh-connect-trouble.html</url>
     <content><![CDATA[<p> 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：</p>

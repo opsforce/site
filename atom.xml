@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opsforce.org/"/>
-  <updated>2018-11-01T16:00:00.000Z</updated>
+  <updated>2021-06-05T07:58:07.984Z</updated>
   <id>https://opsforce.org/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网站 CICD 迁移至 github action</title>
+    <link href="https://opsforce.org/website-cicd-migrate-from-travis-ci-to-github-action.html"/>
+    <id>https://opsforce.org/website-cicd-migrate-from-travis-ci-to-github-action.html</id>
+    <published>2021-03-24T16:00:00.000Z</published>
+    <updated>2021-06-05T07:58:07.984Z</updated>
+    
+    <content type="html"><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; 网站 CICD 已从 travisCI 迁移至 github action&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="CI/CD" scheme="https://opsforce.org/categories/CI-CD/"/>
+    
+    
+      <category term="Github" scheme="https://opsforce.org/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>fix-macos-mojave-ssh-connect-trouble</title>
