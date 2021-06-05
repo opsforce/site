@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -8,22 +10,22 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
-
-
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"opsforce.org","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"KQF320F98G","apiKey":"6b7c5cdc44dd0481ef9243d8f8987b16","indexName":"opsforce.org","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Architecture TutorialDeploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]$ sudo apt-get update $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A91289">
+  <meta name="description" content="Architecture TutorialDeploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]$ sudo apt-get update $ sudo apt-key adv --keyserver hkp:&#x2F;&#x2F;p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A91289">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deploy kubernetes [Continually updating]">
 <meta property="og:url" content="https://opsforce.org/deploy-kubernetes.html">
 <meta property="og:site_name" content="OPSFORCE">
-<meta property="og:description" content="Architecture TutorialDeploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]$ sudo apt-get update $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A91289">
+<meta property="og:description" content="Architecture TutorialDeploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]$ sudo apt-get update $ sudo apt-key adv --keyserver hkp:&#x2F;&#x2F;p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A91289">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg">
 <meta property="article:published_time" content="2017-09-07T16:00:00.000Z">
@@ -78,13 +80,13 @@
   </style>
 </noscript>
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
+</head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
@@ -197,16 +199,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://opsforce.org/deploy-kubernetes.html">
 
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Jimmy Zhao">
       <meta itemprop="description" content="Do not tell me, it can't be done.">
     </span>
 
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OPSFORCE">
     </span>
       <header class="post-header">
@@ -228,7 +230,7 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Kubernetes/" itemprop="url" rel="index"><span itemprop="name">Kubernetes</span></a>
                 </span>
             </span>
@@ -245,7 +247,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-                <span class="post-meta-item-text">Reading time ≈</span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
               <span>11 mins.</span>
             </span>
 
@@ -261,7 +263,7 @@
         <h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg" alt=""></p>
 <h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><h3 id="Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node"><a href="#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node" class="headerlink" title="Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]"></a>Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]</h3><pre><code class="bash">$ sudo apt-get update
 $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-$ sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+$ sudo apt-add-repository &#39;deb https://apt.dockerproject.org/repo ubuntu-xenial main&#39;
 $ sudo apt-get update
 $ sudo apt-cache policy docker-engine # find docker-engine version you need to install
 docker-engine:
@@ -329,7 +331,7 @@ $ sudo ls -l /var/cache/apt/archives # checkout downloaded applications packages
 </code></pre>
 <h3 id="Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-master-node"><a href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-master-node" class="headerlink" title="Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [master node]"></a>Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [master node]</h3><h4 id="init-kubernetes-cluster"><a href="#init-kubernetes-cluster" class="headerlink" title="init kubernetes cluster"></a>init kubernetes cluster</h4><pre><code class="bash">$ sudo -i
 # kubeadm init --apiserver-advertise-address &lt;master node ip&gt;
-[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/admin.conf"
+[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/admin.conf&quot;
 [apiclient] Created API client, waiting for the control plane to become ready
 [apiclient] All control plane components are healthy after 19.392838 seconds
 [apiclient] Waiting for at least one node to register
@@ -348,7 +350,7 @@ To start using your cluster, you need to run (as a regular user):
   export KUBECONFIG=$HOME/admin.conf
 
 You should now deploy a pod network to the cluster.
-Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
   http://kubernetes.io/docs/admin/addons/
 
 You can now join any number of machines by running the following on each node
@@ -362,12 +364,12 @@ $ kubectl apply -f weave-daemonset-k8s-1.6.yaml
 
 ## test DNS network
 $ kubectl run curl --image=radial/busyboxplus:curl -i --tty
-If you don't see a command prompt, try pressing enter.
+If you don&#39;t see a command prompt, try pressing enter.
 [root@curl-2716574283-xr8zd:/]$
 </code></pre>
 <h3 id="Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-minion-node"><a href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-minion-node" class="headerlink" title="Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]"></a>Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]</h3><pre><code class="bash">## master node
 $ sudo -i
-# kubeadm token list | grep authentication,signing | awk '{prin t $1}'
+# kubeadm token list | grep authentication,signing | awk &#39;&#123;prin t $1&#125;&#39;
 4****f.****78b31****9**
 </code></pre>
 <pre><code class="bash">## minion node
@@ -375,33 +377,33 @@ $ sudo -i
 # kubeadm join --token 4****f.****78b31****9** &lt;master node ip&gt;:6443
 [kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
 [preflight] Running pre-flight checks
-[discovery] Trying to connect to API Server "172.31.10.219:6443"
-[discovery] Created cluster-info discovery client, requesting info from "https://172.31.10.219:6443"
-[discovery] Cluster info signature and contents are valid, will use API Server "https://172.31.10.219:6443"
-[discovery] Successfully established connection with API Server "172.31.10.219:6443"
+[discovery] Trying to connect to API Server &quot;172.31.10.219:6443&quot;
+[discovery] Created cluster-info discovery client, requesting info from &quot;https://172.31.10.219:6443&quot;
+[discovery] Cluster info signature and contents are valid, will use API Server &quot;https://172.31.10.219:6443&quot;
+[discovery] Successfully established connection with API Server &quot;172.31.10.219:6443&quot;
 [bootstrap] Detected server version: v1.6.7
 [bootstrap] The server supports the Certificates API (certificates.k8s.io/v1beta1)
 [csr] Created API client to obtain unique certificate for this node, generating keys and certificate signing request
 [csr] Received signed certificate from the API server, generating KubeConfig...
-[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/kubelet.conf"
+[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/kubelet.conf&quot;
 
 Node join complete:
 * Certificate signing request sent to master and response
   received.
 * Kubelet informed of new secure connection details.
 
-Run 'kubectl get nodes' on the master to see this machine join.
+Run &#39;kubectl get nodes&#39; on the master to see this machine join.
 </code></pre>
 <h3 id="Kompose-Helps-Developers-Move-Docker-Compose-Files-to-Kubernetes"><a href="#Kompose-Helps-Developers-Move-Docker-Compose-Files-to-Kubernetes" class="headerlink" title="Kompose Helps Developers Move Docker Compose Files to Kubernetes"></a>Kompose Helps Developers Move Docker Compose Files to Kubernetes</h3><p><a target="_blank" rel="noopener" href="http://blog.kubernetes.io/2017/08/kompose-helps-developers-move-docker.html">http://blog.kubernetes.io/2017/08/kompose-helps-developers-move-docker.html</a></p>
 <h3 id="Deploy-applications"><a href="#Deploy-applications" class="headerlink" title="Deploy applications"></a>Deploy applications</h3><p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/containers/images/">Specifying ImagePullSecrets on a Pod</a><br>Note: This approach is currently the recommended approach for GKE, GCE, and any cloud-providers where node creation is automated.<br>Kubernetes supports specifying registry keys on a pod.</p>
 <p>Creating a Secret with a Docker Config,Run the following command, substituting the appropriate uppercase values:</p>
 <pre><code class="bash">$ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
-secret "myregistrykey" created.
+secret &quot;myregistrykey&quot; created.
 
 $ kubectl -n development create secret docker-registry m4g-harbor-registry --docker-server=harbor.madeforgoods.com --docker-username=docker --docker-password=****** --docker-email=**********
 </code></pre>
 <h3 id="Storage-use-glusterfs"><a href="#Storage-use-glusterfs" class="headerlink" title="Storage use glusterfs"></a>Storage use glusterfs</h3><pre><code> 现在 ami 市场启动三台 centos 机器
-$ sudo yum update -y &amp;&amp; sudo setenforce 0 &amp;&amp; sudo sed -i 's|SELINUX=enforcing|SELINUX=disabled|g' /etc/selinux/config &amp;&amp; sudo systemctl disable firewalld &amp;&amp; sudo systemctl stop firewalld
+$ sudo yum update -y &amp;&amp; sudo setenforce 0 &amp;&amp; sudo sed -i &#39;s|SELINUX=enforcing|SELINUX=disabled|g&#39; /etc/selinux/config &amp;&amp; sudo systemctl disable firewalld &amp;&amp; sudo systemctl stop firewalld
 
 
 # 先安装 gluster 源
@@ -411,7 +413,7 @@ $ sudo yum install -y glusterfs glusterfs-server glusterfs-fuse glusterfsrdma gl
 ## 创建 glusterfs 目录 
 #$ mkdir /opt/glusterd
 ## 修改 glusterd 目录 
-#$ sed -i 's/var\/lib/opt/g' /etc/glusterfs/glusterd.vol 
+#$ sed -i &#39;s/var\/lib/opt/g&#39; /etc/glusterfs/glusterd.vol 
 # 启动 glusterfs 
 $ sudo systemctl start glusterd.service &amp;&amp; sudo systemctl enable glusterd.service &amp;&amp; sudo systemctl status glusterd.service
 
@@ -643,12 +645,12 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorial"><span class="nav-number">2.</span> <span class="nav-text">Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node"><span class="nav-number">2.1.</span> <span class="nav-text">Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-all-node"><span class="nav-number">2.2.</span> <span class="nav-text">Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [all node]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prepare"><span class="nav-number">2.2.1.</span> <span class="nav-text">prepare</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#install-kubernetes"><span class="nav-number">2.2.2.</span> <span class="nav-text">install kubernetes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-master-node"><span class="nav-number">2.3.</span> <span class="nav-text">Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [master node]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-kubernetes-cluster"><span class="nav-number">2.3.1.</span> <span class="nav-text">init kubernetes cluster</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#install-weave-network-for-kubernetes"><span class="nav-number">2.3.2.</span> <span class="nav-text">install weave network for kubernetes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-minion-node"><span class="nav-number">2.4.</span> <span class="nav-text">Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kompose-Helps-Developers-Move-Docker-Compose-Files-to-Kubernetes"><span class="nav-number">2.5.</span> <span class="nav-text">Kompose Helps Developers Move Docker Compose Files to Kubernetes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-applications"><span class="nav-number">2.6.</span> <span class="nav-text">Deploy applications</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storage-use-glusterfs"><span class="nav-number">2.7.</span> <span class="nav-text">Storage use glusterfs</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Maintain-amp-amp-Common-Commands"><span class="nav-number"></span> <span class="nav-text">Maintain &amp;&amp; Common Commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Issue-amp-amp-Todo"><span class="nav-number"></span> <span class="nav-text">Issue &amp;&amp; Todo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu%20%E4%B8%AD%20apt-get-upgrade%20%E5%A6%82%E4%BD%95%E5%BF%BD%E7%95%A5%E6%9F%90%E9%A1%B9%20-SegmentFault"><span class="nav-number">1.</span> <span class="nav-text">ubuntu 中 apt-get upgrade 如何忽略某项 - SegmentFault</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apt-mark-hold-docker-engine"><span class="nav-number"></span> <span class="nav-text">apt-mark hold docker-engine</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apt-get-upgrade-y"><span class="nav-number"></span> <span class="nav-text">apt-get upgrade -y</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrating-Kubernetes-via-the-Addon"><span class="nav-number">1.</span> <span class="nav-text">Integrating Kubernetes via the Addon</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kubectl-apply-f-%E2%80%9Chttps-cloud-weave-works-k8s-net-k8s-version-kubectl-version-base64-tr-d-%E2%80%98-n%E2%80%99-%E2%80%9D"><span class="nav-number"></span> <span class="nav-text">kubectl apply -f “https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d ‘\n’)”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference-amp-amp-Document"><span class="nav-number"></span> <span class="nav-text">Reference &amp;&amp; Document</span></a></li></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorial"><span class="nav-number">2.</span> <span class="nav-text">Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node"><span class="nav-number">2.1.</span> <span class="nav-text">Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-all-node"><span class="nav-number">2.2.</span> <span class="nav-text">Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [all node]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prepare"><span class="nav-number">2.2.1.</span> <span class="nav-text">prepare</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#install-kubernetes"><span class="nav-number">2.2.2.</span> <span class="nav-text">install kubernetes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-master-node"><span class="nav-number">2.3.</span> <span class="nav-text">Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [master node]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-kubernetes-cluster"><span class="nav-number">2.3.1.</span> <span class="nav-text">init kubernetes cluster</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#install-weave-network-for-kubernetes"><span class="nav-number">2.3.2.</span> <span class="nav-text">install weave network for kubernetes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-kubernetes-1-6-7-on-ubuntu-16-04-xenial-minion-node"><span class="nav-number">2.4.</span> <span class="nav-text">Deploy kubernetes 1.6.7 on ubuntu 16.04 xenial [minion node]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kompose-Helps-Developers-Move-Docker-Compose-Files-to-Kubernetes"><span class="nav-number">2.5.</span> <span class="nav-text">Kompose Helps Developers Move Docker Compose Files to Kubernetes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-applications"><span class="nav-number">2.6.</span> <span class="nav-text">Deploy applications</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storage-use-glusterfs"><span class="nav-number">2.7.</span> <span class="nav-text">Storage use glusterfs</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maintain-amp-amp-Common-Commands"><span class="nav-number"></span> <span class="nav-text">Maintain &amp;&amp; Common Commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Issue-amp-amp-Todo"><span class="nav-number"></span> <span class="nav-text">Issue &amp;&amp; Todo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu%20%E4%B8%AD%20apt-get-upgrade%20%E5%A6%82%E4%BD%95%E5%BF%BD%E7%95%A5%E6%9F%90%E9%A1%B9%20-SegmentFault"><span class="nav-number">1.</span> <span class="nav-text">ubuntu 中 apt-get upgrade 如何忽略某项 - SegmentFault</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apt-mark-hold-docker-engine"><span class="nav-number"></span> <span class="nav-text">apt-mark hold docker-engine</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apt-get-upgrade-y"><span class="nav-number"></span> <span class="nav-text">apt-get upgrade -y</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrating-Kubernetes-via-the-Addon"><span class="nav-number">1.</span> <span class="nav-text">Integrating Kubernetes via the Addon</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kubectl-apply-f-%E2%80%9Chttps-cloud-weave-works-k8s-net-k8s-version-kubectl-version-base64-tr-d-%E2%80%98-n%E2%80%99-%E2%80%9D"><span class="nav-number"></span> <span class="nav-text">kubectl apply -f “https:&#x2F;&#x2F;cloud.weave.works&#x2F;k8s&#x2F;net?k8s-version&#x3D;$(kubectl version | base64 | tr -d ‘\n’)”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference-amp-amp-Document"><span class="nav-number"></span> <span class="nav-text">Reference &amp;&amp; Document</span></a></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Jimmy Zhao</p>
   <div class="site-description" itemprop="description">Do not tell me, it can't be done.</div>
 </div>
@@ -696,7 +698,7 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
 
 <div class="copyright">
   
-  © 2013 – 
+  &copy; 2013 – 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -728,19 +730,19 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
   </div>
 
   
-  
-  
-  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-
-
-
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -753,7 +755,7 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
   
 <script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
 <script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-
+<script src="/js/algolia-search.js"></script>
 
 
 
@@ -772,6 +774,5 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
 
   
 
-
-
-<script src="/bundle.js"></script></body></html>
+</body>
+</html>
