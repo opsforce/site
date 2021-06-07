@@ -1,3 +1,3 @@
 # opsforce.org
 
-[![Build Status](https://img.shields.io/travis/opsforce/site/master.svg?style=flat-square)](https://travis-ci.org/opsforce/site)
+![Build Status](https://github.com/opsforce/site/actions/workflows/gh-pages.yml/badge.svg)
