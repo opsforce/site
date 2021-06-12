@@ -31,8 +31,11 @@ jobs:
         run: |
           # - git clone https://github.com/Lemonreds/hexo-theme-Nayo themes/nayo
           git clone https://github.com/theme-next/hexo-theme-next themes/next
+
           ls -al themes/next
+
           git clone https://github.com/theme-next/theme-next-reading-progress themes/next/source/lib/reading_progress
+
           ls -al themes/next/source/lib
 
           sed -i 's|theme:\ vno|theme:\ next|g' _config.yml
@@ -90,9 +93,18 @@ jobs:
           # 开启 Disqus 评论
           sed -i ':a;N;$!ba;s#disqus:\n  enable: false\n  shortname:#disqus:\n  enable: true\n  shortname: opsforce#' themes/next/_config.yml
 
+          # 禁止动画
+          sed -i ':a;N;$!ba;s#motion:\n  enable: true#motion:\n  enable: false#' themes/next/_config.yml
+
+          # 设置代码高亮主题
+          sed -i -e 's|highlight_theme: .*|highlight_theme: night bright|' themes/next/_config.yml
+
+
           # TODO
 
 
+
+          # review configs
           # 打印站点配置文件
           echo '################################ 站点配置文件 START ################################'
           cat _config.yml
