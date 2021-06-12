@@ -97,7 +97,7 @@ jobs:
           sed -i ':a;N;$!ba;s#motion:\n  enable: true#motion:\n  enable: false#' themes/next/_config.yml
 
           # 设置代码高亮主题
-          sed -i -e 's|highlight_theme: .*|highlight_theme: night bright|' themes/next/_config.yml
+          sed -i -e 's|highlight_theme: .*|highlight_theme: night eighties|' themes/next/_config.yml
 
 
           # TODO
