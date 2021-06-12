@@ -182,3 +182,7 @@ abbrlink:
   auto_date: false #enable auto date, it can auto fill the date by time today
   force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink.
 
+# (https://www.npmjs.com/package/hexo-generator-topindex)
+topindex_generator:
+  per_page: 5 #Posts displayed per page. (0 = disable pagination)
+  order_by: -date #Posts order. (Order by date descending by default)

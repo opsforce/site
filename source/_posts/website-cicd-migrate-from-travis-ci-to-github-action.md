@@ -5,6 +5,6 @@ categories:
 - CI/CD
 tags:
 - Github
-top: True
+top: 1
 ---
 网站 CICD 已从 travisCI 迁移至 github action
