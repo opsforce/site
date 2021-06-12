@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opsforce.org/"/>
-  <updated>2021-06-07T07:04:58.041Z</updated>
+  <updated>2021-06-12T03:24:05.059Z</updated>
   <id>https://opsforce.org/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Thindpad x220 Upgrade the Bluetooth module from 3.0 to 4.0</title>
+    <link href="https://opsforce.org/Thindpad-x220-Upgrade-the-Bluetooth-module-from-3.0-to-4.0.html"/>
+    <id>https://opsforce.org/Thindpad-x220-Upgrade-the-Bluetooth-module-from-3.0-to-4.0.html</id>
+    <published>2021-06-11T16:00:00.000Z</published>
+    <updated>2021-06-12T03:24:05.059Z</updated>
+    
+    <content type="html"><![CDATA[<p> 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。<em> 貌似现在比较新的产品好些都不支持蓝牙 3.0</em></p><p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&amp;id=585334985690&amp;_u=cjnl1al0deb"> 购买地址 </a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。&lt;em&gt; 貌似现在比较新的产品好些都不支持蓝牙 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>网站 CICD 迁移至 github action</title>
     <link href="https://opsforce.org/website-cicd-migrate-from-travis-ci-to-github-action.html"/>
     <id>https://opsforce.org/website-cicd-migrate-from-travis-ci-to-github-action.html</id>
     <published>2021-03-24T16:00:00.000Z</published>
-    <updated>2021-06-07T07:04:58.041Z</updated>
+    <updated>2021-06-12T03:24:05.059Z</updated>
     
     <content type="html"><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>]]></content>
     

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Thindpad x220 Upgrade the Bluetooth module from 3.0 to 4.0</title>
+    <url>/Thindpad-x220-Upgrade-the-Bluetooth-module-from-3.0-to-4.0.html</url>
+    <content><![CDATA[<p> 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。<em> 貌似现在比较新的产品好些都不支持蓝牙 3.0</em></p>
+<p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&amp;id=585334985690&amp;_u=cjnl1al0deb"> 购买地址 </a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>网站 CICD 迁移至 github action</title>
     <url>/website-cicd-migrate-from-travis-ci-to-github-action.html</url>
     <content><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>

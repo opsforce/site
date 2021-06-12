@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section">Archives<span class="badge">16</span></a>
+    <a href="/archives/" rel="section">Archives<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -189,6 +189,115 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/how-to-config-python2-python3-all-in-macos.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jimmy Zhao">
+      <meta itemprop="description" content="Do not tell me, it can't be done.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OPSFORCE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/how-to-config-python2-python3-all-in-macos.html" class="post-title-link" itemprop="url">Mac 下配置 Python2 和 Python3 共存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2016-07-10T00:00:00+08:00">2016-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2016-07-13 00:00:00" itemprop="dateModified" datetime="2016-07-13T00:00:00+08:00">2016-07-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>536</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Mac 默认是安装了 Python2 的，所以只需要安装 Python3</p>
+<pre><code>$ brew install python3 # 使用 homebrew 安装 python3
+$ python3 -V
+Python 3.6.5
+
+$ brew install pyenv-virtualenv # 安装 virtualenv
+或者
+$ sudo easy_install virtualenv # 安装 virtualenv
+
+$ mkdir myenv &amp;&amp; cd myenv # 创建本地工作目录
+$ which python3 # 找出 Python3 路径
+/usr/local/bin/python3
+
+# python2
+$ virtualenv --no-site-packages pyenv # 配置 Python2 虚拟路径
+$ source pyenv/bin/activate # 使 Python2 虚拟路径生效
+$ deactivate # 使 Python2 虚拟路径失效
+
+# python3
+$ virtualenv --no-site-packages --python=/usr/local/bin/python3 pyenv3 # 配置 Python3 虚拟路径
+$ source pyenv3/bin/activate # 使 Python3 虚拟路径生效
+$ deactivate # 使 Python3 虚拟路径失效
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -566,101 +675,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/GitHub-Desktop-Bitbucket.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jimmy Zhao">
-      <meta itemprop="description" content="Do not tell me, it can't be done.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="OPSFORCE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/GitHub-Desktop-Bitbucket.html" class="post-title-link" itemprop="url">Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2015-10-18 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-18T00:00:00+08:00">2015-10-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>You <a target="_blank" rel="noopener" href="http://stackoverflow.com/a/32213131/2613447">can’t clone</a> a Bitbucket repo using <a target="_blank" rel="noopener" href="https://desktop.github.com/">GithHub Desktop</a> directly. Instead you would have to:</p>
-<ol>
-<li>Clone the Bitbucket repo locally via command line.</li>
-<li>Add the cloned repository to your GitHub Desktop app.</li>
-</ol>
-<p>After completing these 2 steps, you’ll be able to execute sync, push, pull, commit, and other git commands available in GitHub Desktop for your Bitbucket repository just as you would for any GitHub repository.</p>
-<p><em>You will need your Bitbucket repository’s git URL as available on the <strong>Overview</strong> page of your repository:</em></p>
-<p><img src="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png" alt="Retrieve git URL from Bitbucket.org"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/GitHub-Desktop-Bitbucket.html#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -730,7 +744,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
