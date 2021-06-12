@@ -1,15 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>网站 CICD 迁移至 github action</title>
-    <url>/posts/d44d22bb.html</url>
-    <content><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>
+    <title>Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)</title>
+    <url>/posts/5eaa5d69.html</url>
+    <content><![CDATA[<p>You <a href="http://stackoverflow.com/a/32213131/2613447">can’t clone</a> a Bitbucket repo using <a href="https://desktop.github.com/">GithHub Desktop</a> directly. Instead you would have to:</p>
+<ol>
+<li>Clone the Bitbucket repo locally via command line.</li>
+<li>Add the cloned repository to your GitHub Desktop app.</li>
+</ol>
+<p>After completing these 2 steps, you’ll be able to execute sync, push, pull, commit, and other git commands available in GitHub Desktop for your Bitbucket repository just as you would for any GitHub repository.</p>
+<p><em>You will need your Bitbucket repository’s git URL as available on the <strong>Overview</strong> page of your repository:</em></p>
+<p><img src="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png" alt="Retrieve git URL from Bitbucket.org"></p>
+<span id="more"></span>
+<h2 id="1-Clone-Bitbucket-Repository-Locally-via-Command-Line"><a href="#1-Clone-Bitbucket-Repository-Locally-via-Command-Line" class="headerlink" title="1. Clone Bitbucket Repository Locally via Command Line"></a>1. Clone Bitbucket Repository Locally via Command Line</h2><ol>
+<li>Open Terminal app.</li>
+<li>Type <code>cd /Local/path/to/parent-folder/to/clone/into</code> (replacing that sample path with the local path to the parent folder you want to clone your Bitbucket repository into).</li>
+<li>Hit enter. You’ve just opened that parent folder on the command line.</li>
+<li>Type <code>git clone https://example@bitbucket.org/path/to/your-repo.git</code> (replacing that sample URL with the Bitbucket URL available on the <strong>Overview</strong> page of your repository).</li>
+<li>Hit enter and watch the repository being cloned. (Once it’s done, it’ll say something like <strong>…done</strong> in one of the last lines.)</li>
+</ol>
+<h2 id="2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App"><a href="#2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App" class="headerlink" title="2. Add Cloned Repository to Your GitHub Desktop App"></a>2. Add Cloned Repository to Your GitHub Desktop App</h2><ol>
+<li>Open GitHub Desktop.</li>
+<li>In the upper right corner (if your sidbar is open) press the large <strong>+</strong> button.</li>
+<li>Select <strong>Add</strong> to add an exisiting local repository.</li>
+<li><p>On the <strong>Add</strong> tab click the <strong>Choose…</strong> button, navigate to the folder you have just cloned your Bitbucket repository into, and select it.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/308422/13249268/a342b1e2-da23-11e5-870f-f6ee0efd1b86.png" alt="“Add” tab in GitHub Desktop"></p>
+</li>
+<li><p>Your newly added repository will appear at the bottom of your sidebar in the <strong>Other</strong> section.</p>
+</li>
+</ol>
+<p><strong>That’s it.</strong><br>You should now be able execute git operations on your Bitbucket repository via your GitHub Desktop app just as on any GitHub repository.</p>
 ]]></content>
       <categories>
-        <category>CI/CD</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>Github</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+        <tag>Bitbucket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Remove All Iptables PREROUTING Nat Rules</title>
+    <url>/posts/87cb602a.html</url>
+    <content><![CDATA[<p>To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:</p>
+<pre><code>iptables -t nat --line-numbers -L
+</code></pre><span id="more"></span>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg" alt=""></p>
+<p>As you can see the above command will display all PREROUTING chains with relevant line numbers. Next, we can use these line numbers to remove all PREROUTING chains one by one. For example to remove PREROUTING chain with line number 1 we can do:</p>
+<pre><code>iptables -t nat -D PREROUTING 1
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr43on6oj30vc0d944q.jpg" alt=""></p>
+<p>In case that you wish to remove all PREROUTING chains with a single command you can try the following command chaining example:</p>
+<pre><code>for i in $(iptables -t nat --line-numbers -L | grep ^[0-9] | awk &#39;&#123; print $1 &#125;&#39; | tac ); do iptables -t nat -D PREROUTING $i; done
+</code></pre><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://lubos.rendek.org/remove-all-iptables-prerouting-nat-rules/">Remove All Iptables PREROUTING Nat Rules</a></p>
+]]></content>
+      <categories>
+        <category>Security</category>
+      </categories>
+      <tags>
+        <tag>Firewall</tag>
+        <tag>Iptables</tag>
       </tags>
   </entry>
   <entry>
@@ -20,187 +70,184 @@
 ]]></content>
   </entry>
   <entry>
-    <title>fix-macos-mojave-ssh-connect-trouble</title>
-    <url>/posts/5255ca53.html</url>
-    <content><![CDATA[<p> 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：</p>
-<pre><code>packet_write_wait: Connection to *.*.*.* port 22: Broken pipe
-</code></pre><p> 其实是 ssh 客户端比较新导致的 </p>
-<pre><code>$ ssh -V
-OpenSSH_7.8p1, LibreSSL 2.7.3
-</code></pre><p> 只需添加 ssh 相关配置，可解决问题 </p>
-<pre><code>$ cat .ssh/config
-Host *
-    IPQoS lowdelay throughput
-</code></pre><p> 这个问题困惑了我近半个月 </p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站已开启 ssl 访问</title>
-    <url>/posts/dff19b71.html</url>
-    <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fqh244g88lj30gb0agzlh.jpg" alt=""><br> 网站已开启 ssl 访问，使用的是 cloudflare.com 免费 ssl 服务。</p>
-]]></content>
-      <categories>
-        <category>Security</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hi, sublime text 3</title>
-    <url>/posts/8e109f13.html</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=80 src="http://music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fpp6pb8snvj311y0jnwfs.jpg" alt=""></p>
-<h3 id="安装 Package-Control"><a href="# 安装 Package-Control" class="headerlink" title="安装 Package Control"></a>安装 Package Control</h3><p>Tools -&gt; Install Package Control</p>
-<h3 id="安装主题"><a href="# 安装主题" class="headerlink" title="安装主题"></a>安装主题 </h3><p> 到 package control 里面搜索相应主题安装即可，推荐一款主题 Ayu</p>
+    <title>What DevOps needs?</title>
+    <url>/posts/6adf9790.html</url>
+    <content><![CDATA[<p> 硬性要求：工具上的准备 </p>
+<p> 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：</p>
+<p> 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion</p>
+<p> 构建工具：Ant、Gradle、maven</p>
+<p> 自动部署：Capistrano、CodeDeploy</p>
+<p> 持续集成（CI）：Jenkins、Bamboo、Hudson、</p>
+<p> 配置管理：Ansible、Chef、Puppet、SaltStack、ScriptRock GuardRail</p>
+<p> 容器：Docker、LXC、第三方厂商如 AWS</p>
+<p> 编排：Kubernetes、Core、Apache Mesos、DC/OS、Swarm</p>
+<p> 服务注册与发现：Zookeeper、etcd、Consul</p>
 <span id="more"></span>
-<h3 id="Preferences-sublime-settings-User"><a href="#Preferences-sublime-settings-User" class="headerlink" title="Preferences.sublime-settings-User"></a>Preferences.sublime-settings-User</h3><pre><code>&#123;
-    &quot;font_size&quot;: 13,
-    &quot;ignored_packages&quot;:
-    [&quot;Vintage&quot;],
-    &quot;theme&quot;: &quot;ayu-light.sublime-theme&quot;,
-    &quot;color_scheme&quot;: &quot;Packages/ayu/ayu-light.tmTheme&quot;,
-    &quot;update_check&quot;: false // 禁止软件自动更新
-&#125;
-</code></pre><h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>Package Control - 包控制管理工具<br>Alignment - 行对齐工具<br>SideBarEnhancements - 侧边栏右键加强<br>A File Icon - 主题 ayu 依赖的图标插件<br>Git</p>
-<h3 id="设置 -package- 代理 -shadowsocks"><a href="# 设置 -package- 代理 -shadowsocks" class="headerlink" title="设置 package 代理 (shadowsocks)"></a> 设置 package 代理(shadowsocks)</h3><p>Preferences -&gt; Package Settings -&gt; Package Control -&gt; Settings - User</p>
-<pre><code>    &quot;http_proxy&quot;: &quot;http://127.0.0.1:1087&quot;,
-    &quot;https_proxy&quot;: &quot;http://127.0.0.1:1087&quot;
-</code></pre><h3 id="快捷键"><a href="# 快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>Command+Shift+P - Package Control<br>Command+, - Settings</p>
+<p> 脚本语言：python、ruby、shell</p>
+<p> 日志管理：ELK、Logentries、Logrotate</p>
+<p> 系统监控：Zabbix、Datadog、Graphite、Icinga、Nagios</p>
+<p> 性能监控：AppDynamics、New Relic、Splunk</p>
+<p> 压力测试：JMeter、Blaze Meter、loader.io</p>
+<p> 预警：PagerDuty、pingdom、厂商自带如 AWS SNS</p>
+<p>HTTP 加速器：Varnish</p>
+<p> 消息总线：ActiveMQ、SQS</p>
+<p> 应用服务器：Tomcat、JBoss</p>
+<p>Web 服务器：Apache、Nginx、IIS</p>
+<p> 数据库：MySQL、Oracle、PostgreSQL 等关系型数据库；cassandra、mongoDB、redis 等 NoSQL 数据库 </p>
+<p> 项目管理（PM）：Jira、Asana、Taiga、Trello、Basecamp、Pivotal Tracker</p>
+<p> 在工具的选择上，需要结合公司业务需求和技术团队情况而定。（注：更多关于工具的详细介绍可以参见此文：<a href="https://xebialabs.com/assets/files/infographics/periodic_table_11x17inc_v2_clean_outlines.pdf">51 Best DevOps Tools for DevOps Engineers</a>）</p>
 ]]></content>
       <categories>
         <category>Develop</category>
       </categories>
   </entry>
   <entry>
-    <title>Hi, iterm2 oh-my-zsh solarized</title>
-    <url>/posts/fd26fbfd.html</url>
-    <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg" alt=""></p>
-<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><pre><code>brew cask install iterm2
-</code></pre><p>如果没安装 homebrew，就直接 <a href="http://iterm2.com/downloads.html"> 官方网站 </a> 下载安装包</p>
-<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p><a href="http://ohmyz.sh/">http://ohmyz.sh/</a><br><a href="https://github.com/robbyrussell/oh-my-zsh">https://github.com/robbyrussell/oh-my-zsh</a></p>
+    <title>Deploy docker swarm use multi consul and swarm-manager</title>
+    <url>/posts/41995739.html</url>
+    <content><![CDATA[<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg" alt=""></p>
+<h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><pre><code class="bash"># useradd mfg
+# passwd mfg
+# echo &#39;
+mfg        ALL=(ALL)       NOPASSWD: ALL&#39; &gt;&gt; /etc/sudoers
+# exit
+$ ssh &lt;no_root&gt;@*.*.*.*
+$ curl -fsSL https://get.docker.com/ | sh
+$ sudo usermod -aG docker $(whoami)
+$ sudo systemctl restart docker &amp;&amp; sudo systemctl enable docker
+</code></pre>
 <span id="more"></span>
-<pre><code>$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  4019  100  4019    0     0   3668      0  0:00:01  0:00:01 --:--:-- 2052k
-Cloning Oh My Zsh...
-Cloning into &#39;/Users/opsforce/.oh-my-zsh&#39;...
-remote: Counting objects: 852, done.
-remote: Compressing objects: 100% (716/716), done.
-remote: Total 852 (delta 16), reused 787 (delta 10), pack-reused 0
-Receiving objects: 100% (852/852), 581.15 KiB | 17.00 KiB/s, done.
-Resolving deltas: 100% (16/16), done.
-Looking for an existing zsh config...
-Using the Oh My Zsh template file and adding it to ~/.zshrc
-Time to change your default shell to zsh!
-Changing shell for opsforce.
-Password for opsforce:
-         __                                     __
-  ____  / /_     ____ ___  __  __   ____  _____/ /_
- / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \
-/ /_/ / / / /  / / / / / / /_/ /    / /_(__) / / /
-\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
-                        /____/                       ....is now installed!
+<h2 id="Consul"><a href="#Consul" class="headerlink" title="Consul"></a>Consul</h2><pre><code class="bash">#####################################################################################################
+# consul  https://hub.docker.com/r/progrium/consul/  
+# https://github.com/gliderlabs/docker-consul 
+# https://docs.docker.com/swarm/reference/manage/ 
+# https://docs.docker.com/swarm/reference/join/
+#####################################################################################################
+
+Running a real Consul cluster in a production environment
+Setting up a real cluster on separate hosts is very similar to our single host cluster setup process, but with a few differences:
+
+We assume there is a private network between hosts. Each host should have an IP on this private network
+We&#39;re going to pass this private IP to Consul via the -advertise flag
+We&#39;re going to publish all ports, including internal Consul ports (8300, 8301, 8302), on this IP
+We set up a volume at /data for persistence. As an example, we&#39;ll bind mount /mnt from the host
+Assuming we&#39;re on a host with a private IP of 172.16.2.9 and the IP of docker bridge docker0 is 172.17.0.1 we can start the first host agent:
+
+$ docker run --restart=always --name consul-01 -d -h node1 -v /data/consul/data:/data \
+    -p 172.16.2.9:8300:8300 \
+    -p 172.16.2.9:8301:8301 \
+    -p 172.16.2.9:8301:8301/udp \
+    -p 172.16.2.9:8302:8302 \
+    -p 172.16.2.9:8302:8302/udp \
+    -p 172.16.2.9:8400:8400 \
+    -p 172.16.2.9:8500:8500 \
+    -p 172.17.0.1:53:53/udp \
+    progrium/consul -server -advertise 172.16.2.9 -bootstrap-expect 3
+
+## On the second host, we&#39;d run the same thing, but passing a -join to the first node&#39;s IP. Let&#39;s say the private IP for this host is 172.16.2.10:
+
+$ docker run --restart=always --name consul-02 -d -h node2 -v /data/consul/data:/data  \
+    -p 172.16.2.10:8300:8300 \
+    -p 172.16.2.10:8301:8301 \
+    -p 172.16.2.10:8301:8301/udp \
+    -p 172.16.2.10:8302:8302 \
+    -p 172.16.2.10:8302:8302/udp \
+    -p 172.16.2.10:8400:8400 \
+    -p 172.16.2.10:8500:8500 \
+    -p 172.17.0.1:53:53/udp \
+    progrium/consul -server -advertise 172.16.2.10 -join 172.16.2.9
+
+## And the third host with an IP of 172.16.2.11:
+
+$ docker run --restart=always --name consul-03 -d -h node3 -v /data/consul/data:/data  \
+    -p 172.16.2.11:8300:8300 \
+    -p 172.16.2.11:8301:8301 \
+    -p 172.16.2.11:8301:8301/udp \
+    -p 172.16.2.11:8302:8302 \
+    -p 172.16.2.11:8302:8302/udp \
+    -p 172.16.2.11:8400:8400 \
+    -p 172.16.2.11:8500:8500 \
+    -p 172.17.0.1:53:53/udp \
+    progrium/consul -server -advertise 172.16.2.11 -join 172.16.2.9
+
+## That&#39;s it! Once this last node connects, it will bootstrap into a cluster. You now have a working cluster running in production on a private network.
+</code></pre>
+<h2 id="Lb-for-consul-using-nginx- 或者使用云服务商的 lb"><a href="#Lb-for-consul-using-nginx- 或者使用云服务商的 lb" class="headerlink" title="Lb for consul using nginx [ 或者使用云服务商的 lb]"></a>Lb for consul using nginx [或者使用云服务商的 lb]</h2><pre><code class="bash">$ docker run -d --name nginx -v $&#123;HOME&#125;/nginx/conf.d:/etc/nginx/conf.d -p 8000:80 nginx:1.13.3-alpine
+$ vi $&#123;HOME&#125;/nginx/conf.d/consul.conf
+upstream docker-consul &#123;
+  server 172.16.2.9:8500;
+  server 172.16.2.10:8500;
+  server 172.16.2.11:8500;
+&#125;
+
+server &#123;
+  listen 80;
+  server_name nginx-consul;
+
+  location / &#123;
+    proxy_pass                          http://docker-consul;
+    proxy_set_header  Host              $http_host;
+    proxy_set_header  X-Real-IP         $remote_addr; # pass on real client&#39;s IP
+    proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header  X-Forwarded-Proto $scheme;
+  &#125;
+
+&#125;
+
+$ docker cp consul.conf nginx:/etc/nginx/conf.d
+$ docker exec -it nginx nginx -s reload
+
+</code></pre>
+<h2 id="Swarm-manager-nodes"><a href="#Swarm-manager-nodes" class="headerlink" title="Swarm manager nodes"></a>Swarm manager nodes</h2><pre><code class="bash">#####################################################################################################
+# [Swarm: A Docker-native clustering system | Docker Documentation](https://docs.docker.com/swarm/reference/swarm/)
+# [High availability in Docker Swarm | Docker Documentation](https://docs.docker.com/swarm/multi-manager-setup/)
+# [Build a Swarm cluster for production | Docker Documentation](https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances)
+#####################################################################################################
+
+#### swarm manager
+
+$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-01 swarm manage -H :4000 --replication --advertise 172.16.2.9:4000 consul://172.16.2.12:8500
+
+$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-02 swarm manage -H :4000 --replication --advertise 172.16.2.10:4000 consul://172.16.2.12:8500
+
+$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-03 swarm manage -H :4000 --replication --advertise 172.16.2.11:4000 consul://172.16.2.12:8500
+
+</code></pre>
+<h2 id="Swarm-slave-nodes"><a href="#Swarm-slave-nodes" class="headerlink" title="Swarm slave nodes"></a>Swarm slave nodes</h2><pre><code class="bash">$ sudo vi /usr/lib/systemd/system/docker.service
+
+ExecStart=/usr/bin/dockerd
+
+change to  ===&gt;&gt;&gt;
+
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=consul://172.16.2.12:8500 --cluster-advertise=172.16.2.9:2375
 
 
-Please look over the ~/.zshrc file to select plugins, themes, and options.
+#### swarm slave
+$ docker run -d --restart=always --name=swarm-slave swarm join --advertise=172.16.2.10:2375 consul://172.16.2.12:8500
 
-p.s. Follow us at https://twitter.com/ohmyzsh.
+$ sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart docker
+</code></pre>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><pre><code class="bash">$ docker -H :4000 run -d --name nginx-test -e constraint:node==iZuf654mu2j1ottom86sm9Z -p 80:80 nginx:1.13.3-alpine
 
-p.p.s. Get stickers and t-shirts at https://shop.planetargon.com.
-</code></pre><h3 id="使用 pip 安装 Powerline"><a href="# 使用 pip 安装 Powerline" class="headerlink" title="使用 pip 安装 Powerline"></a>使用 pip 安装 Powerline</h3><pre><code>$ sudo pip install powerline-status
-</code></pre><h3 id="Powerline 字体下载安装"><a href="#Powerline 字体下载安装" class="headerlink" title="Powerline 字体下载安装"></a>Powerline 字体下载安装</h3><pre><code>$ git clone https://github.com/powerline/fonts.git
-$ ./fonts/install.sh
-</code></pre><p>设置 iTerm 2 的 Regular Font 和 Non-ASCII Font<br>安装完字体库之后，把 iTerm 2 的设置里的 Profile 中的 Text 选项卡中里的 Font 的字体设置成 Powerline 的字体，我这里设置的字体是 12pt Meslo LG L DZ Regular for Powerline</p>
-<h3 id="修改主题"><a href="# 修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><pre><code>$ vi .zshrc
-#ZSH_THEME=&quot;robbyrussell&quot;
-ZSH_THEME=&quot;agnoster&quot;
-</code></pre><h3 id="安装配色方案"><a href="# 安装配色方案" class="headerlink" title="安装配色方案"></a>安装配色方案 </h3><p> 在 iTerm 2 输入以下命令：</p>
-<pre><code>$ git clone https://github.com/altercation/solarized.git
-$ open solarized/iterm2-colors-solarized # 打开配色所在目录
-</code></pre><p>打开配色所在目录，双击 Solarized Dark.itermcolors 和 Solarized Light.itermcolors 两个文件就可以把配置文件导入到 iTerm2 里，然后选择 Solarized 配色：Preferences -&gt; Profiles -&gt; Default -&gt; Colors -&gt; Color Presets…</p>
-<h3 id="增加指令高亮效果 -zsh-syntax-highlighting"><a href="# 增加指令高亮效果 -zsh-syntax-highlighting" class="headerlink" title="增加指令高亮效果 zsh-syntax-highlighting"></a>增加指令高亮效果 zsh-syntax-highlighting</h3><pre><code>$ brew install zsh-syntax-highlighting
+</code></pre>
+<h2 id="Maintain"><a href="#Maintain" class="headerlink" title="Maintain"></a>Maintain</h2><pre><code class="bash">## common command
+$ docker -H :4000 info
+$ docker -H :4000 ps
+$ docker-compose -H :4000 -f ~/docker-compose.yml ps
 
-如果没安装 homebrew，就下载源码安装
-
-$ cd ~/.oh-my-zsh/custom/plugins
-$ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-$ echo &#39;# syntax-highlighting
-plugins=(zsh-syntax-highlighting)
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#39; &gt;&gt; ~/.zshrc
-$ source ~/.zshrc # 立即生效
-</code></pre><h4 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://smk17.cn/posts/108/">http://smk17.cn/posts/108/</a><br><a href="https://gist.github.com/kevin-smets/8568070">https://gist.github.com/kevin-smets/8568070</a><br><a href="https://www.jianshu.com/p/7de00c73a2bb">https://www.jianshu.com/p/7de00c73a2bb</a><br><a href="https://zhuanlan.zhihu.com/p/26373052">https://zhuanlan.zhihu.com/p/26373052</a></p>
+## common issue
+* 如果出现 docker -H :4000 info 显示没有节点或者缺少某个节点，到缺少的节点上执行 docker restart slave
+</code></pre>
+<h2 id="Other-Danger"><a href="#Other-Danger" class="headerlink" title="Other [Danger!!!]"></a>Other [Danger!!!]</h2><pre><code class="bash">$ docker stop $(docker ps -a -q) &amp;&amp; docker rm $(docker ps -a -q) &amp;&amp; sudo rm -rf /data/consul &amp;&amp; sudo rm -rf /etc/docker/key.json
+</code></pre>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://hub.docker.com/r/progrium/consul/">https://hub.docker.com/r/progrium/consul/</a><br><a href="https://github.com/gliderlabs/docker-consul">GitHub - gliderlabs/docker-consul: Dockerized Consul</a><br><a href="https://docs.docker.com/swarm/reference/manage/">manage — Create a Swarm manager | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/join/">join — Create a Swarm node | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/swarm/">Swarm: A Docker-native clustering system | Docker Documentation</a> <a href="https://docs.docker.com/swarm/multi-manager-setup/">High availability in Docker Swarm | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances">Build a Swarm cluster for production | Docker Documentation</a></p>
 ]]></content>
       <categories>
-        <category>macOS</category>
-        <category>Unix/Linux</category>
+        <category>Docker</category>
       </categories>
       <tags>
-        <tag>iTerm2</tag>
-        <tag>zsh</tag>
-        <tag>solarized</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My macOS Software list [Continually updating]</title>
-    <url>/posts/a0f6c374.html</url>
-    <content><![CDATA[<ul>
-<li>1password 6 - 密码管理 </li>
-<li>atom - 开发工具 </li>
-<li>bear - Markdown &amp;&amp; GTD</li>
-<li>boxy - 第三方 Gmail for Mac</li>
-<li>calibre - 个人图书馆 </li>
-<li>cleanmymac 3 - 系统管理 </li>
-<li>docker</li>
-<li>dropbox</li>
-<li>dropdmg</li>
-<li>foxit reader - PDF view</li>
-<li>google chrome</li>
-<li>iina - 牛 X 的视频播放软件 </li>
-<li>instant translate - 牛 X 的翻译软件 </li>
-</ul>
-<span id="more"></span>
-<ul>
-<li>istat menus - 状态栏显示系统状况 <br><del>kindle</del><br><del>kypass</del></li>
-<li>microsoft excel</li>
-<li>microsoft word</li>
-<li>microsoft powerpoint</li>
-<li>navicat premium - 关系型数据库图形化工具 </li>
-<li>neteasemusic - 网易云音乐 <br><del>nextcloud</del></li>
-<li>parallels desktop - Mac 上最牛 X 的虚拟化软件 </li>
-<li>robo 3t - MongoDB 图形化工具 </li>
-<li>seafile client - 企业存储 </li>
-<li>shadowsocksx ng - 番·羽·土·啬 </li>
-<li>sketch - 矢量图设计工具 </li>
-<li>slack - 团队交流协作工具 </li>
-<li>sublime text - 开发工具 <br><del>surge</del><br><del>teampaper snap</del></li>
-<li>things - GTD 工具 </li>
-<li>tower - GIT 图形化工具 </li>
-<li>visual studio code - 开发工具 </li>
-<li>vu - instagram 第三方 app</li>
-<li>webtorrent - Mac 上最牛 X 的种子播放工具 </li>
-<li>wechat</li>
-<li>xcode - Mac 自家开发工具 </li>
-<li> 网易邮箱大师 </li>
-<li> 订票助手 </li>
-<li>The Unarchiver - RAR 解压缩 </li>
-<li>Reeder - RSS 阅读 </li>
-<li>snappy - 截图工具 </li>
-<li>iPic &amp;&amp; iPic Mover - 上传图床工具并生成 markdown 格式 </li>
-<li>powershell - Azure 终端工具 </li>
-</ul>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
+        <tag>Docker</tag>
+        <tag>Swarm</tag>
+        <tag>Consul</tag>
       </tags>
   </entry>
   <entry>
@@ -517,300 +564,146 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
       </tags>
   </entry>
   <entry>
-    <title>使用 Travis CI 自动部署 Hexo</title>
-    <url>/posts/6c332584.html</url>
-    <content><![CDATA[<p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p>
-<p>使用 GitHub 登录 travis-ci.org</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt=""></p>
-<p>登录后，点击红色区域选择想要自动部署的 repo</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg" alt=""></p>
-<p>到 GitHub-setting 申请 Personal access token</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg" alt=""></p>
-<p>得到 Personal access token 后，添加到 travisci 对应 repo 的环境变量 GH_TOKEN</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg" alt=""></p>
-<span id="more"></span>
-<p>编写.travis.yml，并上传到 master 分支</p>
-<pre><code># file: .travis.yml
-
-language: node_js  #设置语言
-
-node_js: stable  #设置相应的版本
-
-# S: Build Lifecycle
-install:
-  - npm install  #安装 hexo 及插件
-
-#before_script:
- # - npm install -g gulp
-
-script:
-  - hexo clean  #清除
-  - hexo generate  #生成静态网页
-
-after_script:
-  - cd ./public
-  - git init
-  - git config user.name &quot;your name&quot;  #修改 name
-  - git config user.email &quot;your email&quot;  #修改 email
-  - git add .
-  - git commit -m &quot;update myblog&quot; #此处看情况修改
-  - git push --force --quiet &quot;https://$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:gh-pages #GH_TOKEN 是在 TravisCI 中配置 token 的名称
-# E: Build LifeCycle
-
-branches:
-  only:
-    - master  #只监测 master 分支，对应的源码分支
-
-env:
-  global:
-    - GH_REF: github.com/&lt;github username&gt;/&lt;your repo&gt;.git #设置 GH_REF，注意更改
-</code></pre><p>不出意外的，现在现在新建一遍文章 push 到 GitHub 就会自动部署到 gh-pages 分支了</p>
-<p>good luck ~:~</p>
-<h2 id="注意"><a href="# 注意" class="headerlink" title="注意"></a>注意 </h2><p> 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用</p>
-<h2 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/e22c13d85659">http://www.jianshu.com/p/e22c13d85659</a></p>
-]]></content>
-      <categories>
-        <category>CI/CD</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>TravisCI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deploy docker swarm use multi consul and swarm-manager</title>
-    <url>/posts/41995739.html</url>
-    <content><![CDATA[<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg" alt=""></p>
-<h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><pre><code class="bash"># useradd mfg
-# passwd mfg
-# echo &#39;
-mfg        ALL=(ALL)       NOPASSWD: ALL&#39; &gt;&gt; /etc/sudoers
-# exit
-$ ssh &lt;no_root&gt;@*.*.*.*
-$ curl -fsSL https://get.docker.com/ | sh
-$ sudo usermod -aG docker $(whoami)
-$ sudo systemctl restart docker &amp;&amp; sudo systemctl enable docker
-</code></pre>
-<span id="more"></span>
-<h2 id="Consul"><a href="#Consul" class="headerlink" title="Consul"></a>Consul</h2><pre><code class="bash">#####################################################################################################
-# consul  https://hub.docker.com/r/progrium/consul/  
-# https://github.com/gliderlabs/docker-consul 
-# https://docs.docker.com/swarm/reference/manage/ 
-# https://docs.docker.com/swarm/reference/join/
-#####################################################################################################
-
-Running a real Consul cluster in a production environment
-Setting up a real cluster on separate hosts is very similar to our single host cluster setup process, but with a few differences:
-
-We assume there is a private network between hosts. Each host should have an IP on this private network
-We&#39;re going to pass this private IP to Consul via the -advertise flag
-We&#39;re going to publish all ports, including internal Consul ports (8300, 8301, 8302), on this IP
-We set up a volume at /data for persistence. As an example, we&#39;ll bind mount /mnt from the host
-Assuming we&#39;re on a host with a private IP of 172.16.2.9 and the IP of docker bridge docker0 is 172.17.0.1 we can start the first host agent:
-
-$ docker run --restart=always --name consul-01 -d -h node1 -v /data/consul/data:/data \
-    -p 172.16.2.9:8300:8300 \
-    -p 172.16.2.9:8301:8301 \
-    -p 172.16.2.9:8301:8301/udp \
-    -p 172.16.2.9:8302:8302 \
-    -p 172.16.2.9:8302:8302/udp \
-    -p 172.16.2.9:8400:8400 \
-    -p 172.16.2.9:8500:8500 \
-    -p 172.17.0.1:53:53/udp \
-    progrium/consul -server -advertise 172.16.2.9 -bootstrap-expect 3
-
-## On the second host, we&#39;d run the same thing, but passing a -join to the first node&#39;s IP. Let&#39;s say the private IP for this host is 172.16.2.10:
-
-$ docker run --restart=always --name consul-02 -d -h node2 -v /data/consul/data:/data  \
-    -p 172.16.2.10:8300:8300 \
-    -p 172.16.2.10:8301:8301 \
-    -p 172.16.2.10:8301:8301/udp \
-    -p 172.16.2.10:8302:8302 \
-    -p 172.16.2.10:8302:8302/udp \
-    -p 172.16.2.10:8400:8400 \
-    -p 172.16.2.10:8500:8500 \
-    -p 172.17.0.1:53:53/udp \
-    progrium/consul -server -advertise 172.16.2.10 -join 172.16.2.9
-
-## And the third host with an IP of 172.16.2.11:
-
-$ docker run --restart=always --name consul-03 -d -h node3 -v /data/consul/data:/data  \
-    -p 172.16.2.11:8300:8300 \
-    -p 172.16.2.11:8301:8301 \
-    -p 172.16.2.11:8301:8301/udp \
-    -p 172.16.2.11:8302:8302 \
-    -p 172.16.2.11:8302:8302/udp \
-    -p 172.16.2.11:8400:8400 \
-    -p 172.16.2.11:8500:8500 \
-    -p 172.17.0.1:53:53/udp \
-    progrium/consul -server -advertise 172.16.2.11 -join 172.16.2.9
-
-## That&#39;s it! Once this last node connects, it will bootstrap into a cluster. You now have a working cluster running in production on a private network.
-</code></pre>
-<h2 id="Lb-for-consul-using-nginx- 或者使用云服务商的 lb"><a href="#Lb-for-consul-using-nginx- 或者使用云服务商的 lb" class="headerlink" title="Lb for consul using nginx [ 或者使用云服务商的 lb]"></a>Lb for consul using nginx [或者使用云服务商的 lb]</h2><pre><code class="bash">$ docker run -d --name nginx -v $&#123;HOME&#125;/nginx/conf.d:/etc/nginx/conf.d -p 8000:80 nginx:1.13.3-alpine
-$ vi $&#123;HOME&#125;/nginx/conf.d/consul.conf
-upstream docker-consul &#123;
-  server 172.16.2.9:8500;
-  server 172.16.2.10:8500;
-  server 172.16.2.11:8500;
-&#125;
-
-server &#123;
-  listen 80;
-  server_name nginx-consul;
-
-  location / &#123;
-    proxy_pass                          http://docker-consul;
-    proxy_set_header  Host              $http_host;
-    proxy_set_header  X-Real-IP         $remote_addr; # pass on real client&#39;s IP
-    proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
-    proxy_set_header  X-Forwarded-Proto $scheme;
-  &#125;
-
-&#125;
-
-$ docker cp consul.conf nginx:/etc/nginx/conf.d
-$ docker exec -it nginx nginx -s reload
-
-</code></pre>
-<h2 id="Swarm-manager-nodes"><a href="#Swarm-manager-nodes" class="headerlink" title="Swarm manager nodes"></a>Swarm manager nodes</h2><pre><code class="bash">#####################################################################################################
-# [Swarm: A Docker-native clustering system | Docker Documentation](https://docs.docker.com/swarm/reference/swarm/)
-# [High availability in Docker Swarm | Docker Documentation](https://docs.docker.com/swarm/multi-manager-setup/)
-# [Build a Swarm cluster for production | Docker Documentation](https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances)
-#####################################################################################################
-
-#### swarm manager
-
-$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-01 swarm manage -H :4000 --replication --advertise 172.16.2.9:4000 consul://172.16.2.12:8500
-
-$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-02 swarm manage -H :4000 --replication --advertise 172.16.2.10:4000 consul://172.16.2.12:8500
-
-$ docker run -d -p 4000:4000 --restart=always --name=swarm-manager-03 swarm manage -H :4000 --replication --advertise 172.16.2.11:4000 consul://172.16.2.12:8500
-
-</code></pre>
-<h2 id="Swarm-slave-nodes"><a href="#Swarm-slave-nodes" class="headerlink" title="Swarm slave nodes"></a>Swarm slave nodes</h2><pre><code class="bash">$ sudo vi /usr/lib/systemd/system/docker.service
-
-ExecStart=/usr/bin/dockerd
-
-change to  ===&gt;&gt;&gt;
-
-ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=consul://172.16.2.12:8500 --cluster-advertise=172.16.2.9:2375
-
-
-#### swarm slave
-$ docker run -d --restart=always --name=swarm-slave swarm join --advertise=172.16.2.10:2375 consul://172.16.2.12:8500
-
-$ sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart docker
-</code></pre>
-<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><pre><code class="bash">$ docker -H :4000 run -d --name nginx-test -e constraint:node==iZuf654mu2j1ottom86sm9Z -p 80:80 nginx:1.13.3-alpine
-
-</code></pre>
-<h2 id="Maintain"><a href="#Maintain" class="headerlink" title="Maintain"></a>Maintain</h2><pre><code class="bash">## common command
-$ docker -H :4000 info
-$ docker -H :4000 ps
-$ docker-compose -H :4000 -f ~/docker-compose.yml ps
-
-## common issue
-* 如果出现 docker -H :4000 info 显示没有节点或者缺少某个节点，到缺少的节点上执行 docker restart slave
-</code></pre>
-<h2 id="Other-Danger"><a href="#Other-Danger" class="headerlink" title="Other [Danger!!!]"></a>Other [Danger!!!]</h2><pre><code class="bash">$ docker stop $(docker ps -a -q) &amp;&amp; docker rm $(docker ps -a -q) &amp;&amp; sudo rm -rf /data/consul &amp;&amp; sudo rm -rf /etc/docker/key.json
-</code></pre>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://hub.docker.com/r/progrium/consul/">https://hub.docker.com/r/progrium/consul/</a><br><a href="https://github.com/gliderlabs/docker-consul">GitHub - gliderlabs/docker-consul: Dockerized Consul</a><br><a href="https://docs.docker.com/swarm/reference/manage/">manage — Create a Swarm manager | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/join/">join — Create a Swarm node | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/reference/swarm/">Swarm: A Docker-native clustering system | Docker Documentation</a> <a href="https://docs.docker.com/swarm/multi-manager-setup/">High availability in Docker Swarm | Docker Documentation</a><br><a href="https://docs.docker.com/swarm/install-manual/#step-2-create-your-instances">Build a Swarm cluster for production | Docker Documentation</a></p>
-]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Swarm</tag>
-        <tag>Consul</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac 下配置 Python2 和 Python3 共存</title>
-    <url>/posts/9ec1380c.html</url>
-    <content><![CDATA[<p>Mac 默认是安装了 Python2 的，所以只需要安装 Python3</p>
-<pre><code>$ brew install python3 # 使用 homebrew 安装 python3
-$ python3 -V
-Python 3.6.5
-
-$ brew install pyenv-virtualenv # 安装 virtualenv
-或者
-$ sudo easy_install virtualenv # 安装 virtualenv
-
-$ mkdir myenv &amp;&amp; cd myenv # 创建本地工作目录
-$ which python3 # 找出 Python3 路径
-/usr/local/bin/python3
-
-# python2
-$ virtualenv --no-site-packages pyenv # 配置 Python2 虚拟路径
-$ source pyenv/bin/activate # 使 Python2 虚拟路径生效
-$ deactivate # 使 Python2 虚拟路径失效
-
-# python3
-$ virtualenv --no-site-packages --python=/usr/local/bin/python3 pyenv3 # 配置 Python3 虚拟路径
-$ source pyenv3/bin/activate # 使 Python3 虚拟路径生效
-$ deactivate # 使 Python3 虚拟路径失效
-</code></pre>]]></content>
-      <categories>
-        <category>Develop</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Python</tag>
-        <tag>Virtualenv</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Remove All Iptables PREROUTING Nat Rules</title>
-    <url>/posts/87cb602a.html</url>
-    <content><![CDATA[<p>To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:</p>
-<pre><code>iptables -t nat --line-numbers -L
-</code></pre><span id="more"></span>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg" alt=""></p>
-<p>As you can see the above command will display all PREROUTING chains with relevant line numbers. Next, we can use these line numbers to remove all PREROUTING chains one by one. For example to remove PREROUTING chain with line number 1 we can do:</p>
-<pre><code>iptables -t nat -D PREROUTING 1
-</code></pre><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr43on6oj30vc0d944q.jpg" alt=""></p>
-<p>In case that you wish to remove all PREROUTING chains with a single command you can try the following command chaining example:</p>
-<pre><code>for i in $(iptables -t nat --line-numbers -L | grep ^[0-9] | awk &#39;&#123; print $1 &#125;&#39; | tac ); do iptables -t nat -D PREROUTING $i; done
-</code></pre><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://lubos.rendek.org/remove-all-iptables-prerouting-nat-rules/">Remove All Iptables PREROUTING Nat Rules</a></p>
+    <title>网站已开启 ssl 访问</title>
+    <url>/posts/dff19b71.html</url>
+    <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fqh244g88lj30gb0agzlh.jpg" alt=""><br> 网站已开启 ssl 访问，使用的是 cloudflare.com 免费 ssl 服务。</p>
 ]]></content>
       <categories>
         <category>Security</category>
       </categories>
+  </entry>
+  <entry>
+    <title>fix-macos-mojave-ssh-connect-trouble</title>
+    <url>/posts/5255ca53.html</url>
+    <content><![CDATA[<p> 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：</p>
+<pre><code>packet_write_wait: Connection to *.*.*.* port 22: Broken pipe
+</code></pre><p> 其实是 ssh 客户端比较新导致的 </p>
+<pre><code>$ ssh -V
+OpenSSH_7.8p1, LibreSSL 2.7.3
+</code></pre><p> 只需添加 ssh 相关配置，可解决问题 </p>
+<pre><code>$ cat .ssh/config
+Host *
+    IPQoS lowdelay throughput
+</code></pre><p> 这个问题困惑了我近半个月 </p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
       <tags>
-        <tag>Firewall</tag>
-        <tag>Iptables</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
-    <title>What DevOps needs?</title>
-    <url>/posts/6adf9790.html</url>
-    <content><![CDATA[<p> 硬性要求：工具上的准备 </p>
-<p> 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：</p>
-<p> 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion</p>
-<p> 构建工具：Ant、Gradle、maven</p>
-<p> 自动部署：Capistrano、CodeDeploy</p>
-<p> 持续集成（CI）：Jenkins、Bamboo、Hudson、</p>
-<p> 配置管理：Ansible、Chef、Puppet、SaltStack、ScriptRock GuardRail</p>
-<p> 容器：Docker、LXC、第三方厂商如 AWS</p>
-<p> 编排：Kubernetes、Core、Apache Mesos、DC/OS、Swarm</p>
-<p> 服务注册与发现：Zookeeper、etcd、Consul</p>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hi, iterm2 oh-my-zsh solarized</title>
+    <url>/posts/fd26fbfd.html</url>
+    <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg" alt=""></p>
+<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><pre><code>brew cask install iterm2
+</code></pre><p>如果没安装 homebrew，就直接 <a href="http://iterm2.com/downloads.html"> 官方网站 </a> 下载安装包</p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p><a href="http://ohmyz.sh/">http://ohmyz.sh/</a><br><a href="https://github.com/robbyrussell/oh-my-zsh">https://github.com/robbyrussell/oh-my-zsh</a></p>
 <span id="more"></span>
-<p> 脚本语言：python、ruby、shell</p>
-<p> 日志管理：ELK、Logentries、Logrotate</p>
-<p> 系统监控：Zabbix、Datadog、Graphite、Icinga、Nagios</p>
-<p> 性能监控：AppDynamics、New Relic、Splunk</p>
-<p> 压力测试：JMeter、Blaze Meter、loader.io</p>
-<p> 预警：PagerDuty、pingdom、厂商自带如 AWS SNS</p>
-<p>HTTP 加速器：Varnish</p>
-<p> 消息总线：ActiveMQ、SQS</p>
-<p> 应用服务器：Tomcat、JBoss</p>
-<p>Web 服务器：Apache、Nginx、IIS</p>
-<p> 数据库：MySQL、Oracle、PostgreSQL 等关系型数据库；cassandra、mongoDB、redis 等 NoSQL 数据库 </p>
-<p> 项目管理（PM）：Jira、Asana、Taiga、Trello、Basecamp、Pivotal Tracker</p>
-<p> 在工具的选择上，需要结合公司业务需求和技术团队情况而定。（注：更多关于工具的详细介绍可以参见此文：<a href="https://xebialabs.com/assets/files/infographics/periodic_table_11x17inc_v2_clean_outlines.pdf">51 Best DevOps Tools for DevOps Engineers</a>）</p>
+<pre><code>$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  4019  100  4019    0     0   3668      0  0:00:01  0:00:01 --:--:-- 2052k
+Cloning Oh My Zsh...
+Cloning into &#39;/Users/opsforce/.oh-my-zsh&#39;...
+remote: Counting objects: 852, done.
+remote: Compressing objects: 100% (716/716), done.
+remote: Total 852 (delta 16), reused 787 (delta 10), pack-reused 0
+Receiving objects: 100% (852/852), 581.15 KiB | 17.00 KiB/s, done.
+Resolving deltas: 100% (16/16), done.
+Looking for an existing zsh config...
+Using the Oh My Zsh template file and adding it to ~/.zshrc
+Time to change your default shell to zsh!
+Changing shell for opsforce.
+Password for opsforce:
+         __                                     __
+  ____  / /_     ____ ___  __  __   ____  _____/ /_
+ / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \
+/ /_/ / / / /  / / / / / / /_/ /    / /_(__) / / /
+\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
+                        /____/                       ....is now installed!
+
+
+Please look over the ~/.zshrc file to select plugins, themes, and options.
+
+p.s. Follow us at https://twitter.com/ohmyzsh.
+
+p.p.s. Get stickers and t-shirts at https://shop.planetargon.com.
+</code></pre><h3 id="使用 pip 安装 Powerline"><a href="# 使用 pip 安装 Powerline" class="headerlink" title="使用 pip 安装 Powerline"></a>使用 pip 安装 Powerline</h3><pre><code>$ sudo pip install powerline-status
+</code></pre><h3 id="Powerline 字体下载安装"><a href="#Powerline 字体下载安装" class="headerlink" title="Powerline 字体下载安装"></a>Powerline 字体下载安装</h3><pre><code>$ git clone https://github.com/powerline/fonts.git
+$ ./fonts/install.sh
+</code></pre><p>设置 iTerm 2 的 Regular Font 和 Non-ASCII Font<br>安装完字体库之后，把 iTerm 2 的设置里的 Profile 中的 Text 选项卡中里的 Font 的字体设置成 Powerline 的字体，我这里设置的字体是 12pt Meslo LG L DZ Regular for Powerline</p>
+<h3 id="修改主题"><a href="# 修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><pre><code>$ vi .zshrc
+#ZSH_THEME=&quot;robbyrussell&quot;
+ZSH_THEME=&quot;agnoster&quot;
+</code></pre><h3 id="安装配色方案"><a href="# 安装配色方案" class="headerlink" title="安装配色方案"></a>安装配色方案 </h3><p> 在 iTerm 2 输入以下命令：</p>
+<pre><code>$ git clone https://github.com/altercation/solarized.git
+$ open solarized/iterm2-colors-solarized # 打开配色所在目录
+</code></pre><p>打开配色所在目录，双击 Solarized Dark.itermcolors 和 Solarized Light.itermcolors 两个文件就可以把配置文件导入到 iTerm2 里，然后选择 Solarized 配色：Preferences -&gt; Profiles -&gt; Default -&gt; Colors -&gt; Color Presets…</p>
+<h3 id="增加指令高亮效果 -zsh-syntax-highlighting"><a href="# 增加指令高亮效果 -zsh-syntax-highlighting" class="headerlink" title="增加指令高亮效果 zsh-syntax-highlighting"></a>增加指令高亮效果 zsh-syntax-highlighting</h3><pre><code>$ brew install zsh-syntax-highlighting
+
+如果没安装 homebrew，就下载源码安装
+
+$ cd ~/.oh-my-zsh/custom/plugins
+$ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+$ echo &#39;# syntax-highlighting
+plugins=(zsh-syntax-highlighting)
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#39; &gt;&gt; ~/.zshrc
+$ source ~/.zshrc # 立即生效
+</code></pre><h4 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://smk17.cn/posts/108/">http://smk17.cn/posts/108/</a><br><a href="https://gist.github.com/kevin-smets/8568070">https://gist.github.com/kevin-smets/8568070</a><br><a href="https://www.jianshu.com/p/7de00c73a2bb">https://www.jianshu.com/p/7de00c73a2bb</a><br><a href="https://zhuanlan.zhihu.com/p/26373052">https://zhuanlan.zhihu.com/p/26373052</a></p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+        <category>Unix/Linux</category>
+      </categories>
+      <tags>
+        <tag>iTerm2</tag>
+        <tag>zsh</tag>
+        <tag>solarized</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hi, sublime text 3</title>
+    <url>/posts/8e109f13.html</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=80 src="http://music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fpp6pb8snvj311y0jnwfs.jpg" alt=""></p>
+<h3 id="安装 Package-Control"><a href="# 安装 Package-Control" class="headerlink" title="安装 Package Control"></a>安装 Package Control</h3><p>Tools -&gt; Install Package Control</p>
+<h3 id="安装主题"><a href="# 安装主题" class="headerlink" title="安装主题"></a>安装主题 </h3><p> 到 package control 里面搜索相应主题安装即可，推荐一款主题 Ayu</p>
+<span id="more"></span>
+<h3 id="Preferences-sublime-settings-User"><a href="#Preferences-sublime-settings-User" class="headerlink" title="Preferences.sublime-settings-User"></a>Preferences.sublime-settings-User</h3><pre><code>&#123;
+    &quot;font_size&quot;: 13,
+    &quot;ignored_packages&quot;:
+    [&quot;Vintage&quot;],
+    &quot;theme&quot;: &quot;ayu-light.sublime-theme&quot;,
+    &quot;color_scheme&quot;: &quot;Packages/ayu/ayu-light.tmTheme&quot;,
+    &quot;update_check&quot;: false // 禁止软件自动更新
+&#125;
+</code></pre><h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>Package Control - 包控制管理工具<br>Alignment - 行对齐工具<br>SideBarEnhancements - 侧边栏右键加强<br>A File Icon - 主题 ayu 依赖的图标插件<br>Git</p>
+<h3 id="设置 -package- 代理 -shadowsocks"><a href="# 设置 -package- 代理 -shadowsocks" class="headerlink" title="设置 package 代理 (shadowsocks)"></a> 设置 package 代理(shadowsocks)</h3><p>Preferences -&gt; Package Settings -&gt; Package Control -&gt; Settings - User</p>
+<pre><code>    &quot;http_proxy&quot;: &quot;http://127.0.0.1:1087&quot;,
+    &quot;https_proxy&quot;: &quot;http://127.0.0.1:1087&quot;
+</code></pre><h3 id="快捷键"><a href="# 快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>Command+Shift+P - Package Control<br>Command+, - Settings</p>
 ]]></content>
       <categories>
         <category>Develop</category>
@@ -885,6 +778,97 @@ $ deactivate # 使 Python3 虚拟路径失效
       </tags>
   </entry>
   <entry>
+    <title>Mac 下配置 Python2 和 Python3 共存</title>
+    <url>/posts/9ec1380c.html</url>
+    <content><![CDATA[<p>Mac 默认是安装了 Python2 的，所以只需要安装 Python3</p>
+<pre><code>$ brew install python3 # 使用 homebrew 安装 python3
+$ python3 -V
+Python 3.6.5
+
+$ brew install pyenv-virtualenv # 安装 virtualenv
+或者
+$ sudo easy_install virtualenv # 安装 virtualenv
+
+$ mkdir myenv &amp;&amp; cd myenv # 创建本地工作目录
+$ which python3 # 找出 Python3 路径
+/usr/local/bin/python3
+
+# python2
+$ virtualenv --no-site-packages pyenv # 配置 Python2 虚拟路径
+$ source pyenv/bin/activate # 使 Python2 虚拟路径生效
+$ deactivate # 使 Python2 虚拟路径失效
+
+# python3
+$ virtualenv --no-site-packages --python=/usr/local/bin/python3 pyenv3 # 配置 Python3 虚拟路径
+$ source pyenv3/bin/activate # 使 Python3 虚拟路径生效
+$ deactivate # 使 Python3 虚拟路径失效
+</code></pre>]]></content>
+      <categories>
+        <category>Develop</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Python</tag>
+        <tag>Virtualenv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My macOS Software list [Continually updating]</title>
+    <url>/posts/a0f6c374.html</url>
+    <content><![CDATA[<ul>
+<li>1password 6 - 密码管理 </li>
+<li>atom - 开发工具 </li>
+<li>bear - Markdown &amp;&amp; GTD</li>
+<li>boxy - 第三方 Gmail for Mac</li>
+<li>calibre - 个人图书馆 </li>
+<li>cleanmymac 3 - 系统管理 </li>
+<li>docker</li>
+<li>dropbox</li>
+<li>dropdmg</li>
+<li>foxit reader - PDF view</li>
+<li>google chrome</li>
+<li>iina - 牛 X 的视频播放软件 </li>
+<li>instant translate - 牛 X 的翻译软件 </li>
+</ul>
+<span id="more"></span>
+<ul>
+<li>istat menus - 状态栏显示系统状况 <br><del>kindle</del><br><del>kypass</del></li>
+<li>microsoft excel</li>
+<li>microsoft word</li>
+<li>microsoft powerpoint</li>
+<li>navicat premium - 关系型数据库图形化工具 </li>
+<li>neteasemusic - 网易云音乐 <br><del>nextcloud</del></li>
+<li>parallels desktop - Mac 上最牛 X 的虚拟化软件 </li>
+<li>robo 3t - MongoDB 图形化工具 </li>
+<li>seafile client - 企业存储 </li>
+<li>shadowsocksx ng - 番·羽·土·啬 </li>
+<li>sketch - 矢量图设计工具 </li>
+<li>slack - 团队交流协作工具 </li>
+<li>sublime text - 开发工具 <br><del>surge</del><br><del>teampaper snap</del></li>
+<li>things - GTD 工具 </li>
+<li>tower - GIT 图形化工具 </li>
+<li>visual studio code - 开发工具 </li>
+<li>vu - instagram 第三方 app</li>
+<li>webtorrent - Mac 上最牛 X 的种子播放工具 </li>
+<li>wechat</li>
+<li>xcode - Mac 自家开发工具 </li>
+<li> 网易邮箱大师 </li>
+<li> 订票助手 </li>
+<li>The Unarchiver - RAR 解压缩 </li>
+<li>Reeder - RSS 阅读 </li>
+<li>snappy - 截图工具 </li>
+<li>iPic &amp;&amp; iPic Mover - 上传图床工具并生成 markdown 格式 </li>
+<li>powershell - Azure 终端工具 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>跨平台同步 Safari、IE、Chrome、Firefox 的书签</title>
     <url>/posts/7d4f56ae.html</url>
     <content><![CDATA[<h2 id="Windows 环境："><a href="#Windows 环境：" class="headerlink" title="Windows 环境："></a>Windows 环境：</h2><p> 首先下载 iCloud for Windows，<a href="https://support.apple.com/zh-cn/HT204283"> 下载地址 </a></p>
@@ -903,61 +887,77 @@ $ deactivate # 使 Python3 虚拟路径失效
       </tags>
   </entry>
   <entry>
-    <title>Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)</title>
-    <url>/posts/5eaa5d69.html</url>
-    <content><![CDATA[<p>You <a href="http://stackoverflow.com/a/32213131/2613447">can’t clone</a> a Bitbucket repo using <a href="https://desktop.github.com/">GithHub Desktop</a> directly. Instead you would have to:</p>
-<ol>
-<li>Clone the Bitbucket repo locally via command line.</li>
-<li>Add the cloned repository to your GitHub Desktop app.</li>
-</ol>
-<p>After completing these 2 steps, you’ll be able to execute sync, push, pull, commit, and other git commands available in GitHub Desktop for your Bitbucket repository just as you would for any GitHub repository.</p>
-<p><em>You will need your Bitbucket repository’s git URL as available on the <strong>Overview</strong> page of your repository:</em></p>
-<p><img src="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png" alt="Retrieve git URL from Bitbucket.org"></p>
+    <title>使用 Travis CI 自动部署 Hexo</title>
+    <url>/posts/6c332584.html</url>
+    <content><![CDATA[<p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p>
+<p>使用 GitHub 登录 travis-ci.org</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt=""></p>
+<p>登录后，点击红色区域选择想要自动部署的 repo</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg" alt=""></p>
+<p>到 GitHub-setting 申请 Personal access token</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg" alt=""></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg" alt=""></p>
+<p>得到 Personal access token 后，添加到 travisci 对应 repo 的环境变量 GH_TOKEN</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg" alt=""></p>
 <span id="more"></span>
-<h2 id="1-Clone-Bitbucket-Repository-Locally-via-Command-Line"><a href="#1-Clone-Bitbucket-Repository-Locally-via-Command-Line" class="headerlink" title="1. Clone Bitbucket Repository Locally via Command Line"></a>1. Clone Bitbucket Repository Locally via Command Line</h2><ol>
-<li>Open Terminal app.</li>
-<li>Type <code>cd /Local/path/to/parent-folder/to/clone/into</code> (replacing that sample path with the local path to the parent folder you want to clone your Bitbucket repository into).</li>
-<li>Hit enter. You’ve just opened that parent folder on the command line.</li>
-<li>Type <code>git clone https://example@bitbucket.org/path/to/your-repo.git</code> (replacing that sample URL with the Bitbucket URL available on the <strong>Overview</strong> page of your repository).</li>
-<li>Hit enter and watch the repository being cloned. (Once it’s done, it’ll say something like <strong>…done</strong> in one of the last lines.)</li>
-</ol>
-<h2 id="2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App"><a href="#2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App" class="headerlink" title="2. Add Cloned Repository to Your GitHub Desktop App"></a>2. Add Cloned Repository to Your GitHub Desktop App</h2><ol>
-<li>Open GitHub Desktop.</li>
-<li>In the upper right corner (if your sidbar is open) press the large <strong>+</strong> button.</li>
-<li>Select <strong>Add</strong> to add an exisiting local repository.</li>
-<li><p>On the <strong>Add</strong> tab click the <strong>Choose…</strong> button, navigate to the folder you have just cloned your Bitbucket repository into, and select it.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/308422/13249268/a342b1e2-da23-11e5-870f-f6ee0efd1b86.png" alt="“Add” tab in GitHub Desktop"></p>
-</li>
-<li><p>Your newly added repository will appear at the bottom of your sidebar in the <strong>Other</strong> section.</p>
-</li>
-</ol>
-<p><strong>That’s it.</strong><br>You should now be able execute git operations on your Bitbucket repository via your GitHub Desktop app just as on any GitHub repository.</p>
+<p>编写.travis.yml，并上传到 master 分支</p>
+<pre><code># file: .travis.yml
+
+language: node_js  #设置语言
+
+node_js: stable  #设置相应的版本
+
+# S: Build Lifecycle
+install:
+  - npm install  #安装 hexo 及插件
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - hexo clean  #清除
+  - hexo generate  #生成静态网页
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name &quot;your name&quot;  #修改 name
+  - git config user.email &quot;your email&quot;  #修改 email
+  - git add .
+  - git commit -m &quot;update myblog&quot; #此处看情况修改
+  - git push --force --quiet &quot;https://$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:gh-pages #GH_TOKEN 是在 TravisCI 中配置 token 的名称
+# E: Build LifeCycle
+
+branches:
+  only:
+    - master  #只监测 master 分支，对应的源码分支
+
+env:
+  global:
+    - GH_REF: github.com/&lt;github username&gt;/&lt;your repo&gt;.git #设置 GH_REF，注意更改
+</code></pre><p>不出意外的，现在现在新建一遍文章 push 到 GitHub 就会自动部署到 gh-pages 分支了</p>
+<p>good luck ~:~</p>
+<h2 id="注意"><a href="# 注意" class="headerlink" title="注意"></a>注意 </h2><p> 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用</p>
+<h2 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/e22c13d85659">http://www.jianshu.com/p/e22c13d85659</a></p>
 ]]></content>
       <categories>
-        <category>Git</category>
+        <category>CI/CD</category>
       </categories>
       <tags>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
-        <tag>Bitbucket</tag>
+        <tag>Github</tag>
+        <tag>TravisCI</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+    <title>网站 CICD 迁移至 github action</title>
+    <url>/posts/d44d22bb.html</url>
+    <content><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>
 ]]></content>
+      <categories>
+        <category>CI/CD</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
   </entry>
 </search>
