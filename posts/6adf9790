@@ -20,20 +20,19 @@
     var CONFIG = {"hostname":"opsforce.org","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"KQF320F98G","apiKey":"6b7c5cdc44dd0481ef9243d8f8987b16","indexName":"opsforce.org","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1password 6 - 密码管理 atom - 开发工具 bear - Markdown &amp;&amp; GTD boxy - 第三方Gmail for Mac calibre - 个人图书馆 cleanmymac 3 - 系统管理 docker dropbox dropdmg foxit reader - PDF view google chrome iina - 牛X的视频播放软件">
+  <meta name="description" content="硬性要求：工具上的准备 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下： 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion 构建工具：Ant、Gradle、maven 自动部署：Capistrano、CodeDeploy 持续集成（CI）：Jenkins、Bamboo、Hudson、 配置管理：Ansible、Ch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My macOS Software list [Continually updating]">
-<meta property="og:url" content="https://opsforce.org/my-macos-software.html">
+<meta property="og:title" content="What DevOps needs?">
+<meta property="og:url" content="https://opsforce.org/posts/6adf9790">
 <meta property="og:site_name" content="OPSFORCE">
-<meta property="og:description" content="1password 6 - 密码管理 atom - 开发工具 bear - Markdown &amp;&amp; GTD boxy - 第三方Gmail for Mac calibre - 个人图书馆 cleanmymac 3 - 系统管理 docker dropbox dropdmg foxit reader - PDF view google chrome iina - 牛X的视频播放软件">
+<meta property="og:description" content="硬性要求：工具上的准备 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下： 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion 构建工具：Ant、Gradle、maven 自动部署：Capistrano、CodeDeploy 持续集成（CI）：Jenkins、Bamboo、Hudson、 配置管理：Ansible、Ch">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2017-09-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2017-09-08T16:00:00.000Z">
+<meta property="article:published_time" content="2016-05-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2016-05-19T16:00:00.000Z">
 <meta property="article:author" content="Jimmy Zhao">
-<meta property="article:tag" content="macOS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://opsforce.org/my-macos-software.html">
+<link rel="canonical" href="https://opsforce.org/posts/6adf9790">
 
 
 <script id="page-configurations">
@@ -46,7 +45,7 @@
   };
 </script>
 
-  <title>My macOS Software list [Continually updating] | OPSFORCE</title>
+  <title>What DevOps needs? | OPSFORCE</title>
   
 
 
@@ -197,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/my-macos-software.html">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/6adf9790">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -210,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          My macOS Software list [Continually updating]
+          What DevOps needs?
         </h1>
 
         <div class="post-meta">
@@ -220,7 +219,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-09-09 00:00:00" itemprop="dateCreated datePublished" datetime="2017-09-09T00:00:00+08:00">2017-09-09</time>
+              <time title="Created: 2016-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2016-05-20T00:00:00+08:00">2016-05-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/macOS/" itemprop="url" rel="index"><span itemprop="name">macOS</span></a>
+                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
                 </span>
             </span>
 
@@ -238,7 +237,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>696</span>
+              <span>797</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -257,51 +256,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
-<li>1password 6 - 密码管理 </li>
-<li>atom - 开发工具 </li>
-<li>bear - Markdown &amp;&amp; GTD</li>
-<li>boxy - 第三方 Gmail for Mac</li>
-<li>calibre - 个人图书馆 </li>
-<li>cleanmymac 3 - 系统管理 </li>
-<li>docker</li>
-<li>dropbox</li>
-<li>dropdmg</li>
-<li>foxit reader - PDF view</li>
-<li>google chrome</li>
-<li>iina - 牛 X 的视频播放软件 </li>
-<li>instant translate - 牛 X 的翻译软件 </li>
-</ul>
+        <p> 硬性要求：工具上的准备 </p>
+<p> 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：</p>
+<p> 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion</p>
+<p> 构建工具：Ant、Gradle、maven</p>
+<p> 自动部署：Capistrano、CodeDeploy</p>
+<p> 持续集成（CI）：Jenkins、Bamboo、Hudson、</p>
+<p> 配置管理：Ansible、Chef、Puppet、SaltStack、ScriptRock GuardRail</p>
+<p> 容器：Docker、LXC、第三方厂商如 AWS</p>
+<p> 编排：Kubernetes、Core、Apache Mesos、DC/OS、Swarm</p>
+<p> 服务注册与发现：Zookeeper、etcd、Consul</p>
 <span id="more"></span>
-<ul>
-<li>istat menus - 状态栏显示系统状况 <br><del>kindle</del><br><del>kypass</del></li>
-<li>microsoft excel</li>
-<li>microsoft word</li>
-<li>microsoft powerpoint</li>
-<li>navicat premium - 关系型数据库图形化工具 </li>
-<li>neteasemusic - 网易云音乐 <br><del>nextcloud</del></li>
-<li>parallels desktop - Mac 上最牛 X 的虚拟化软件 </li>
-<li>robo 3t - MongoDB 图形化工具 </li>
-<li>seafile client - 企业存储 </li>
-<li>shadowsocksx ng - 番·羽·土·啬 </li>
-<li>sketch - 矢量图设计工具 </li>
-<li>slack - 团队交流协作工具 </li>
-<li>sublime text - 开发工具 <br><del>surge</del><br><del>teampaper snap</del></li>
-<li>things - GTD 工具 </li>
-<li>tower - GIT 图形化工具 </li>
-<li>visual studio code - 开发工具 </li>
-<li>vu - instagram 第三方 app</li>
-<li>webtorrent - Mac 上最牛 X 的种子播放工具 </li>
-<li>wechat</li>
-<li>xcode - Mac 自家开发工具 </li>
-<li> 网易邮箱大师 </li>
-<li> 订票助手 </li>
-<li>The Unarchiver - RAR 解压缩 </li>
-<li>Reeder - RSS 阅读 </li>
-<li>snappy - 截图工具 </li>
-<li>iPic &amp;&amp; iPic Mover - 上传图床工具并生成 markdown 格式 </li>
-<li>powershell - Azure 终端工具 </li>
-</ul>
+<p> 脚本语言：python、ruby、shell</p>
+<p> 日志管理：ELK、Logentries、Logrotate</p>
+<p> 系统监控：Zabbix、Datadog、Graphite、Icinga、Nagios</p>
+<p> 性能监控：AppDynamics、New Relic、Splunk</p>
+<p> 压力测试：JMeter、Blaze Meter、loader.io</p>
+<p> 预警：PagerDuty、pingdom、厂商自带如 AWS SNS</p>
+<p>HTTP 加速器：Varnish</p>
+<p> 消息总线：ActiveMQ、SQS</p>
+<p> 应用服务器：Tomcat、JBoss</p>
+<p>Web 服务器：Apache、Nginx、IIS</p>
+<p> 数据库：MySQL、Oracle、PostgreSQL 等关系型数据库；cassandra、mongoDB、redis 等 NoSQL 数据库 </p>
+<p> 项目管理（PM）：Jira、Asana、Taiga、Trello、Basecamp、Pivotal Tracker</p>
+<p> 在工具的选择上，需要结合公司业务需求和技术团队情况而定。（注：更多关于工具的详细介绍可以参见此文：<a target="_blank" rel="noopener" href="https://xebialabs.com/assets/files/infographics/periodic_table_11x17inc_v2_clean_outlines.pdf">51 Best DevOps Tools for DevOps Engineers</a>）</p>
 
     </div>
 
@@ -310,9 +288,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/macOS/" rel="tag"># macOS</a>
-          </div>
 
         
 
@@ -320,12 +295,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/deploy-kubernetes.html" rel="prev" title="Deploy kubernetes [Continually updating]">
-      <i class="fa fa-chevron-left"></i> Deploy kubernetes [Continually updating]
+    <a href="/posts/95d85744" rel="prev" title="修改 git 的远程 url 地址 git 或者 https">
+      <i class="fa fa-chevron-left"></i> 修改 git 的远程 url 地址 git 或者 https
     </a></div>
       <div class="post-nav-item">
-    <a href="/hi-iterm2-oh-my-zsh-solarized.html" rel="next" title="Hi, iterm2 oh-my-zsh solarized">
-      Hi, iterm2 oh-my-zsh solarized <i class="fa fa-chevron-right"></i>
+    <a href="/posts/87cb602a" rel="next" title="Remove All Iptables PREROUTING Nat Rules">
+      Remove All Iptables PREROUTING Nat Rules <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

@@ -20,22 +20,24 @@
     var CONFIG = {"hostname":"opsforce.org","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"KQF320F98G","apiKey":"6b7c5cdc44dd0481ef9243d8f8987b16","indexName":"opsforce.org","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Mac 默认是安装了 Python2 的，所以只需要安装 Python3 $ brew install python3 # 使用 homebrew 安装 python3 $ python3 -V Python 3.6.5  $ brew install pyenv-virtualenv # 安装 virtualenv 或者 $ sudo easy_install virtualenv # 安装 v">
+  <meta name="description" content="To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command: ipt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac 下配置 Python2 和 Python3 共存">
-<meta property="og:url" content="https://opsforce.org/how-to-config-python2-python3-all-in-macos.html">
+<meta property="og:title" content="Remove All Iptables PREROUTING Nat Rules">
+<meta property="og:url" content="https://opsforce.org/posts/87cb602a">
 <meta property="og:site_name" content="OPSFORCE">
-<meta property="og:description" content="Mac 默认是安装了 Python2 的，所以只需要安装 Python3 $ brew install python3 # 使用 homebrew 安装 python3 $ python3 -V Python 3.6.5  $ brew install pyenv-virtualenv # 安装 virtualenv 或者 $ sudo easy_install virtualenv # 安装 v">
+<meta property="og:description" content="To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command: ipt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-07-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2016-07-12T16:00:00.000Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr43on6oj30vc0d944q.jpg">
+<meta property="article:published_time" content="2016-06-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2016-06-08T16:00:00.000Z">
 <meta property="article:author" content="Jimmy Zhao">
-<meta property="article:tag" content="macOS">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="Virtualenv">
+<meta property="article:tag" content="Firewall">
+<meta property="article:tag" content="Iptables">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg">
 
-<link rel="canonical" href="https://opsforce.org/how-to-config-python2-python3-all-in-macos.html">
+<link rel="canonical" href="https://opsforce.org/posts/87cb602a">
 
 
 <script id="page-configurations">
@@ -48,7 +50,7 @@
   };
 </script>
 
-  <title>Mac 下配置 Python2 和 Python3 共存 | OPSFORCE</title>
+  <title>Remove All Iptables PREROUTING Nat Rules | OPSFORCE</title>
   
 
 
@@ -199,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/how-to-config-python2-python3-all-in-macos.html">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/87cb602a">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -212,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Mac 下配置 Python2 和 Python3 共存
+          Remove All Iptables PREROUTING Nat Rules
         </h1>
 
         <div class="post-meta">
@@ -222,22 +224,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2016-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2016-07-10T00:00:00+08:00">2016-07-10</time>
+              <time title="Created: 2016-06-09 00:00:00" itemprop="dateCreated datePublished" datetime="2016-06-09T00:00:00+08:00">2016-06-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2016-07-13 00:00:00" itemprop="dateModified" datetime="2016-07-13T00:00:00+08:00">2016-07-13</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                  <a href="/categories/Security/" itemprop="url" rel="index"><span itemprop="name">Security</span></a>
                 </span>
             </span>
 
@@ -247,7 +242,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>536</span>
+              <span>694</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -266,29 +261,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Mac 默认是安装了 Python2 的，所以只需要安装 Python3</p>
-<pre><code>$ brew install python3 # 使用 homebrew 安装 python3
-$ python3 -V
-Python 3.6.5
+        <p>To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:</p>
+<pre><code>iptables -t nat --line-numbers -L
+</code></pre><span id="more"></span>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr3n1znnj316o0nhwm7.jpg" alt=""></p>
+<p>As you can see the above command will display all PREROUTING chains with relevant line numbers. Next, we can use these line numbers to remove all PREROUTING chains one by one. For example to remove PREROUTING chain with line number 1 we can do:</p>
+<pre><code>iptables -t nat -D PREROUTING 1
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgr43on6oj30vc0d944q.jpg" alt=""></p>
+<p>In case that you wish to remove all PREROUTING chains with a single command you can try the following command chaining example:</p>
+<pre><code>for i in $(iptables -t nat --line-numbers -L | grep ^[0-9] | awk &#39;&#123; print $1 &#125;&#39; | tac ); do iptables -t nat -D PREROUTING $i; done
+</code></pre><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="http://lubos.rendek.org/remove-all-iptables-prerouting-nat-rules/">Remove All Iptables PREROUTING Nat Rules</a></p>
 
-$ brew install pyenv-virtualenv # 安装 virtualenv
-或者
-$ sudo easy_install virtualenv # 安装 virtualenv
-
-$ mkdir myenv &amp;&amp; cd myenv # 创建本地工作目录
-$ which python3 # 找出 Python3 路径
-/usr/local/bin/python3
-
-# python2
-$ virtualenv --no-site-packages pyenv # 配置 Python2 虚拟路径
-$ source pyenv/bin/activate # 使 Python2 虚拟路径生效
-$ deactivate # 使 Python2 虚拟路径失效
-
-# python3
-$ virtualenv --no-site-packages --python=/usr/local/bin/python3 pyenv3 # 配置 Python3 虚拟路径
-$ source pyenv3/bin/activate # 使 Python3 虚拟路径生效
-$ deactivate # 使 Python3 虚拟路径失效
-</code></pre>
     </div>
 
     
@@ -297,9 +280,8 @@ $ deactivate # 使 Python3 虚拟路径失效
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/macOS/" rel="tag"># macOS</a>
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/Virtualenv/" rel="tag"># Virtualenv</a>
+              <a href="/tags/Firewall/" rel="tag"># Firewall</a>
+              <a href="/tags/Iptables/" rel="tag"># Iptables</a>
           </div>
 
         
@@ -308,12 +290,12 @@ $ deactivate # 使 Python3 虚拟路径失效
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/Remove-All-iptables-PREROUTING-Nat-Rules.html" rel="prev" title="Remove All Iptables PREROUTING Nat Rules">
-      <i class="fa fa-chevron-left"></i> Remove All Iptables PREROUTING Nat Rules
+    <a href="/posts/6adf9790" rel="prev" title="What DevOps needs?">
+      <i class="fa fa-chevron-left"></i> What DevOps needs?
     </a></div>
       <div class="post-nav-item">
-    <a href="/deploy-docker-swarm-use-multi-consul-and-swarm-manager.html" rel="next" title="Deploy docker swarm use multi consul and swarm-manager">
-      Deploy docker swarm use multi consul and swarm-manager <i class="fa fa-chevron-right"></i>
+    <a href="/posts/9ec1380c" rel="next" title="Mac 下配置 Python2 和 Python3 共存">
+      Mac 下配置 Python2 和 Python3 共存 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -373,6 +355,7 @@ $ deactivate # 使 Python3 虚拟路径失效
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
