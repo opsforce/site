@@ -76,7 +76,7 @@ jobs:
           # 开启本地搜索
           # sed -i ':a;N;$!ba;s#local_search:\n  enable: false#local_search:\n  enable: true#' themes/next/_config.yml
 
-          # 集成 algolia 搜索
+          # 开启 algolia 搜索
           sed -i ':a;N;$!ba;s#algolia_search:\n  enable: false#algolia_search:\n  enable: true#' themes/next/_config.yml
           sed -i "s|ALGOLIA_APPLICATION_ID|${{ secrets.ALGOLIA_APPLICATION_ID }}|" _config.yml
           sed -i "s|ALGOLIA_SEARCH_ONLY_API_KEY|${{ secrets.ALGOLIA_SEARCH_ONLY_API_KEY }}|" _config.yml
@@ -86,6 +86,9 @@ jobs:
 
           # 移除页面底部 Powered by Hexo & NexT...
           sed -i -e 's|  powered: .*|  powered: false|g' themes/next/_config.yml
+
+          # 开启 Disqus 评论
+          sed -i ':a;N;$!ba;s#disqus:\n  enable: false\n  shortname:#disqus:\n  enable: false\n  shortname: opsforce#' themes/next/_config.yml
 
           # TODO
 
