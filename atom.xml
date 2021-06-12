@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opsforce.org/"/>
-  <updated>2021-06-12T03:51:27.296Z</updated>
+  <updated>2021-06-12T04:09:30.113Z</updated>
   <id>https://opsforce.org/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://opsforce.org/posts/1c61f82d.html"/>
     <id>https://opsforce.org/posts/1c61f82d.html</id>
     <published>2021-06-11T16:00:00.000Z</published>
-    <updated>2021-06-12T03:51:27.296Z</updated>
+    <updated>2021-06-12T04:09:30.113Z</updated>
     
     <content type="html"><![CDATA[<p> 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。<em> 貌似现在比较新的产品好些都不支持蓝牙 3.0</em></p><p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&amp;id=585334985690&amp;_u=cjnl1al0deb"> 购买地址 </a></p>]]></content>
     
@@ -43,7 +43,7 @@
     <link href="https://opsforce.org/posts/d44d22bb.html"/>
     <id>https://opsforce.org/posts/d44d22bb.html</id>
     <published>2021-03-24T16:00:00.000Z</published>
-    <updated>2021-06-12T03:51:27.296Z</updated>
+    <updated>2021-06-12T04:09:30.113Z</updated>
     
     <content type="html"><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>]]></content>
     
