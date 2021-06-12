@@ -20,23 +20,25 @@
     var CONFIG = {"hostname":"opsforce.org","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"KQF320F98G","apiKey":"6b7c5cdc44dd0481ef9243d8f8987b16","indexName":"opsforce.org","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Windows 环境： 首先下载 iCloud for Windows， 下载地址  iCloud Bookmarks for chrome 的下载地址：iCloud Bookmarks，官方出品，值得信赖。 iCloud Bookmarks for firefox 的下载地址：iCloud 书签 ，官方出品，值得信赖。 Mac 环境： 啥都不用下载，只需要设置好 iCloud。">
+  <meta name="description" content="You can’t clone a Bitbucket repo using GithHub Desktop directly. Instead you would have to:  Clone the Bitbucket repo locally via command line. Add the cloned repository to your GitHub Desktop app.  A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨平台同步 Safari、IE、Chrome、Firefox 的书签">
-<meta property="og:url" content="https://opsforce.org/posts/7d4f56ae">
+<meta property="og:title" content="Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)">
+<meta property="og:url" content="https://opsforce.org/posts/5eaa5d69.html">
 <meta property="og:site_name" content="OPSFORCE">
-<meta property="og:description" content="Windows 环境： 首先下载 iCloud for Windows， 下载地址  iCloud Bookmarks for chrome 的下载地址：iCloud Bookmarks，官方出品，值得信赖。 iCloud Bookmarks for firefox 的下载地址：iCloud 书签 ，官方出品，值得信赖。 Mac 环境： 啥都不用下载，只需要设置好 iCloud。">
+<meta property="og:description" content="You can’t clone a Bitbucket repo using GithHub Desktop directly. Instead you would have to:  Clone the Bitbucket repo locally via command line. Add the cloned repository to your GitHub Desktop app.  A">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2015-10-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2015-10-18T16:00:00.000Z">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/308422/13249268/a342b1e2-da23-11e5-870f-f6ee0efd1b86.png">
+<meta property="article:published_time" content="2015-10-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2015-10-17T16:00:00.000Z">
 <meta property="article:author" content="Jimmy Zhao">
-<meta property="article:tag" content="macOS">
-<meta property="article:tag" content="Windows">
-<meta property="article:tag" content="Safari">
-<meta property="article:tag" content="iCloud">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="Bitbucket">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png">
 
-<link rel="canonical" href="https://opsforce.org/posts/7d4f56ae">
+<link rel="canonical" href="https://opsforce.org/posts/5eaa5d69.html">
 
 
 <script id="page-configurations">
@@ -49,7 +51,7 @@
   };
 </script>
 
-  <title>跨平台同步 Safari、IE、Chrome、Firefox 的书签 | OPSFORCE</title>
+  <title>Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac) | OPSFORCE</title>
   
 
 
@@ -200,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/7d4f56ae">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/5eaa5d69.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -213,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          跨平台同步 Safari、IE、Chrome、Firefox 的书签
+          Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)
         </h1>
 
         <div class="post-meta">
@@ -223,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2015-10-19 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-19T00:00:00+08:00">2015-10-19</time>
+              <time title="Created: 2015-10-18 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-18T00:00:00+08:00">2015-10-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +233,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iCloud/" itemprop="url" rel="index"><span itemprop="name">iCloud</span></a>
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
                 </span>
             </span>
 
@@ -241,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>167</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -260,10 +262,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Windows 环境："><a href="#Windows 环境：" class="headerlink" title="Windows 环境："></a>Windows 环境：</h2><p> 首先下载 iCloud for Windows，<a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT204283"> 下载地址 </a></p>
-<p>iCloud Bookmarks for chrome 的下载地址：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/icloud-bookmarks/fkepacicchenbjecpbpbclokcabebhah">iCloud Bookmarks</a>，官方出品，值得信赖。</p>
-<p>iCloud Bookmarks for firefox 的下载地址：<a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-CN/firefox/addon/icloud-bookmarks/">iCloud 书签 </a>，官方出品，值得信赖。</p>
-<h3 id="Mac 环境："><a href="#Mac 环境：" class="headerlink" title="Mac 环境："></a>Mac 环境：</h3><p> 啥都不用下载，只需要设置好 iCloud。</p>
+        <p>You <a target="_blank" rel="noopener" href="http://stackoverflow.com/a/32213131/2613447">can’t clone</a> a Bitbucket repo using <a target="_blank" rel="noopener" href="https://desktop.github.com/">GithHub Desktop</a> directly. Instead you would have to:</p>
+<ol>
+<li>Clone the Bitbucket repo locally via command line.</li>
+<li>Add the cloned repository to your GitHub Desktop app.</li>
+</ol>
+<p>After completing these 2 steps, you’ll be able to execute sync, push, pull, commit, and other git commands available in GitHub Desktop for your Bitbucket repository just as you would for any GitHub repository.</p>
+<p><em>You will need your Bitbucket repository’s git URL as available on the <strong>Overview</strong> page of your repository:</em></p>
+<p><img src="https://cloud.githubusercontent.com/assets/308422/13249267/a3407f8a-da23-11e5-93ab-32c4a5fb501b.png" alt="Retrieve git URL from Bitbucket.org"></p>
+<span id="more"></span>
+<h2 id="1-Clone-Bitbucket-Repository-Locally-via-Command-Line"><a href="#1-Clone-Bitbucket-Repository-Locally-via-Command-Line" class="headerlink" title="1. Clone Bitbucket Repository Locally via Command Line"></a>1. Clone Bitbucket Repository Locally via Command Line</h2><ol>
+<li>Open Terminal app.</li>
+<li>Type <code>cd /Local/path/to/parent-folder/to/clone/into</code> (replacing that sample path with the local path to the parent folder you want to clone your Bitbucket repository into).</li>
+<li>Hit enter. You’ve just opened that parent folder on the command line.</li>
+<li>Type <code>git clone https://example@bitbucket.org/path/to/your-repo.git</code> (replacing that sample URL with the Bitbucket URL available on the <strong>Overview</strong> page of your repository).</li>
+<li>Hit enter and watch the repository being cloned. (Once it’s done, it’ll say something like <strong>…done</strong> in one of the last lines.)</li>
+</ol>
+<h2 id="2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App"><a href="#2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App" class="headerlink" title="2. Add Cloned Repository to Your GitHub Desktop App"></a>2. Add Cloned Repository to Your GitHub Desktop App</h2><ol>
+<li>Open GitHub Desktop.</li>
+<li>In the upper right corner (if your sidbar is open) press the large <strong>+</strong> button.</li>
+<li>Select <strong>Add</strong> to add an exisiting local repository.</li>
+<li><p>On the <strong>Add</strong> tab click the <strong>Choose…</strong> button, navigate to the folder you have just cloned your Bitbucket repository into, and select it.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/308422/13249268/a342b1e2-da23-11e5-870f-f6ee0efd1b86.png" alt="“Add” tab in GitHub Desktop"></p>
+</li>
+<li><p>Your newly added repository will appear at the bottom of your sidebar in the <strong>Other</strong> section.</p>
+</li>
+</ol>
+<p><strong>That’s it.</strong><br>You should now be able execute git operations on your Bitbucket repository via your GitHub Desktop app just as on any GitHub repository.</p>
 
     </div>
 
@@ -273,10 +298,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/macOS/" rel="tag"># macOS</a>
-              <a href="/tags/Windows/" rel="tag"># Windows</a>
-              <a href="/tags/Safari/" rel="tag"># Safari</a>
-              <a href="/tags/iCloud/" rel="tag"># iCloud</a>
+              <a href="/tags/Git/" rel="tag"># Git</a>
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+              <a href="/tags/Bitbucket/" rel="tag"># Bitbucket</a>
           </div>
 
         
@@ -285,12 +309,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/5eaa5d69" rel="prev" title="Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)">
-      <i class="fa fa-chevron-left"></i> Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)
+    <a href="/posts/4a17b156.html" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/95d85744" rel="next" title="修改 git 的远程 url 地址 git 或者 https">
-      修改 git 的远程 url 地址 git 或者 https <i class="fa fa-chevron-right"></i>
+    <a href="/posts/7d4f56ae.html" rel="next" title="跨平台同步 Safari、IE、Chrome、Firefox 的书签">
+      跨平台同步 Safari、IE、Chrome、Firefox 的书签 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -350,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows%20%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">Windows 环境：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac%20%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">Mac 环境：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Clone-Bitbucket-Repository-Locally-via-Command-Line"><span class="nav-number">1.</span> <span class="nav-text">1. Clone Bitbucket Repository Locally via Command Line</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Add-Cloned-Repository-to-Your-GitHub-Desktop-App"><span class="nav-number">2.</span> <span class="nav-text">2. Add Cloned Repository to Your GitHub Desktop App</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

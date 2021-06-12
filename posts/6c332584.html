@@ -20,20 +20,27 @@
     var CONFIG = {"hostname":"opsforce.org","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"KQF320F98G","apiKey":"6b7c5cdc44dd0481ef9243d8f8987b16","indexName":"opsforce.org","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="git remote set-url 命令是修改存在的远程库的 URL 提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “我应该用哪种远程 URL” 这个命令带两个参数  已经存在远程名字，如 origin 新的远程的 URL ，如： https:&#x2F;&#x2F;github.com&#x2F;USERNAME&#x2F;REPOSITORY_2.git 如果你用https 更新代码 &#96;git@github.c">
+  <meta name="description" content="branch: master   - 网站源码branch: gh-pages - html网页 使用GitHub登录travis-ci.org  登录后，点击红色区域选择想要自动部署的repo  到GitHub-setting申请Personal access token   得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改 git 的远程 url 地址 git 或者 https">
-<meta property="og:url" content="https://opsforce.org/posts/95d85744">
+<meta property="og:title" content="使用 Travis CI 自动部署 Hexo">
+<meta property="og:url" content="https://opsforce.org/posts/6c332584.html">
 <meta property="og:site_name" content="OPSFORCE">
-<meta property="og:description" content="git remote set-url 命令是修改存在的远程库的 URL 提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “我应该用哪种远程 URL” 这个命令带两个参数  已经存在远程名字，如 origin 新的远程的 URL ，如： https:&#x2F;&#x2F;github.com&#x2F;USERNAME&#x2F;REPOSITORY_2.git 如果你用https 更新代码 &#96;git@github.c">
+<meta property="og:description" content="branch: master   - 网站源码branch: gh-pages - html网页 使用GitHub登录travis-ci.org  登录后，点击红色区域选择想要自动部署的repo  到GitHub-setting申请Personal access token   得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2015-10-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2015-10-18T16:00:00.000Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg">
+<meta property="article:published_time" content="2017-07-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2017-07-12T16:00:00.000Z">
 <meta property="article:author" content="Jimmy Zhao">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="TravisCI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg">
 
-<link rel="canonical" href="https://opsforce.org/posts/95d85744">
+<link rel="canonical" href="https://opsforce.org/posts/6c332584.html">
 
 
 <script id="page-configurations">
@@ -46,7 +53,7 @@
   };
 </script>
 
-  <title>修改 git 的远程 url 地址 git 或者 https | OPSFORCE</title>
+  <title>使用 Travis CI 自动部署 Hexo | OPSFORCE</title>
   
 
 
@@ -197,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/95d85744">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/6c332584.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -210,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          修改 git 的远程 url 地址 git 或者 https
+          使用 Travis CI 自动部署 Hexo
         </h1>
 
         <div class="post-meta">
@@ -220,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2015-10-19 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-19T00:00:00+08:00">2015-10-19</time>
+              <time title="Created: 2017-07-13 00:00:00" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">2017-07-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                  <a href="/categories/CI-CD/" itemprop="url" rel="index"><span itemprop="name">CI/CD</span></a>
                 </span>
             </span>
 
@@ -238,14 +245,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.7k</span>
+              <span>962</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -257,63 +264,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><code>git remote set-url</code> 命令是修改存在的远程库的 URL</p>
-<p><em>提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “<a target="_blank" rel="noopener" href="https://github.com/waylau/github-help/blob/master/Which%20remote%20URL%20should%20I%20use%20%E6%88%91%E5%BA%94%E8%AF%A5%E7%94%A8%E5%93%AA%E7%A7%8D%E8%BF%9C%E7%A8%8B%20URL%20.md">我应该用哪种远程 URL</a>”</em></p>
-<p>这个命令带两个参数</p>
-<ul>
-<li>已经存在远程名字，如 <code>origin</code></li>
-<li>新的远程的 URL ，如：<ul>
-<li><code>https://github.com/USERNAME/REPOSITORY_2.git</code> 如果你用 https 更新代码</li>
-<li><a href="mailto:`git@github.com">`git@github.com</a>:USER/REPOSITORY_2.git` 如果你用 SSH 更新代码</li>
-</ul>
-</li>
-</ul>
-<p>##Switching remote URLs from SSH to HTTPS 从 SSH 切换 远程 URL 到 HTTPS</p>
-<p>1. 打开终端 (Mac 和 Linux 用户) 或者 命令行 (Windows 用户).</p>
-<p>2. 更改当前工作路径到你的本地项目</p>
-<p>3. 列出你已经存在的远程库，为了获取到你想要修改的远程的名字</p>
-<pre><code>$ git remote -v
-# origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
-# origin  git@github.com:USERNAME/REPOSITORY.git (push)
-</code></pre><span id="more"></span>
-<p>4. 使用 <code>remote set-url</code> 修改从 SSH 切换 远程 URL 到 HTTPS</p>
-<pre><code>$ git remote set-url origin https://github.com/USERNAME/REPOSITORY_2.git
-</code></pre><p>5. 验证远程 URL 已改变</p>
-<pre><code>$ git remote -v
-# Verify new remote URL
-# origin  https://github.com/USERNAME/REPOSITORY2.git (fetch)
-# origin  https://github.com/USERNAME/REPOSITORY2.git (push)
-</code></pre><p>下次，如果你使用 git fetch, git pull, 或 git push 操作库，则被要求提供账号密码</p>
-<ul>
-<li>如果你开启 <a target="_blank" rel="noopener" href="https://help.github.com/articles/about-two-factor-authentication"> 双因素认证 </a>，您必须<a target="_blank" rel="noopener" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use"> 创建一个个人访问 token</a> 来代替密码。</li>
-<li>你可以使用一个 <a target="_blank" rel="noopener" href="https://github.com/waylau/github-help/blob/master/Caching%20your%20GitHub%20password%20in%20Git%20%E4%BF%9D%E5%AD%98%E4%BD%A0%E7%9A%84%20Github%20%E5%AF%86%E7%A0%81.md">credential helper</a> ，Git 会记住你的 GitHub 的用户名和密码，当每次与 GitHub 交互时。</li>
-</ul>
-<p>##Switching remote URLs from HTTPS to SSH 从 HTTPS 切换 远程 URL 到 SSH</p>
-<p>1. 打开终端 (Mac 和 Linux 用户) 或者 命令行 (Windows 用户).</p>
-<p>2. 更改当前工作路径到你的本地项目</p>
-<p>3. 列出你已经存在的远程库，为了获取到你想要修改的远程的名字</p>
-<pre><code>$ git remote -v
-# origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
-# origin  https://github.com/USERNAME/REPOSITORY.git (push)
-</code></pre><p>4. 使用 <code>remote set-url</code> 修改从 SSH 切换 远程 URL 到 HTTPS</p>
-<pre><code>$ git remote set-url origin git@github.com:USERNAME/REPOSITORY2.git
-</code></pre><p>5. 验证远程 URL 已改变</p>
-<pre><code>$ git remote -v
-# Verify new remote URL
-# origin  git@github.com:USERNAME/REPOSITORY2.git (fetch)
-# origin  git@github.com:USERNAME/REPOSITORY2.git (push)
-</code></pre><p>##Troubleshooting 故障排除</p>
-<p>你可能会遇到这些错误时，当试图改变一个远程。</p>
-<p><strong>No such remote ‘[name]’</strong></p>
-<p>这意思是说你要修改的远程不存在</p>
-<pre><code>$ git remote set-url sofake https://github.com/octocat/Spoon-Knife
-# fatal: No such remote &#39;sofake&#39;
-</code></pre><p>检查你是否正确地输入远程名称。</p>
-<p>##Further reading 扩展阅读</p>
-<ul>
-<li>《Pro Git》 书中的 “<a target="_blank" rel="noopener" href="http://git-scm.com/book/en/Git-Basics-Working-with-Remotes">Working with Remotes</a>“</li>
-</ul>
-<p><em>参考：</em><a target="_blank" rel="noopener" href="https://help.github.com/articles/changing-a-remote-s-url/">https://help.github.com/articles/changing-a-remote-s-url/</a></p>
+        <p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p>
+<p>使用 GitHub 登录 travis-ci.org</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt=""></p>
+<p>登录后，点击红色区域选择想要自动部署的 repo</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg" alt=""></p>
+<p>到 GitHub-setting 申请 Personal access token</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg" alt=""></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg" alt=""></p>
+<p>得到 Personal access token 后，添加到 travisci 对应 repo 的环境变量 GH_TOKEN</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg" alt=""></p>
+<span id="more"></span>
+<p>编写.travis.yml，并上传到 master 分支</p>
+<pre><code># file: .travis.yml
+
+language: node_js  #设置语言
+
+node_js: stable  #设置相应的版本
+
+# S: Build Lifecycle
+install:
+  - npm install  #安装 hexo 及插件
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - hexo clean  #清除
+  - hexo generate  #生成静态网页
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name &quot;your name&quot;  #修改 name
+  - git config user.email &quot;your email&quot;  #修改 email
+  - git add .
+  - git commit -m &quot;update myblog&quot; #此处看情况修改
+  - git push --force --quiet &quot;https://$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:gh-pages #GH_TOKEN 是在 TravisCI 中配置 token 的名称
+# E: Build LifeCycle
+
+branches:
+  only:
+    - master  #只监测 master 分支，对应的源码分支
+
+env:
+  global:
+    - GH_REF: github.com/&lt;github username&gt;/&lt;your repo&gt;.git #设置 GH_REF，注意更改
+</code></pre><p>不出意外的，现在现在新建一遍文章 push 到 GitHub 就会自动部署到 gh-pages 分支了</p>
+<p>good luck ~:~</p>
+<h2 id="注意"><a href="# 注意" class="headerlink" title="注意"></a>注意 </h2><p> 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用</p>
+<h2 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/e22c13d85659">http://www.jianshu.com/p/e22c13d85659</a></p>
 
     </div>
 
@@ -323,7 +323,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Git/" rel="tag"># Git</a>
+              <a href="/tags/Github/" rel="tag"># Github</a>
+              <a href="/tags/TravisCI/" rel="tag"># TravisCI</a>
           </div>
 
         
@@ -332,12 +333,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/7d4f56ae" rel="prev" title="跨平台同步 Safari、IE、Chrome、Firefox 的书签">
-      <i class="fa fa-chevron-left"></i> 跨平台同步 Safari、IE、Chrome、Firefox 的书签
+    <a href="/posts/41995739.html" rel="prev" title="Deploy docker swarm use multi consul and swarm-manager">
+      <i class="fa fa-chevron-left"></i> Deploy docker swarm use multi consul and swarm-manager
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/6adf9790" rel="next" title="What DevOps needs?">
-      What DevOps needs? <i class="fa fa-chevron-right"></i>
+    <a href="/posts/c2a53a01.html" rel="next" title="Deploy kubernetes [Continually updating]">
+      Deploy kubernetes [Continually updating] <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -397,6 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.</span> <span class="nav-text">注意 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

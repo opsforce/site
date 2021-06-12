@@ -2,14 +2,14 @@
 <search>
   <entry>
     <title>Thindpad x220 Upgrade the Bluetooth module from 3.0 to 4.0</title>
-    <url>/posts/1c61f82d</url>
+    <url>/posts/1c61f82d.html</url>
     <content><![CDATA[<p> 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。<em> 貌似现在比较新的产品好些都不支持蓝牙 3.0</em></p>
 <p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&amp;id=585334985690&amp;_u=cjnl1al0deb"> 购买地址 </a></p>
 ]]></content>
   </entry>
   <entry>
     <title>网站 CICD 迁移至 github action</title>
-    <url>/posts/d44d22bb</url>
+    <url>/posts/d44d22bb.html</url>
     <content><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>
 ]]></content>
       <categories>
@@ -21,7 +21,7 @@
   </entry>
   <entry>
     <title>fix-macos-mojave-ssh-connect-trouble</title>
-    <url>/posts/5255ca53</url>
+    <url>/posts/5255ca53.html</url>
     <content><![CDATA[<p> 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：</p>
 <pre><code>packet_write_wait: Connection to *.*.*.* port 22: Broken pipe
 </code></pre><p> 其实是 ssh 客户端比较新导致的 </p>
@@ -42,7 +42,7 @@ Host *
   </entry>
   <entry>
     <title>网站已开启 ssl 访问</title>
-    <url>/posts/dff19b71</url>
+    <url>/posts/dff19b71.html</url>
     <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fqh244g88lj30gb0agzlh.jpg" alt=""><br> 网站已开启 ssl 访问，使用的是 cloudflare.com 免费 ssl 服务。</p>
 ]]></content>
       <categories>
@@ -51,7 +51,7 @@ Host *
   </entry>
   <entry>
     <title>Hi, sublime text 3</title>
-    <url>/posts/8e109f13</url>
+    <url>/posts/8e109f13.html</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=80 src="http://music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fpp6pb8snvj311y0jnwfs.jpg" alt=""></p>
@@ -78,7 +78,7 @@ Host *
   </entry>
   <entry>
     <title>Hi, iterm2 oh-my-zsh solarized</title>
-    <url>/posts/fd26fbfd</url>
+    <url>/posts/fd26fbfd.html</url>
     <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fpp6ihd1g2j30zp0jc0t7.jpg" alt=""></p>
 <h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><pre><code>brew cask install iterm2
 </code></pre><p>如果没安装 homebrew，就直接 <a href="http://iterm2.com/downloads.html"> 官方网站 </a> 下载安装包</p>
@@ -149,7 +149,7 @@ $ source ~/.zshrc # 立即生效
   </entry>
   <entry>
     <title>My macOS Software list [Continually updating]</title>
-    <url>/posts/a0f6c374</url>
+    <url>/posts/a0f6c374.html</url>
     <content><![CDATA[<ul>
 <li>1password 6 - 密码管理 </li>
 <li>atom - 开发工具 </li>
@@ -205,7 +205,7 @@ $ source ~/.zshrc # 立即生效
   </entry>
   <entry>
     <title>Deploy kubernetes [Continually updating]</title>
-    <url>/posts/c2a53a01</url>
+    <url>/posts/c2a53a01.html</url>
     <content><![CDATA[<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg" alt=""></p>
 <h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><h3 id="Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node"><a href="#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node" class="headerlink" title="Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]"></a>Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]</h3><pre><code class="bash">$ sudo apt-get update
 $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
@@ -518,7 +518,7 @@ $ kubectl apply -f &lt;yaml name&gt;.yaml
   </entry>
   <entry>
     <title>使用 Travis CI 自动部署 Hexo</title>
-    <url>/posts/6c332584</url>
+    <url>/posts/6c332584.html</url>
     <content><![CDATA[<p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p>
 <p>使用 GitHub 登录 travis-ci.org</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt=""></p>
@@ -580,7 +580,7 @@ env:
   </entry>
   <entry>
     <title>Deploy docker swarm use multi consul and swarm-manager</title>
-    <url>/posts/41995739</url>
+    <url>/posts/41995739.html</url>
     <content><![CDATA[<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjj6athl6ij30kk0ardgm.jpg" alt=""></p>
 <h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><pre><code class="bash"># useradd mfg
 # passwd mfg
@@ -729,7 +729,7 @@ $ docker-compose -H :4000 -f ~/docker-compose.yml ps
   </entry>
   <entry>
     <title>Mac 下配置 Python2 和 Python3 共存</title>
-    <url>/posts/9ec1380c</url>
+    <url>/posts/9ec1380c.html</url>
     <content><![CDATA[<p>Mac 默认是安装了 Python2 的，所以只需要安装 Python3</p>
 <pre><code>$ brew install python3 # 使用 homebrew 安装 python3
 $ python3 -V
@@ -764,7 +764,7 @@ $ deactivate # 使 Python3 虚拟路径失效
   </entry>
   <entry>
     <title>Remove All Iptables PREROUTING Nat Rules</title>
-    <url>/posts/87cb602a</url>
+    <url>/posts/87cb602a.html</url>
     <content><![CDATA[<p>To Flush iptables PREROUTING chains cannot be achieved by -F iptables option. To remove PREROUTING nat rules from you system first display all PREROUTING chains using a following iptables command:</p>
 <pre><code>iptables -t nat --line-numbers -L
 </code></pre><span id="more"></span>
@@ -786,7 +786,7 @@ $ deactivate # 使 Python3 虚拟路径失效
   </entry>
   <entry>
     <title>What DevOps needs?</title>
-    <url>/posts/6adf9790</url>
+    <url>/posts/6adf9790.html</url>
     <content><![CDATA[<p> 硬性要求：工具上的准备 </p>
 <p> 上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：</p>
 <p> 代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion</p>
@@ -818,7 +818,7 @@ $ deactivate # 使 Python3 虚拟路径失效
   </entry>
   <entry>
     <title>修改 git 的远程 url 地址 git 或者 https</title>
-    <url>/posts/95d85744</url>
+    <url>/posts/95d85744.html</url>
     <content><![CDATA[<p><code>git remote set-url</code> 命令是修改存在的远程库的 URL</p>
 <p><em>提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “<a href="https://github.com/waylau/github-help/blob/master/Which%20remote%20URL%20should%20I%20use%20%E6%88%91%E5%BA%94%E8%AF%A5%E7%94%A8%E5%93%AA%E7%A7%8D%E8%BF%9C%E7%A8%8B%20URL%20.md">我应该用哪种远程 URL</a>”</em></p>
 <p>这个命令带两个参数</p>
@@ -886,7 +886,7 @@ $ deactivate # 使 Python3 虚拟路径失效
   </entry>
   <entry>
     <title>跨平台同步 Safari、IE、Chrome、Firefox 的书签</title>
-    <url>/posts/7d4f56ae</url>
+    <url>/posts/7d4f56ae.html</url>
     <content><![CDATA[<h2 id="Windows 环境："><a href="#Windows 环境：" class="headerlink" title="Windows 环境："></a>Windows 环境：</h2><p> 首先下载 iCloud for Windows，<a href="https://support.apple.com/zh-cn/HT204283"> 下载地址 </a></p>
 <p>iCloud Bookmarks for chrome 的下载地址：<a href="https://chrome.google.com/webstore/detail/icloud-bookmarks/fkepacicchenbjecpbpbclokcabebhah">iCloud Bookmarks</a>，官方出品，值得信赖。</p>
 <p>iCloud Bookmarks for firefox 的下载地址：<a href="https://addons.mozilla.org/zh-CN/firefox/addon/icloud-bookmarks/">iCloud 书签 </a>，官方出品，值得信赖。</p>
@@ -904,7 +904,7 @@ $ deactivate # 使 Python3 虚拟路径失效
   </entry>
   <entry>
     <title>Clone Bitbucket Repository and Add it to GitHub Desktop App (Mac)</title>
-    <url>/posts/5eaa5d69</url>
+    <url>/posts/5eaa5d69.html</url>
     <content><![CDATA[<p>You <a href="http://stackoverflow.com/a/32213131/2613447">can’t clone</a> a Bitbucket repo using <a href="https://desktop.github.com/">GithHub Desktop</a> directly. Instead you would have to:</p>
 <ol>
 <li>Clone the Bitbucket repo locally via command line.</li>
@@ -944,7 +944,7 @@ $ deactivate # 使 Python3 虚拟路径失效
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/posts/4a17b156</url>
+    <url>/posts/4a17b156.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
 </code></pre>
