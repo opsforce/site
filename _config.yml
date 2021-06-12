@@ -19,7 +19,7 @@ root: /
 # disable permalink date time format
 # permalink: :title.html
 # (https://www.npmjs.com/package/hexo-abbrlink)
-permalink: posts/:abbrlink
+permalink: posts/:abbrlink.html
 permalink_defaults:
 
 # Directory
