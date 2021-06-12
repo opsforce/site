@@ -88,7 +88,7 @@ jobs:
           sed -i -e 's|  powered: .*|  powered: false|g' themes/next/_config.yml
 
           # 开启 Disqus 评论
-          sed -i ':a;N;$!ba;s#disqus:\n  enable: false\n  shortname:#disqus:\n  enable: false\n  shortname: opsforce#' themes/next/_config.yml
+          sed -i ':a;N;$!ba;s#disqus:\n  enable: false\n  shortname:#disqus:\n  enable: true\n  shortname: opsforce#' themes/next/_config.yml
 
           # TODO
 
