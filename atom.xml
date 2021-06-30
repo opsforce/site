@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opsforce.org/"/>
-  <updated>2021-06-24T10:03:18.992Z</updated>
+  <updated>2021-06-30T09:17:49.626Z</updated>
   <id>https://opsforce.org/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>微博账户貌似无法登录了，f**k!!!</title>
     <link href="https://opsforce.org/posts/3846c14b.html"/>
     <id>https://opsforce.org/posts/3846c14b.html</id>
-    <published>2021-06-24T10:03:18.992Z</published>
-    <updated>2021-06-24T10:03:18.992Z</updated>
+    <published>2021-06-30T09:17:49.626Z</published>
+    <updated>2021-06-30T09:17:49.626Z</updated>
     
     <content type="html"><![CDATA[<p> 老的 gmail 数年前自己给注销了，现在微博登录现在要二次认证，要么绑定手机发短信验证码，要么发送私信给已在登录状态的客户端。问题是我就是不想绑定手机号！！！f**k!!! w**bo, f**k!!! gfw, f**k!!! z*</p>]]></content>
     
@@ -43,11 +43,44 @@
   </entry>
   
   <entry>
+    <title>罗技键盘 K380 支持双系统（Windows/macOS）</title>
+    <link href="https://opsforce.org/posts/e16fb88b.html"/>
+    <id>https://opsforce.org/posts/e16fb88b.html</id>
+    <published>2021-06-30T09:17:49.626Z</published>
+    <updated>2021-06-30T09:17:49.626Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>k380 默认每个蓝牙按键只支持不同蓝牙设备，所以说默认不支持同一蓝牙不同系统的。</p></blockquote><p> 而本人正有双系统（同一蓝牙硬件）的需求，所以在网上寻找了些许实战参考文档，最终测试成功。</p><p> 参考链接：<a href="https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086">https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;k380 默认每个蓝牙按键只支持不同蓝牙设备，所以说默认不支持同一蓝牙不同系统的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; 而本人正有双系统（同一蓝牙硬件）的需求，所以在网上寻找了些许实战参考文档，最终测试成功。&lt;/p&gt;
+&lt;p&gt; 参考链接：&lt;a
+      
+    
+    </summary>
+    
+      <category term="k380" scheme="https://opsforce.org/categories/k380/"/>
+    
+      <category term="windows" scheme="https://opsforce.org/categories/k380/windows/"/>
+    
+      <category term="macos" scheme="https://opsforce.org/categories/k380/windows/macos/"/>
+    
+      <category term="logi" scheme="https://opsforce.org/categories/k380/windows/macos/logi/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Thindpad x220 Upgrade the Bluetooth module from 3.0 to 4.0</title>
     <link href="https://opsforce.org/posts/1c61f82d.html"/>
     <id>https://opsforce.org/posts/1c61f82d.html</id>
     <published>2021-06-11T16:00:00.000Z</published>
-    <updated>2021-06-24T10:03:18.992Z</updated>
+    <updated>2021-06-30T09:17:49.622Z</updated>
     
     <content type="html"><![CDATA[<p> 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。<em> 貌似现在比较新的产品好些都不支持蓝牙 3.0</em></p><p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&amp;id=585334985690&amp;_u=cjnl1al0deb"> 购买地址 </a></p>]]></content>
     
@@ -69,7 +102,7 @@
     <link href="https://opsforce.org/posts/d44d22bb.html"/>
     <id>https://opsforce.org/posts/d44d22bb.html</id>
     <published>2021-03-24T16:00:00.000Z</published>
-    <updated>2021-06-24T10:03:18.992Z</updated>
+    <updated>2021-06-30T09:17:49.626Z</updated>
     
     <content type="html"><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>]]></content>
     
@@ -307,39 +340,6 @@ $ sudo usermod -aG docker $(whoami) # 退出当前终端，docker相关命令才
   </entry>
   
   <entry>
-    <title>使用 Travis CI 自动部署 Hexo</title>
-    <link href="https://opsforce.org/posts/6c332584.html"/>
-    <id>https://opsforce.org/posts/6c332584.html</id>
-    <published>2017-07-12T16:00:00.000Z</published>
-    <updated>2017-07-12T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p><p>使用 GitHub 登录 travis-ci.org</p><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt=""></p><p>登录后，点击红色区域选择想要自动部署的 repo</p><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg" alt=""></p><p>到 GitHub-setting 申请 Personal access token</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg" alt=""></p><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg" alt=""></p><p>得到 Personal access token 后，添加到 travisci 对应 repo 的环境变量 GH_TOKEN</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg" alt=""></p><span id="more"></span><p>编写.travis.yml，并上传到 master 分支</p><pre><code># file: .travis.ymllanguage: node_js  #设置语言node_js: stable  #设置相应的版本# S: Build Lifecycleinstall:  - npm install  #安装 hexo 及插件#before_script: # - npm install -g gulpscript:  - hexo clean  #清除  - hexo generate  #生成静态网页after_script:  - cd ./public  - git init  - git config user.name &quot;your name&quot;  #修改 name  - git config user.email &quot;your email&quot;  #修改 email  - git add .  - git commit -m &quot;update myblog&quot; #此处看情况修改  - git push --force --quiet &quot;https://$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:gh-pages #GH_TOKEN 是在 TravisCI 中配置 token 的名称# E: Build LifeCyclebranches:  only:    - master  #只监测 master 分支，对应的源码分支env:  global:    - GH_REF: github.com/&lt;github username&gt;/&lt;your repo&gt;.git #设置 GH_REF，注意更改</code></pre><p>不出意外的，现在现在新建一遍文章 push 到 GitHub 就会自动部署到 gh-pages 分支了</p><p>good luck ~:~</p><h2 id="注意"><a href="# 注意" class="headerlink" title="注意"></a>注意 </h2><p> 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用</p><h2 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/e22c13d85659">http://www.jianshu.com/p/e22c13d85659</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;branch: master   - 网站源码&lt;br&gt;branch: gh-pages - html网页&lt;/p&gt;
-&lt;p&gt;使用GitHub登录travis-ci.org&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;登录后，点击红色区域选择想要自动部署的repo&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;到GitHub-setting申请Personal access token&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CI/CD" scheme="https://opsforce.org/categories/CI-CD/"/>
-    
-    
-      <category term="Github" scheme="https://opsforce.org/tags/Github/"/>
-    
-      <category term="TravisCI" scheme="https://opsforce.org/tags/TravisCI/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Deploy docker swarm use multi consul and swarm-manager</title>
     <link href="https://opsforce.org/posts/41995739.html"/>
     <id>https://opsforce.org/posts/41995739.html</id>
@@ -372,6 +372,39 @@ $ sudo systemctl restart docker &amp;amp;&amp;amp; sudo systemctl enable docker
       <category term="Swarm" scheme="https://opsforce.org/tags/Swarm/"/>
     
       <category term="Consul" scheme="https://opsforce.org/tags/Consul/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Travis CI 自动部署 Hexo</title>
+    <link href="https://opsforce.org/posts/6c332584.html"/>
+    <id>https://opsforce.org/posts/6c332584.html</id>
+    <published>2017-07-12T16:00:00.000Z</published>
+    <updated>2017-07-12T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>branch: master   - 网站源码<br>branch: gh-pages - html 网页</p><p>使用 GitHub 登录 travis-ci.org</p><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg" alt=""></p><p>登录后，点击红色区域选择想要自动部署的 repo</p><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg" alt=""></p><p>到 GitHub-setting 申请 Personal access token</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg" alt=""></p><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg" alt=""></p><p>得到 Personal access token 后，添加到 travisci 对应 repo 的环境变量 GH_TOKEN</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg" alt=""></p><span id="more"></span><p>编写.travis.yml，并上传到 master 分支</p><pre><code># file: .travis.ymllanguage: node_js  #设置语言node_js: stable  #设置相应的版本# S: Build Lifecycleinstall:  - npm install  #安装 hexo 及插件#before_script: # - npm install -g gulpscript:  - hexo clean  #清除  - hexo generate  #生成静态网页after_script:  - cd ./public  - git init  - git config user.name &quot;your name&quot;  #修改 name  - git config user.email &quot;your email&quot;  #修改 email  - git add .  - git commit -m &quot;update myblog&quot; #此处看情况修改  - git push --force --quiet &quot;https://$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:gh-pages #GH_TOKEN 是在 TravisCI 中配置 token 的名称# E: Build LifeCyclebranches:  only:    - master  #只监测 master 分支，对应的源码分支env:  global:    - GH_REF: github.com/&lt;github username&gt;/&lt;your repo&gt;.git #设置 GH_REF，注意更改</code></pre><p>不出意外的，现在现在新建一遍文章 push 到 GitHub 就会自动部署到 gh-pages 分支了</p><p>good luck ~:~</p><h2 id="注意"><a href="# 注意" class="headerlink" title="注意"></a>注意 </h2><p> 环境变量名称必须是‘GH_TOKEN’，什么小写或改成其他都不可用</p><h2 id="参考"><a href="# 参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/e22c13d85659">http://www.jianshu.com/p/e22c13d85659</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;branch: master   - 网站源码&lt;br&gt;branch: gh-pages - html网页&lt;/p&gt;
+&lt;p&gt;使用GitHub登录travis-ci.org&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fjgqumntn0j30us0gk78k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;登录后，点击红色区域选择想要自动部署的repo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fjgqv5rt8aj30rm0ew400.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;到GitHub-setting申请Personal access token&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqw6gokoj30r70iemzi.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tKfTcgy1fjgqxcwx9cj30ss0j2tcx.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;得到Personal access token后，添加到travisci对应repo的环境变量GH_TOKEN&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fjgqy82w12j310b0hejt9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CI/CD" scheme="https://opsforce.org/categories/CI-CD/"/>
+    
+    
+      <category term="Github" scheme="https://opsforce.org/tags/Github/"/>
+    
+      <category term="TravisCI" scheme="https://opsforce.org/tags/TravisCI/"/>
     
   </entry>
   

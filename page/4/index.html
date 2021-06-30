@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section">Archives<span class="badge">18</span></a>
+    <a href="/archives/" rel="section">Archives<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section">Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section">Categories<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -189,6 +189,126 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/95d85744.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jimmy Zhao">
+      <meta itemprop="description" content="Do not tell me, it can't be done.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OPSFORCE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/95d85744.html" class="post-title-link" itemprop="url">修改 git 的远程 url 地址 git 或者 https</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2015-10-19 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-19T00:00:00+08:00">2015-10-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/95d85744.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/95d85744.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>git remote set-url</code> 命令是修改存在的远程库的 URL</p>
+<p><em>提示：了解  HTTPS 和 SSH URL 的不同之处，请查看 “<a target="_blank" rel="noopener" href="https://github.com/waylau/github-help/blob/master/Which%20remote%20URL%20should%20I%20use%20%E6%88%91%E5%BA%94%E8%AF%A5%E7%94%A8%E5%93%AA%E7%A7%8D%E8%BF%9C%E7%A8%8B%20URL%20.md">我应该用哪种远程 URL</a>”</em></p>
+<p>这个命令带两个参数</p>
+<ul>
+<li>已经存在远程名字，如 <code>origin</code></li>
+<li>新的远程的 URL ，如：<ul>
+<li><code>https://github.com/USERNAME/REPOSITORY_2.git</code> 如果你用https 更新代码</li>
+<li><a href="mailto:`git@github.com">`git@github.com</a>:USER/REPOSITORY_2.git` 如果你用 SSH 更新代码</li>
+</ul>
+</li>
+</ul>
+<p>##Switching remote URLs from SSH to HTTPS 从 SSH 切换 远程 URL 到 HTTPS</p>
+<p>1.打开终端( Mac 和 Linux 用户)或者 命令行 (Windows 用户).</p>
+<p>2.更改当前工作路径到你的本地项目</p>
+<p>3.列出你已经存在的远程库，为了获取到你想要修改的远程的名字</p>
+<pre><code>$ git remote -v
+# origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
+# origin  git@github.com:USERNAME/REPOSITORY.git (push)
+</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/95d85744.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -563,14 +683,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -612,7 +732,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">28k</span>
+    <span title="Symbols count total">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

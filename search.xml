@@ -813,6 +813,22 @@ $ deactivate # 使 Python3 虚拟路径失效
       </tags>
   </entry>
   <entry>
+    <title>罗技键盘 K380 支持双系统（Windows/macOS）</title>
+    <url>/posts/e16fb88b.html</url>
+    <content><![CDATA[<blockquote>
+<p>k380 默认每个蓝牙按键只支持不同蓝牙设备，所以说默认不支持同一蓝牙不同系统的。</p>
+</blockquote>
+<p> 而本人正有双系统（同一蓝牙硬件）的需求，所以在网上寻找了些许实战参考文档，最终测试成功。</p>
+<p> 参考链接：<a href="https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086">https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086</a></p>
+]]></content>
+      <categories>
+        <category>k380</category>
+        <category>windows</category>
+        <category>macos</category>
+        <category>logi</category>
+      </categories>
+  </entry>
+  <entry>
     <title>My macOS Software list [Continually updating]</title>
     <url>/posts/a0f6c374.html</url>
     <content><![CDATA[<ul>
