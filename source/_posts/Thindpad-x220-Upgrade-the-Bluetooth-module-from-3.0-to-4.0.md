@@ -6,3 +6,8 @@ date: 2021/6/12
 
 [购买地址](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&id=585334985690&_u=cjnl1al0deb)
 
+罗技鼠标（m590）频繁掉线 -_-
+
+**just `$ sudo pkill bluetoothd`, then daemon bluetooth service will restart self (tested success on macOS 10.14+).**
+
+> Works for me on macOS High Sierra My Logitech mx anywhere does not work after sleep sometimes. As I read its not because of mouse, it's a macOS Smart Bluetooth bug. But my Apple keyboard always works, never got this issue. Sometimes I wake up my computer, the Apple keyboard is working but the Logitech mouse is not working. So without the mouse I cannot restart Bluetooth from the system (I could close but my keyboard also go away, so cannot restart again) I started to use this command from terminal, it stops the service but when the service stops it automatically restarts it self. And my mouse starts working within a second!

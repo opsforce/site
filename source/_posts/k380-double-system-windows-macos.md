@@ -1,5 +1,6 @@
 ---
 title: 罗技键盘K380支持双系统（Windows/macOS）
+date: 2021/6/12
 categories:
 - k380
 - windows
