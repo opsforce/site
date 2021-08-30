@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section">Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section">Archives<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section">Categories<span class="badge">15</span></a>
+    <a href="/categories/" rel="section">Categories<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -189,6 +189,158 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/c2a53a01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ming J">
+      <meta itemprop="description" content="Do not tell me, it can't be done.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OPSFORCE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/c2a53a01.html" class="post-title-link" itemprop="url">Deploy kubernetes [Continually updating]</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-08 00:00:00" itemprop="dateCreated datePublished" datetime="2017-09-08T00:00:00+08:00">2017-09-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kubernetes/" itemprop="url" rel="index"><span itemprop="name">Kubernetes</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/c2a53a01.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/c2a53a01.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>11 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjj6575asqj30kj0gn3zl.jpg" alt=""></p>
+<h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><h3 id="Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node"><a href="#Deploy-docker-engine-1-12-6-on-ubuntu-16-04-xenial-all-node" class="headerlink" title="Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]"></a>Deploy docker-engine 1.12.6 on ubuntu 16.04 xenial [all node]</h3><pre><code class="bash">$ sudo apt-get update
+$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+$ sudo apt-add-repository &#39;deb https://apt.dockerproject.org/repo ubuntu-xenial main&#39;
+$ sudo apt-get update
+$ sudo apt-cache policy docker-engine # find docker-engine version you need to install
+docker-engine:
+  Installed: (none)
+  Candidate: 17.05.0~ce-0~ubuntu-xenial
+  Version table:
+     17.05.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     17.04.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     17.03.1~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     17.03.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.13.1-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.13.0-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.6-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.5-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.4-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.3-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+
+## 如果Ubuntu为14.04,建议先装上以下两个软件包。
+$ apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+
+## 这里安装docker-engine 1.12.6，官方兼容版本
+$ sudo apt-get -y install docker-engine=1.12.6-0~ubuntu-xenial
+$ sudo systemctl restart docker &amp;&amp; sudo systemctl enable docker &amp;&amp; sudo systemctl status docker
+$ sudo usermod -aG docker $(whoami) # 退出当前终端，docker相关命令才能生效
+</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/c2a53a01.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -639,117 +791,6 @@ $ deactivate # 使 Python3 虚拟路径失效
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/6adf9790.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ming J">
-      <meta itemprop="description" content="Do not tell me, it can't be done.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="OPSFORCE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/6adf9790.html" class="post-title-link" itemprop="url">What DevOps needs?</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2016-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2016-05-20T00:00:00+08:00">2016-05-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/6adf9790.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/6adf9790.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>797</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>硬性要求：工具上的准备</p>
-<p>上文提到了工具链的打通，那么工具自然就需要做好准备。现将工具类型及对应的不完全列举整理如下：</p>
-<p>代码管理（SCM）：GitHub、GitLab、BitBucket、SubVersion</p>
-<p>构建工具：Ant、Gradle、maven</p>
-<p>自动部署：Capistrano、CodeDeploy</p>
-<p>持续集成（CI）：Jenkins、Bamboo、Hudson、</p>
-<p>配置管理：Ansible、Chef、Puppet、SaltStack、ScriptRock GuardRail</p>
-<p>容器：Docker、LXC、第三方厂商如AWS</p>
-<p>编排：Kubernetes、Core、Apache Mesos、DC/OS、Swarm</p>
-<p>服务注册与发现：Zookeeper、etcd、Consul</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/6adf9790.html#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -819,14 +860,14 @@ $ deactivate # 使 Python3 虚拟路径失效
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -868,12 +909,12 @@ $ deactivate # 使 Python3 虚拟路径失效
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">29k</span>
+    <span title="Symbols count total">33k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">27 mins.</span>
+    <span title="Reading time total">30 mins.</span>
 </div>
 
         

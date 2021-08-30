@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section">Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section">Archives<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section">Categories<span class="badge">15</span></a>
+    <a href="/categories/" rel="section">Categories<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-12 11:21:07" itemprop="dateModified" datetime="2021-08-12T11:21:07+08:00">2021-08-12</time>
+                <time title="Modified: 2021-08-30 18:38:41" itemprop="dateModified" datetime="2021-08-30T18:38:41+08:00">2021-08-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -295,6 +295,189 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/1a67a951.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ming J">
+      <meta itemprop="description" content="Do not tell me, it can't be done.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OPSFORCE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1a67a951.html" class="post-title-link" itemprop="url">不完美的解决方案：macOS 连接 logi m590 蓝牙鼠标时常出现掉线问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-30 00:00:00 / Modified: 18:38:41" itemprop="dateCreated datePublished" datetime="2021-08-30T00:00:00+08:00">2021-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bluetooth/" itemprop="url" rel="index"><span itemprop="name">bluetooth</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bluetooth/macos/" itemprop="url" rel="index"><span itemprop="name">macos</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bluetooth/macos/logi/" itemprop="url" rel="index"><span itemprop="name">logi</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/1a67a951.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/1a67a951.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>macOS 蓝牙连接 logi 设备是，时不时出现掉线问题，令人很烦恼，在网上查了一通，很多人说是 macOS 的 bug，自己也尝试了一通，写了一通脚本等等，最终临时得出来一个不完美的解决方案：<strong> 模拟手动打开 System Preferences - Bluetooth，这样就可以让系统重新 / 再次扫描可连接蓝牙设备，前台窗框打开 3～5 秒后，再关闭 System Preferences 窗口，会发现鼠标又已经重新连接上了 </strong></p>
+<p> 放上（半）自动化此方案的相关资源 / 操作：</p>
+<p> 依赖：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/toy/blueutil">blueutil</a></li>
+<li>launchctl (macOS 自带)</li>
+</ul>
+<p>launchd 服务（.plist) 文件路径：<code>~/Library/LaunchAgents/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.plist</code></p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;!-- Label 唯一的标识 --&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem&lt;/string&gt;
+    &lt;!-- 指定要运行的脚本 --&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;!-- 下面脚本的绝对路径，记得修改 --&gt;
+        &lt;string&gt;/Users/username/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.sh&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;!-- 每 5 秒会运行一次，可自行更改 --&gt;
+    &lt;key&gt;StartInterval&lt;/key&gt;
+    &lt;integer&gt;5&lt;/integer&gt;
+    &lt;!-- 脚本运行的日志，可自行更改 / 放开 --&gt;
+    &lt;!-- &lt;key&gt;StandardErrorPath&lt;/key&gt; --&gt;
+    &lt;!-- &lt;string&gt;/var/log/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.log&lt;/string&gt; --&gt;
+    &lt;!-- &lt;key&gt;StandardOutPath&lt;/key&gt; --&gt;
+    &lt;!-- &lt;string&gt;/var/log/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.log&lt;/string&gt; --&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+<p> 脚本：<code>repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.sh</code></p>
+<pre><code class="bash">#!/bin/sh
+
+# M585/M590: f3-7a-db-1f-18-86
+
+#export BLUEUTIL_ALLOW_ROOT=1
+CONNECT_STATUS=$(/usr/local/bin/blueutil --is-connected f3-7a-db-1f-18-86)
+
+NOTIFY_TITLE=&quot;Repair macOS Bluetooth connection drop problem&quot;
+
+BLUETOOTHD_PPID=$(ps aux | grep bluetoothd | grep -v grep | awk &#39;&#123;print $2&#125;&#39;)
+
+if [[&quot;$&#123;CONNECT_STATUS&#125;&quot; == &quot;0&quot;]]; then
+    # /usr/local/bin/blueutil --inquiry
+
+    open /System/Library/PreferencePanes/Bluetooth.prefPane
+
+    CONNECT_STATUS_NEW=$(/usr/local/bin/blueutil --is-connected f3-7a-db-1f-18-86)
+
+    if [[&quot;$&#123;CONNECT_STATUS_NEW&#125;&quot; == &quot;1&quot;]]; then
+        NOTIFY_CONTENT=&quot;Logi m590 Bluetooth mouse maybe reconnected&quot;
+        osascript -e &quot;display notification \&quot;$&#123;NOTIFY_CONTENT&#125;\&quot; with title \&quot;$&#123;NOTIFY_TITLE&#125;\&quot;&quot;
+
+    # else
+    #     NOTIFY_CONTENT=&quot;Logi m590 Bluetooth mouse reconnect fail, will handle it by killing bluetoothd process, please wait a moment&quot;
+    #     osascript -e &quot;display notification \&quot;$&#123;NOTIFY_CONTENT&#125;\&quot; with title \&quot;$&#123;NOTIFY_TITLE&#125;\&quot;&quot;
+
+    #     /usr/bin/pkill bluetoothd
+    #     # sleep 1
+    #     BLUETOOTHD_PID=$(ps aux | grep bluetoothd | grep -v grep | awk &#39;&#123;print $2&#125;&#39;)
+
+    #     if [[$&#123;BLUETOOTHD_PID&#125; == $&#123;BLUETOOTHD_PPID&#125;]]; then
+    #         NOTIFY_CONTENT=&quot;Kill bluetoothd process[pid: $&#123;BLUETOOTHD_PPID&#125;] fail, please handle it manually&quot;
+    #     else
+    #         NOTIFY_CONTENT=&quot;Logi m590 Bluetooth mouse maybe reconnected. bluetoothd process[pid: $&#123;BLUETOOTHD_PPID&#125;-&gt;$&#123;BLUETOOTHD_PID&#125;]&quot;
+    #     fi
+    fi
+
+#    sleep 10
+#    # 如果和其它类似操作同步的话，会中断其它操作，暂时先常驻非显现窗口
+#    osascript -e &#39;tell application &quot;System Preferences&quot; to quit&#39;
+fi
+
+</code></pre>
+<p> 最后启动 launchd 服务：</p>
+<pre><code>$ chmod 644 ~/Library/LaunchAgents/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.plist
+$ chmod 755 repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.sh
+$ launchctl load -w ~/Library/LaunchAgents/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.plist
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/3846c14b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -319,8 +502,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-08-12 11:21:07" itemprop="dateCreated datePublished" datetime="2021-08-12T11:21:07+08:00">2021-08-12</time>
+              <time title="Created: 2021-08-12 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-12T00:00:00+08:00">2021-08-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-30 18:38:41" itemprop="dateModified" datetime="2021-08-30T18:38:41+08:00">2021-08-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -425,7 +615,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-12 11:21:07" itemprop="dateModified" datetime="2021-08-12T11:21:07+08:00">2021-08-12</time>
+                <time title="Modified: 2021-08-30 18:38:41" itemprop="dateModified" datetime="2021-08-30T18:38:41+08:00">2021-08-30</time>
               </span>
 
           
@@ -524,7 +714,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-12 11:21:07" itemprop="dateModified" datetime="2021-08-12T11:21:07+08:00">2021-08-12</time>
+                <time title="Modified: 2021-08-30 18:38:41" itemprop="dateModified" datetime="2021-08-30T18:38:41+08:00">2021-08-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -592,117 +782,6 @@
 </blockquote>
 <p> 而本人正有双系统（同一蓝牙硬件）的需求，所以在网上寻找了些许实战参考文档，最终测试成功。</p>
 <p> 参考链接：<a target="_blank" rel="noopener" href="https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086">https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://opsforce.org/posts/5255ca53.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ming J">
-      <meta itemprop="description" content="Do not tell me, it can't be done.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="OPSFORCE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/5255ca53.html" class="post-title-link" itemprop="url">fix-macos-mojave-ssh-connect-trouble</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-11-01T00:00:00+08:00">2018-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-11-02 00:00:00" itemprop="dateModified" datetime="2018-11-02T00:00:00+08:00">2018-11-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/macOS/" itemprop="url" rel="index"><span itemprop="name">macOS</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/5255ca53.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/5255ca53.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>210</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p> 升级 macos mojave 10.14.1 后 ssh 远程服务器出现如下错误：</p>
-<pre><code>packet_write_wait: Connection to *.*.*.* port 22: Broken pipe
-</code></pre><p> 其实是 ssh 客户端比较新导致的 </p>
-<pre><code>$ ssh -V
-OpenSSH_7.8p1, LibreSSL 2.7.3
-</code></pre><p> 只需添加 ssh 相关配置，可解决问题 </p>
-<pre><code>$ cat .ssh/config
-Host *
-    IPQoS lowdelay throughput
-</code></pre><p> 这个问题困惑了我近半个月 </p>
 
       
     </div>
@@ -787,14 +866,14 @@ Host *
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -836,12 +915,12 @@ Host *
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">29k</span>
+    <span title="Symbols count total">33k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">27 mins.</span>
+    <span title="Reading time total">30 mins.</span>
 </div>
 
         
