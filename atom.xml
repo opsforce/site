@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opsforce.org/"/>
-  <updated>2021-08-30T10:42:15.864Z</updated>
+  <updated>2021-09-02T06:23:32.700Z</updated>
   <id>https://opsforce.org/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://opsforce.org/posts/1a67a951.html"/>
     <id>https://opsforce.org/posts/1a67a951.html</id>
     <published>2021-08-29T16:00:00.000Z</published>
-    <updated>2021-08-30T10:42:15.864Z</updated>
+    <updated>2021-09-02T06:23:32.700Z</updated>
     
     <content type="html"><![CDATA[<p>macOS 蓝牙连接 logi 设备是，时不时出现掉线问题，令人很烦恼，在网上查了一通，很多人说是 macOS 的 bug，自己也尝试了一通，写了一通脚本等等，最终临时得出来一个不完美的解决方案：<strong> 模拟手动打开 System Preferences - Bluetooth，这样就可以让系统重新 / 再次扫描可连接蓝牙设备，前台窗框打开 3～5 秒后，再关闭 System Preferences 窗口，会发现鼠标又已经重新连接上了 </strong></p><span id="more"></span><p> 放上（半）自动化此方案的相关资源 / 操作：</p><p> 依赖：</p><ul><li><a href="https://github.com/toy/blueutil">blueutil</a></li><li>launchctl (macOS 自带)</li></ul><p>launchd 服务（.plist) 文件路径：<code>~/Library/LaunchAgents/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.plist</code></p><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;&lt;plist version=&quot;1.0&quot;&gt;&lt;dict&gt;    &lt;!-- Label 唯一的标识 --&gt;    &lt;key&gt;Label&lt;/key&gt;    &lt;string&gt;repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem&lt;/string&gt;    &lt;!-- 指定要运行的脚本 --&gt;    &lt;key&gt;ProgramArguments&lt;/key&gt;    &lt;array&gt;        &lt;!-- 下面脚本的绝对路径，记得修改 --&gt;        &lt;string&gt;/Users/username/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.sh&lt;/string&gt;    &lt;/array&gt;    &lt;!-- 每 5 秒会运行一次，可自行更改 --&gt;    &lt;key&gt;StartInterval&lt;/key&gt;    &lt;integer&gt;5&lt;/integer&gt;    &lt;!-- 脚本运行的日志，可自行更改 / 放开 --&gt;    &lt;!-- &lt;key&gt;StandardErrorPath&lt;/key&gt; --&gt;    &lt;!-- &lt;string&gt;/var/log/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.log&lt;/string&gt; --&gt;    &lt;!-- &lt;key&gt;StandardOutPath&lt;/key&gt; --&gt;    &lt;!-- &lt;string&gt;/var/log/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.log&lt;/string&gt; --&gt;&lt;/dict&gt;&lt;/plist&gt;</code></pre><p> 脚本：<code>repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.sh</code></p><pre><code class="bash">#!/bin/sh# M585/M590: f3-7a-db-1f-18-86#export BLUEUTIL_ALLOW_ROOT=1CONNECT_STATUS=$(/usr/local/bin/blueutil --is-connected f3-7a-db-1f-18-86)NOTIFY_TITLE=&quot;Repair macOS Bluetooth connection drop problem&quot;BLUETOOTHD_PPID=$(ps aux | grep bluetoothd | grep -v grep | awk &#39;&#123;print $2&#125;&#39;)if [[&quot;$&#123;CONNECT_STATUS&#125;&quot; == &quot;0&quot;]]; then    # /usr/local/bin/blueutil --inquiry    open /System/Library/PreferencePanes/Bluetooth.prefPane    CONNECT_STATUS_NEW=$(/usr/local/bin/blueutil --is-connected f3-7a-db-1f-18-86)    if [[&quot;$&#123;CONNECT_STATUS_NEW&#125;&quot; == &quot;1&quot;]]; then        NOTIFY_CONTENT=&quot;Logi m590 Bluetooth mouse maybe reconnected&quot;        osascript -e &quot;display notification \&quot;$&#123;NOTIFY_CONTENT&#125;\&quot; with title \&quot;$&#123;NOTIFY_TITLE&#125;\&quot;&quot;    # else    #     NOTIFY_CONTENT=&quot;Logi m590 Bluetooth mouse reconnect fail, will handle it by killing bluetoothd process, please wait a moment&quot;    #     osascript -e &quot;display notification \&quot;$&#123;NOTIFY_CONTENT&#125;\&quot; with title \&quot;$&#123;NOTIFY_TITLE&#125;\&quot;&quot;    #     /usr/bin/pkill bluetoothd    #     # sleep 1    #     BLUETOOTHD_PID=$(ps aux | grep bluetoothd | grep -v grep | awk &#39;&#123;print $2&#125;&#39;)    #     if [[$&#123;BLUETOOTHD_PID&#125; == $&#123;BLUETOOTHD_PPID&#125;]]; then    #         NOTIFY_CONTENT=&quot;Kill bluetoothd process[pid: $&#123;BLUETOOTHD_PPID&#125;] fail, please handle it manually&quot;    #     else    #         NOTIFY_CONTENT=&quot;Logi m590 Bluetooth mouse maybe reconnected. bluetoothd process[pid: $&#123;BLUETOOTHD_PPID&#125;-&gt;$&#123;BLUETOOTHD_PID&#125;]&quot;    #     fi    fi#    sleep 10#    # 如果和其它类似操作同步的话，会中断其它操作，暂时先常驻非显现窗口#    osascript -e &#39;tell application &quot;System Preferences&quot; to quit&#39;fi</code></pre><p> 最后启动 launchd 服务：</p><pre><code>$ chmod 644 ~/Library/LaunchAgents/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.plist$ chmod 755 repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.sh$ launchctl load -w ~/Library/LaunchAgents/repair.logi.m590.bluetooth.mouse.macOS.connection.drop.problem.plist</code></pre>]]></content>
     
@@ -45,7 +45,7 @@
     <link href="https://opsforce.org/posts/3846c14b.html"/>
     <id>https://opsforce.org/posts/3846c14b.html</id>
     <published>2021-08-11T16:00:00.000Z</published>
-    <updated>2021-08-30T10:42:15.864Z</updated>
+    <updated>2021-09-02T06:23:32.700Z</updated>
     
     <content type="html"><![CDATA[<p> 老的 gmail 数年前自己给注销了，现在微博登录现在要二次认证，要么绑定手机发短信验证码，要么发送私信给已在登录状态的客户端。问题是我就是不想绑定手机号！！！f**k!!! w**bo, f**k!!! gfw, f**k!!! z*</p>]]></content>
     
@@ -71,7 +71,7 @@
     <link href="https://opsforce.org/posts/1c61f82d.html"/>
     <id>https://opsforce.org/posts/1c61f82d.html</id>
     <published>2021-06-11T16:00:00.000Z</published>
-    <updated>2021-08-30T10:42:15.864Z</updated>
+    <updated>2021-09-02T06:23:32.700Z</updated>
     
     <content type="html"><![CDATA[<p> 考虑到手头上的蓝牙设备（鼠标、耳机等）不往下兼容，或者说不支持蓝牙 3.0，而且 x220 这个老本子的蓝牙默认是 3.0，所以只能升级 x220 的蓝牙模块到 4.0 了。<em> 貌似现在比较新的产品好些都不支持蓝牙 3.0</em></p><p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3afc2e8dWwEBsT&amp;id=585334985690&amp;_u=cjnl1al0deb"> 购买地址 </a></p><p> 罗技鼠标（m590）频繁掉线 -_-</p><p><strong>just <code>$ sudo pkill bluetoothd</code>, then daemon bluetooth service will restart self (tested success on macOS 10.14+).</strong></p><blockquote><p>Works for me on macOS High Sierra My Logitech mx anywhere does not work after sleep sometimes. As I read its not because of mouse, it’s a macOS Smart Bluetooth bug. But my Apple keyboard always works, never got this issue. Sometimes I wake up my computer, the Apple keyboard is working but the Logitech mouse is not working. So without the mouse I cannot restart Bluetooth from the system (I could close but my keyboard also go away, so cannot restart again) I started to use this command from terminal, it stops the service but when the service stops it automatically restarts it self. And my mouse starts working within a second!</p></blockquote>]]></content>
     
@@ -93,7 +93,7 @@
     <link href="https://opsforce.org/posts/e16fb88b.html"/>
     <id>https://opsforce.org/posts/e16fb88b.html</id>
     <published>2021-06-11T16:00:00.000Z</published>
-    <updated>2021-08-30T10:42:15.864Z</updated>
+    <updated>2021-09-02T06:23:32.700Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>k380 默认每个蓝牙按键只支持不同蓝牙设备，所以说默认不支持同一蓝牙不同系统的。</p></blockquote><p> 而本人正有双系统（同一蓝牙硬件）的需求，所以在网上寻找了些许实战参考文档，最终测试成功。</p><p> 参考链接：<a href="https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086">https://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1847086</a></p>]]></content>
     
@@ -126,7 +126,7 @@
     <link href="https://opsforce.org/posts/d44d22bb.html"/>
     <id>https://opsforce.org/posts/d44d22bb.html</id>
     <published>2021-03-24T16:00:00.000Z</published>
-    <updated>2021-08-30T10:42:15.864Z</updated>
+    <updated>2021-09-02T06:23:32.700Z</updated>
     
     <content type="html"><![CDATA[<p> 网站 CICD 已从 travisCI 迁移至 github action</p>]]></content>
     
