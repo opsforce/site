@@ -6,9 +6,18 @@ comments: false
 
 > Do not tell me, it can't be done! --- [Pearl Harbor](https://movie.douban.com/subject/1302987/)
 
-### Me
-Hi, I'm Jimmy Zhao, I write this blog and work as a DevOps Engineer in Shanghai. Focused on building and automating infrastructure. My toolbox: Docker, Kubernetes, Rancher, Terraform, Ansible, GlusterFS, Ceph, OpenStack, Linux, Alicloud, AWS, GCE etc.
+### Gald to see you here! 👋
 
-### Contact
-Github: [opsforce](https://github.com/opsforce)
-E-mail: [minng.jao@gmail.com](minng.jao@gmail.com)
+I am DevOps/DevSecOps Engineer(SRE) Leader/Header experienced in Services Reliability Engineering and Software Development. Passionate about Systems Reliability, Infrastructure automation, DevOps and Scalable architectures. Always have a keen interestautomating boring stuff.
+
+- 🔭 I’m currently working on ...
+  - Deployments and Support (AliCloud, TencentCloud, AWS, GCP, CI/CD, GitOps/ Dev Productivity, Logging, Monitoring, Provisioning, Secrets Management, Config Management, etc.)
+  - Operations automation (Gitlab, GitHub, Terraform, Ansible, Jenkins, Packer, Linux, Docker, etc.)
+  - Other Tools and Platforms (Kubernetes, Shell, Python, Golang, ElasticSearch(ELK), Mysql, MongoDB, Redis, Kafka, Microservices, etc.)
+  - ...
+
+- 📫 How to reach me, *Maybe slower to reply/respond* 😄
+
+  ☁️ [Github](https://github.com/opsforce)
+
+  ✉️ [Gmail](mailto:minng.jao@gmail.com)
