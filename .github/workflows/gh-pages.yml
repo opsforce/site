@@ -43,8 +43,10 @@ jobs:
           # theme_config=themes/next/_config.yml
 
           # 设置 theme next 的样式
-          sed -i 's|scheme: Muse|# scheme: Muse|' themes/next/_config.yml
-          sed -i 's|#scheme: Mist|scheme: Mist|' themes/next/_config.yml
+          # 使用 Mist 样式 START
+          # sed -i 's|scheme: Muse|# scheme: Muse|' themes/next/_config.yml
+          # sed -i 's|#scheme: Mist|scheme: Mist|' themes/next/_config.yml
+          # 使用 Mist 样式 END
           sed -i -e 's|darkmode: .*|darkmode: true|' themes/next/_config.yml
 
           # 添加自定义的图片，例如 favicon, logo, etc. 并配置
